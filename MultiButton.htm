@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<!-- have a ton of info hidden on a button until mouseover ala pivotaltracker -->
+<html>
+<head>
+	<title>MultiButton test</title>
+	<script>
+		if (screen.width < 600) {
+
+		}
+	</script>
+	<style>
+		* {margin:0;padding:0}
+		html, body {width:100%;font-size:100%}
+		ul {list-style:none;}
+		.MultiButton {padding:0.5em;margin:0.5em;color:#CCC;width:auto;height:auto;
+			background: #4c4c4c; /* old browsers */
+			background: -moz-linear-gradient(top, #4c4c4c 0%, #131313 100%); /* firefox */
+			background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#4c4c4c), color-stop(100%,#131313)); /* webkit */
+			filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4c4c4c', endColorstr='#131313',GradientType=0 ); /* ie */
+			-moz-border-radius: 15px;
+			border-radius: 15px;
+			
+		}
+		.MultiButton a {text-decoration:none;color:#CCF}
+		.MultiButton a:hover {color:#99F;text-decoration:underline;}
+		.MultiButton ul {display:block;clear:both;width:100%}
+		.MultiButton li {display:inline-block;margin:0 0.5em;}
+		.MultiButton p {font-size:0.75em;color:#CCC;margin:0.5em;}
+		.MultiButton * {height:0px;width:0px;overflow:hidden}
+		.MultiButton:hover * {height:auto;width:auto}
+		.MultiButton h2 {display:block;height:auto;width:auto;color:#FFF;text-shadow: 2px 2px 2px #000;}
+		
+		
+	</style>
+</head>
+<body>
+<ul>
+	<li class="MultiButton">
+		<h2>Lorem</h2>
+		<ul>
+			<li><a href="#">Lorem ipsum</a></li>
+			<li><a href="#">dolor sit</a></li>
+			<li><a href="#">consectetur adipiscing</a></li>
+		</ul>
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam lorem nibh, fermentum vel lobortis quis, interdum et risus.</p>
+	</li>
+	<li class="MultiButton">
+		<h2>Ipsum</h2>
+		<ul>
+			<li><a href="#">Lorem ipsum</a></li>
+			<li><a href="#">dolor sit</a></li>
+			<li><a href="#">consectetur adipiscing</a></li>
+		</ul>
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam lorem nibh, fermentum vel lobortis quis, interdum et risus.</p>
+	</li>
+	<li class="MultiButton">
+		<h2>Dolar</h2>
+		<ul>
+			<li><a href="#">Lorem ipsum</a></li>
+			<li><a href="#">dolor sit</a></li>
+			<li><a href="#">consectetur adipiscing</a></li>
+		</ul>
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam lorem nibh, fermentum vel lobortis quis, interdum et risus.</p>
+	</li>
+	<li class="MultiButton">
+		<h2>Consecteur</h2>
+		<ul>
+			<li><a href="#">Lorem ipsum</a></li>
+			<li><a href="#">dolor sit</a></li>
+			<li><a href="#">consectetur adipiscing</a></li>
+		</ul>
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam lorem nibh, fermentum vel lobortis quis, interdum et risus.</p>
+	</li>
+</ul>
+</body>
+</html>
