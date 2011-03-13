@@ -9,7 +9,7 @@ body{background:#eee;color:#111;height:100%;width:100%;margin:0;padding:1em;font
 	var body = document.getElementsByTagName("body")[0];
 	function save(){localStorage.setItem("notepad", body.innerHTML);}
 	if(window.localStorage){ body.innerHTML = localStorage.getItem("notepad");}
-	setInterval ( save(), 500);
+	setInterval ( save, 500);
 	window.onunload = save();
 </script>
 </head>
