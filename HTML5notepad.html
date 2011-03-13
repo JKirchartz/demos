@@ -10,7 +10,7 @@
 <div id="notepad" contenteditable="true">
 </div>
 <script>
-	var body = document.getElementById("notepad")[0];
+	var body = document.getElementById("notepad");
 	function save(){localStorage.setItem("notepad", body.innerHTML);}
 	if(window.localStorage){ body.innerHTML = localStorage.getItem("notepad");}
 	setInterval ( save, 500);
