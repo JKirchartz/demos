@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>JKirchartz's Demos etc.</title>
+		<!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+		<script src="http://code.jquery.com/jquery-1.5.min.js"></script>
+		
+	</head>
+	<body>
+	<h1>Bookmarklets</h1>
+<a href='javascript:var a=document.getElementsByTagName("a");for(i=0;i<a.length;i++){if(a[i].href.match(/([^\/\\]+)\.(DOC|DOCX|PPT|PPTX|XLS|XLSX|PAGES|EPS|PS|PSD|AI|XPS|TTF)$/i)){a[i].href ="http://docs.google.com/viewer?url="+ a[i].href;}}'>Open appropriate links in Google Docs Viewer</a><br>
+<a href='javascript:window.open("http://validator.w3.org/check?uri="+window.location);'>Validate with validator.w3.org</a>
+</body>
+</html>
