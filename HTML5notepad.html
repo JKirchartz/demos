@@ -3,8 +3,12 @@
 <title>HTML5 notepad app</title>
 <meta charset="utf-8">
 <style>
-body{background:#eee;color:#111;height:100%;width:100%;margin:0;padding:1em;font-size:100%/1.25}
+#notepad{background:#eee;color:#111;height:100%;width:100%;margin:0;padding:1em;font-size:100%/1.25}
 </style>
+</head>
+<body>
+<div id="notepad" contenteditable="true">
+</div>
 <script>
 	var body = document.getElementsByTagName("body")[0];
 	function save(){localStorage.setItem("notepad", body.innerHTML);}
@@ -12,8 +16,4 @@ body{background:#eee;color:#111;height:100%;width:100%;margin:0;padding:1em;font
 	setInterval ( save, 500);
 	window.onunload = save();
 </script>
-</head>
-<body contenteditable="true">
-
-
 </body></html>
