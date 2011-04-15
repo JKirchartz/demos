@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<script src="http://code.jquery.com/jquery-1.5.min.js"></script>
+<style>
+	html,body{margin:0;padding:0;width:100%;height:100%}
+</style>
+<script>
+var change = function(i){
+	out = Math.floor(i%360);
+	$("body").css({'background-color':'hsl(' + out + ', 100%, 100%)'});
+	if(typeof change == 'function'){
+		setTimeout(change(),500,i++);
+	}
+}
+$(change(1));
+</script>
+</head>
+<body>
+
+
+</body>
+</html>

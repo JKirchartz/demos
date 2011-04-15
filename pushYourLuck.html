@@ -1,0 +1,110 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<title>Push Your Luck</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<script src="http://code.jquery.com/jquery-1.5.min.js"></script>
+	<script src="http://simplemodal.googlecode.com/files/jquery.simplemodal.1.4.1.min.js"></script>
+	<style>
+		*{margin:0;padding:0}
+		.on {border:5px solid #f0f}
+		table, html, body {width:100%;height:100%}
+		td {max-height:12.5%;max-width:12.5%;border:5px solid #333}
+		body{background:#444;}
+		.spacer{width:100px;height:100px;margin:0 auto;font-size:3em;font-weight:900;text-align:center;valign:middle}
+	#confirm {display:none;}
+
+/* Overlay */
+#confirm-overlay {background-color:#eee; cursor:wait;}
+
+/* Container */
+#confirm-container {height:140px; width:420px; font: 16px/22px 'Trebuchet MS', Verdana, Arial; text-align:left; background:#fff; border:2px solid #336699;}
+#confirm-container .header {height:30px; line-height:30px; width:100%; background:url(../img/confirm/header.gif) repeat-x; color:#fff; font-weight:bold;}
+#confirm-container .header span {padding-left:8px;}
+#confirm-container .message {color:#333; font-size:14px; margin:0; padding:12px 4px 12px 8px;}
+#confirm-container .buttons {line-height:26px; width:160px; float:right; padding:10px 8px 0;} 
+#confirm-container .buttons div {float:right; margin-left:4px; width:70px; height:26px; color:#666; font-weight:bold; text-align:center; background:url(../img/confirm/button.gif) repeat-x; border:1px solid #bbb; cursor:pointer;} 
+#confirm-container a.modal-close,
+#confirm-container a.modal-close:link,
+#confirm-container a.modal-close:active,
+#confirm-container a.modal-close:visited {text-decoration:none; font-weight:bold; position:absolute; right:10px; top:2px; color:#fff;}
+#confirm-container a.modal-close:hover {color:#ccc;}
+	</style>
+	<script>
+		var nextBox = { 'breaker' : false, 
+		'get' : function(id){
+			var num = id.replace("box","");
+			$("#box"+num).removeClass("on");
+			num++;
+			if(num>24) num = 1;
+			$("#box"+num).addClass("on");
+			if(!nextBox.breaker){
+				nextBox.init();
+			}},
+		'init' : function(){
+				var id = $(".on").attr("id");
+				setTimeout(nextBox.get,50,id);
+			},
+		'toggle' : function(){
+				nextBox.breaker=(nextBox.breaker)?false:true;
+			}
+		}	
+		$(function(){
+			nextBox.init()
+			$("td").not(".middle").each(function(index){
+				//set the background of each td to a random color
+				$(this).css('background','#'+Math.round(0xffffff * Math.random()).toString(16));
+				var rand = Math.floor(Math.random*1000000);
+				$(this).children("div").text(index + 1);
+			});
+$(window).click(function(event) {
+            if(!nextBox.breaker){
+				nextBox.toggle();
+				confirm("", function () {
+					nextBox.breaker = false;
+					nextBox.init()
+				});
+			}
+	});
+$(window).bind("contextmenu", function(e) {
+               // e.preventDefault();
+            });
+});
+function confirm(message, callback) {
+	$('#confirm').modal({
+		closeHTML: "<a href='#' title='Close' class='modal-close'>x</a>",
+		position: ["30%",],
+		overlayId: 'confirm-overlay',
+		containerId: 'confirm-container', 
+		onShow: function (dialog) {
+			var modal = this;
+			$('.message', dialog.data[0]).append(message);
+			$('.yes', dialog.data[0]).click(function () {
+				if ($.isFunction(callback)) {
+					callback.apply();
+				}
+				modal.close();
+			});
+		}
+	});
+}
+	</script>
+</head>
+<body>
+<table>
+<tr><td id="box1" class="on"><div class="spacer"></div></td><td id="box2"><div class="spacer"></div></td><td id="box3"><div class="spacer"></div></td><td id="box4"><div class="spacer"></div></td><td id="box5"><div class="spacer"></div></td><td id="box6"><div class="spacer"></div></td><td id="box7"><div class="spacer"></div></td><td id="box8"><div class="spacer"></div></td></tr>
+<tr><td id="box24"><div class="spacer"></div></td><td colspan="6" rowspan="4" class="middle" valign="middle" align="center" ><img src="http://placekitten.com/600/400" alt="kitten" style="display:inline"><div class="spacer"></div></td><td id="box9"><div class="spacer"></div></td></tr>
+<tr><td id="box23"><div class="spacer"></div></td><td id="box10"><div class="spacer"></div></td></tr>
+<tr><td id="box22"><div class="spacer"></div></td><td id="box11"><div class="spacer"></div></td></tr>
+<tr><td id="box21"><div class="spacer"></div></td><td id="box12"><div class="spacer"></div></td></tr>
+<tr><td id="box20"><div class="spacer"></div></td><td id="box19"><div class="spacer"></div></td><td id="box18"><div class="spacer"></div></td><td id="box17"><div class="spacer"></div></td><td id="box16"><div class="spacer"></div></td><td id="box15"><div class="spacer"></div></td><td id="box14"><div class="spacer"></div></td><td id="box13"><div class="spacer"></div></td></tr>
+</table>
+<div id='confirm'>
+			<div class='header'><span>Confirm</span></div>
+			<div class='message'><h2>Congratulations! You won!</h2> <p>Text WIN to 94253 for your prize.</p><p>Play Again?</p></div>
+			<div class='buttons'>
+				<div class='no simplemodal-close'>No</div><div class='yes'>Yes</div>
+			</div>
+		</div>
+</body>
+</html>
