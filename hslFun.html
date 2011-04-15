@@ -10,9 +10,11 @@
 <script>
 var change = function(i){
 	var out = Math.floor(i%360);
+	console.log(out);
 	$("body").css({'background-color':'hsl(' + out + ', 100%, 100%)'});
 	if(typeof change == 'function'){
 		setTimeout(change,500,i++);
+		console.log("recurse")
 	}
 };
 $(change(1));
