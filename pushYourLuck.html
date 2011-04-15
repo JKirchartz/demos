@@ -53,7 +53,7 @@
 			nextBox.init()
 			$("td").not(".middle").each(function(index){
 				//set the background of each td to a random color
-				$(this).css('background','#'+Math.round(0xffffff * Math.random()).toString(16));
+				$(this).css('background','#'+Math.floor(Math.random()*16777215).toString(16)); // improvement over '#'+Math.round(0xffffff * Math.random()).toString(16)
 				var rand = Math.floor(Math.random*1000000);
 				$(this).children("div").text(index + 1);
 			});
