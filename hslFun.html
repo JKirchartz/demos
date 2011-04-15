@@ -14,7 +14,7 @@ var change = function(i){
 	$("body").css({'background-color':'hsl(' + out + ', 100%, 100%)'});
 	if(typeof change == 'function'){
 		i++;
-		setTimeout(change,500,i);
+		setTimeout(change,50,i);
 		console.log("recurse")
 	}
 };
