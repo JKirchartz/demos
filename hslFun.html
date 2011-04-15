@@ -9,12 +9,12 @@
 </style>
 <script>
 var change = function(i){
-	out = Math.floor(i%360);
+	var out = Math.floor(i%360);
 	$("body").css({'background-color':'hsl(' + out + ', 100%, 100%)'});
 	if(typeof change == 'function'){
 		setTimeout(change(),500,i++);
 	}
-}
+};
 $(change(1));
 </script>
 </head>
