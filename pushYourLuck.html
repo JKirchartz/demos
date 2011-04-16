@@ -53,8 +53,8 @@
 			nextBox.init()
 			$("td").not(".middle").each(function(index){
 				//set the background of each td to a random color
-				$(this).css('background','#'+Math.floor(Math.random()*16777215).toString(16)); // improvement over '#'+Math.round(0xffffff * Math.random()).toString(16)
-				var rand = Math.floor(Math.random*1000000);
+				$(this).css('background','#'+Math.floor(Math.random()*16777215).toString(16));
+				var rand = Math.floor(Math.random*100000);
 				$(this).children("div").text(index + 1);
 			});
 $(window).click(function(event) {
@@ -101,7 +101,7 @@ function confirm(message, callback) {
 </table>
 <div id='confirm'>
 			<div class='header'><span>Confirm</span></div>
-			<div class='message'><h2>Congratulations! You won!</h2> <p>Text WIN to 94253 for your prize.</p><p>Play Again?</p></div>
+			<div class='message'><h2>Congratulations! You won!</h2><p>Play Again?</p></div>
 			<div class='buttons'>
 				<div class='no simplemodal-close'>No</div><div class='yes'>Yes</div>
 			</div>
