@@ -6,8 +6,8 @@
 		<script src="http://code.jquery.com/jquery-1.5.min.js"></script>
 		<link href='http://fonts.googleapis.com/css?family=Fontdiner+Swanky' rel='stylesheet' type='text/css'>
 		<style>
-			html {height:100%;width:100%;font:100%/1.25 sans-serif;background:#222}
-			body {width:36em;margin:0 auto;padding:1em;background:#eee;color:#444}
+			html {height:100%;width:100%;font:100%/1.25 sans-serif;background:#222 url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAPklEQVQYV2NkIA78ZyRC3X+gGkZkhWABNI1wMZwS6DZhsxqbyRhWwQzCUIzPMyiKSfYMVnchewhkIkFFIA0Ak1IMCv1gGaUAAAAASUVORK5CYII=") repeat}
+			body {width:36em;margin:0 auto;padding:1em;color:#444;background:#eee;}
 			h1,h2,h3{font-family:'Fontdiner Swanky', serif; margin-top:0; margin-bottom:0; color: #222; text-shadow:1px 1px 2px #B0E0E6, 2px 2px 2px #B0E0E6, 3px 3px 2px #B0E0E6, 4px 4px 2px #B0E0E6;}
 			h1 { font-size:1.5em; padding:1.45833em 0; text-align:center}
 			h2 { font-size:1.33333em; padding:1.25em 0; }
@@ -16,6 +16,9 @@
 			li p {margin-left:1em}
 			a {text-decoration:none;margin:0 8px 8px 0;font-weight:900;color:#004}
 			a:hover {text-shadow:1px 1px 1px #7D7, 2px 2px 1px #7D7, 3px 3px 1px #7D7, 4px 4px 1px #7D7;margin:0}
+			#footer {background:#000;font-size:0.75em;color:#ccc;border-radius:1em;-moz-border-radius:1em;-webkit-border-radius:1em;padding:0.5em}
+			#footer a {text-shadow:none;color:#aaf;margin:0}
+			#footer a {text-decoration:underline}
 		</style>
 	</head>
 	<body>
@@ -30,7 +33,17 @@
 			<li><a href="ds10Buttons.html">ds-10 buttons</a><p>Emulating the drum-pad button animation from the Korg DS-10</p></li>
 			<li><a href="hslFun.html">HSL fun</a><p>HSL color spinner... This is broken, <s>it doesn't like the recursion</s> I can't figure out why though... but I'll fix it soon...</p></li>
 			<li><a href="pushYourLuck.html">Push Your Luck</a><p>A clone of the popular gameshow, no whammies yet, just the animation & click detection. It's a little unreliable on restarting the game & everybody's a winner! It's designed for full-screen mode so for most browsers hit f11 and give it a go.</p></li>
+			<li><a href="sewn.html">Sewn</a><p>that new "stitched" trend with a png texture and border:dashed.</p></li>
 		</ol>
 		</nav>
+		<div id="footer">
+		<p>All code on <a href="http://jkirchartz.github.com">jkirchartz.github.com</a> is presented under a <a href="http://en.wikipedia.org/wiki/Copyleft">copyleft license</a> which guarantee you:</p>
+		<ol start="0">
+			<li>the freedom to use the work,</li>
+			<li>the freedom to study the work,</li>
+			<li>the freedom to copy and share the work with others,</li>
+			<li>the freedom to modify the work, and the freedom to distribute modified and therefore derivative works.</li>
+		</ol>
+		</div>
 	</body>
 </html>
