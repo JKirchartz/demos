@@ -15,10 +15,10 @@ html,body{background:#FCFCFC;color:#444;height:100%;width:100%;margin:0;padding:
 </textarea>
 <script>
 	var n = document.getElementById("notepad");
-	function save(){localStorage.setItem("notepad", n.value);}
+	var s = function(){localStorage.setItem("notepad", n.value);}
 	if(window.localStorage){ n.value = localStorage.getItem("notepad");}
-	n.onchange = save();
-	//setInterval( save, 500);
-	window.onunload = save();
+	//n.onchange = s();
+	setInterval( s, 500);
+	window.onunload = s();
 </script>
 </body></html>
