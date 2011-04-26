@@ -15,8 +15,8 @@ html,body,#notepad{background:#FCFCFC;color:#444;height:100%;width:100%;margin:0
 </textarea>
 <script>
 	var n = document.getElementById("notepad");
-	function save(){localStorage.setItem("notepad", n.innerHTML);}
-	if(window.localStorage){ n.innerHTML = localStorage.getItem("notepad");}
+	function save(){localStorage.setItem("notepad", n.value);}
+	if(window.localStorage){ n.value = localStorage.getItem("notepad");}
 	document.getElementById("notepad").onchange = save();//setInterval( save, 500);
 	window.onunload = save();
 </script>
