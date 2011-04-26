@@ -8,14 +8,14 @@
 	html,body{margin:0;padding:0;width:100%;height:100%}
 </style>
 <script>
-var change = function(out){
-	out = Math.floor(out%360);
+var i = 0;
+var change = function(){
+	var out = Math.floor(i%360);
 	$("body").css('background-color','hsl(' + out + ', 100%, 100%)');
-	out++;
-		setTimeout(change,50,i);
-	}
+	i++;
+	setTimeout(change,50);
 };
-$(document).ready({change(1);});
+change(1);
 </script>
 </head>
 <body>
