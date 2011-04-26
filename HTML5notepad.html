@@ -14,9 +14,9 @@ html,body,#notepad{background:#FCFCFC;color:#444;height:100%;width:100%;margin:0
 <textarea placeholder="Type here, see it here..."  id="notepad">
 </textarea>
 <script>
-	var body = document.getElementById("notepad");
-	function save(){localStorage.setItem("notepad", body.innerHTML);}
-	if(window.localStorage){ body.innerHTML = localStorage.getItem("notepad");}
+	var n = document.getElementById("notepad");
+	function save(){localStorage.setItem("notepad", n.innerHTML);}
+	if(window.localStorage){ n.innerHTML = localStorage.getItem("notepad");}
 	document.getElementById("notepad").onchange = save();//setInterval( save, 500);
 	window.onunload = save();
 </script>
