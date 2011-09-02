@@ -17,13 +17,13 @@ var yAmt = 0;
 var change = function(){
 	var out = Math.floor(i%360);
 	var pct = Math.floor((i+rnd)%60) + 20;
-	$("body").css('background-color','hsl(' + out + ', '+xAmt+'%, '+yAmt+'%)');
+	$("body").css('background-color','hsl(' + yAmt + ', '+xAmt+'%, 70%)');
 	i++;
 	setTimeout(change,50);
 };
 $("body").mousemove(function(event){
 xAmt = event.pageX%100;
-yAmt = event.pageY%100;
+yAmt = event.pageY%360;
 
 })
 change(1);
