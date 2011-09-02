@@ -9,9 +9,11 @@
 </style>
 <script>
 var i = 0;
+var rnd = Math.random();
 var change = function(){
 	var out = Math.floor(i%360);
-	$("body").css('background-color','hsl(' + out + ', 75%, 50%)');
+	var pct = Math.floor((i+rnd)%60) + 20;
+	$("body").css('background-color','hsl(' + out + ', '+pct+'%, '+pct+'%)');
 	i++;
 	setTimeout(change,50);
 };
