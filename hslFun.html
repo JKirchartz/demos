@@ -1,8 +1,10 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-<title></title>
+<title>HSL Fun</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+
 <script src="http://code.jquery.com/jquery-1.5.min.js"></script>
 <style>
 	html,body{margin:0;padding:0;width:100%;height:100%}
@@ -10,13 +12,20 @@
 <script>
 var i = 0;
 var rnd = Math.random();
+var xAmt = 0;
+var yAmt = 0;
 var change = function(){
 	var out = Math.floor(i%360);
 	var pct = Math.floor((i+rnd)%60) + 20;
-	$("body").css('background-color','hsl(' + out + ', '+pct+'%, '+pct+'%)');
+	$("body").css('background-color','hsl(' + out + ', '+xAmt+'%, '+yAmt+'%)');
 	i++;
 	setTimeout(change,50);
 };
+$("body").mousemove(function(event){
+xAmt = event.pageX%100;
+yAmt = event.pageY%100;
+
+})
 change(1);
 </script>
 </head>
