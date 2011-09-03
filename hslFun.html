@@ -5,7 +5,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
 
-<script src="http://code.jquery.com/jquery-1.5.min.js"></script>
+<script src="http://code.jquery.com/jquery-1.6.min.js"></script>
 <style>
 	html,body{margin:0;padding:0;width:100%;height:100%}
 </style>
@@ -23,13 +23,13 @@ var change = function(){
 	i++;
 	setTimeout(change,50);
 };
-$("x").change(function(){
-        xAmt = $(this).val()%100;
+$("#x").change(function(){
+        xAmt = $(this).val() % 100;
 });
-$("y").change(function(){
-        yAmt = $(this).val()%100;
+$("#y").change(function(){
+        yAmt = $(this).val() % 100;
 });
-change(1);
+change();
 </script>
 </head>
 <body>
