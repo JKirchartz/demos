@@ -14,8 +14,8 @@ var i = 0;
 var rnd = Math.random();
 var xAmt = 50;
 var yAmt = 50;
-//var bodHeight = $('body').height();
-//var bodWidth = $('body').width();
+var bodHeight = screen.height;
+var bodWidth = screen.width;
 var change = function(){
 	var out = Math.floor(i%360);
 	var pct = Math.floor((i+rnd)%60) + 20;
@@ -23,12 +23,10 @@ var change = function(){
 	i++;
 	setTimeout(change,50);
 };
-/*
-$("body").mousemove(function(event){
- xAmt = Math.floor(event.pageX/bodHeight);
- yAmt = Math.floor(event.pageY/bodWidth);
+$(document).mousemove(function(ev){
+ xAmt = Math.floor(ev.pageX/bodHeight);
+ yAmt = Math.floor(ev.pageY/bodWidth);
 });
-*/
 change(1);
 </script>
 </head>
