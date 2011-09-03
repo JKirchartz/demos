@@ -22,15 +22,15 @@ var shift = function(){
 	$("body").css('background-color','hsl(' + out + ', '+xAmt+'%, '+yAmt+'%)');
 	i++;
 	/* Recursive: writing things twice with excellent penmanship. */
-	setTimeout(shift,10);
+	setTimeout(shift,24);
 };
 $("#x").change(function(e){
-	xAmt = $(this).val();
+	xAmt = document.getElementById("x").value;
         xAmt %= 100;
         console.log(xAmt);
 });
 $("#y").change(function(e){
-        yAmt = $(this).val();
+        yAmt = document.getElementById("y").value;
         yAmt %= 100;
         console.log(xAmt);
 });
