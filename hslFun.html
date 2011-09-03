@@ -11,29 +11,15 @@
 </style>
 <script>
 var i = 0;
-var rnd = Math.random();
 var xAmt = 50;
 var yAmt = 50;
-var bodHeight = screen.height;
-var bodWidth = screen.width;
 var shift = function(){
 	var out = Math.floor(i%360);
-	var pct = Math.floor((i+rnd)%60) + 20;
-	$("body").css('background-color','hsl(' + out + ', '+xAmt+'%, '+yAmt+'%)');
+	$("body").css('background-color','hsl(' + out + ', '+ $("#x").val()+'%, '+$("#y").val()+'%)');
 	i++;
 	/* Recursive: writing things twice with excellent penmanship. */
 	setTimeout(shift,24);
-};
-$("#x").change(function(e){
-	xAmt = document.getElementById("x").value;
-        xAmt %= 100;
-        console.log(xAmt);
-});
-$("#y").change(function(e){
-        yAmt = document.getElementById("y").value;
-        yAmt %= 100;
-        console.log(xAmt);
-});
+}
 shift();
 </script>
 </head>
