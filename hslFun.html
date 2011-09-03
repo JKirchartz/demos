@@ -16,23 +16,25 @@ var xAmt = 50;
 var yAmt = 50;
 var bodHeight = screen.height;
 var bodWidth = screen.width;
-var change = function(){
+var shift = function(){
 	var out = Math.floor(i%360);
 	var pct = Math.floor((i+rnd)%60) + 20;
 	$("body").css('background-color','hsl(' + out + ', '+xAmt+'%, '+yAmt+'%)');
 	i++;
 	/* Recursive: writing things twice with excellent penmanship. */
-	setTimeout(change,10);
+	setTimeout(shift,10);
 };
 $("#x").change(function(e){
-        xAmt = $("#x").val() % 100;
+	xAmt = $(this).val();
+        xAmt %= 100;
         console.log(xAmt);
 });
 $("#y").change(function(e){
-        yAmt = $("#y").val() % 100;
+        yAmt = $(this).val();
+        yAmt %= 100;
         console.log(xAmt);
 });
-change();
+shift();
 </script>
 </head>
 <body>
