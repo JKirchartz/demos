@@ -1,3 +1,4 @@
+
 ﻿<!DOCTYPE html>
 <html>
 <head>
@@ -23,15 +24,17 @@ var change = function(){
 	i++;
 	setTimeout(change,50);
 };
-$(document).mousemove(function(ev){
- xAmt = Math.floor(ev.pageX/bodHeight);
- yAmt = Math.floor(ev.pageY/bodWidth);
+$("x").change(function(){
+        xAmt = $(this).val;
+});
+$("y").change(function(){
+        yAmt = $(this).val;
 });
 change(1);
 </script>
 </head>
 <body>
-
-
+<input type="range" id="x" min="0" max="50" value="25" />
+<input type="range" id="y" min="0" max="50" value="25" />
 </body>
 </html>
