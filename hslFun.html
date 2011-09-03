@@ -12,8 +12,8 @@
 <script>
 var i = 0;
 var rnd = Math.random();
-var xAmt = 50;
-var yAmt = 50;
+var xAmt;
+var yAmt;
 var bodHeight = screen.height;
 var bodWidth = screen.width;
 var change = function(){
@@ -23,17 +23,17 @@ var change = function(){
 	i++;
 	setTimeout(change,50);
 };
-$("#x").change(function(){
+$("#x").change(function(e){
         xAmt = $(this).val() % 100;
 });
-$("#y").change(function(){
+$("#y").change(function(e){
         yAmt = $(this).val() % 100;
 });
 change();
 </script>
 </head>
 <body>
-<input type="range" id="x" min="0" max="50" value="25" />
-<input type="range" id="y" min="0" max="50" value="25" />
+<input type="range" id="x" min="0" max="100" value="50" />
+<input type="range" id="y" min="0" max="100" value="50" />
 </body>
 </html>
