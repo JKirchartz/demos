@@ -12,8 +12,8 @@
 <script>
 var i = 0;
 var rnd = Math.random();
-var xAmt;
-var yAmt;
+var xAmt = 50;
+var yAmt = 50;
 var bodHeight = screen.height;
 var bodWidth = screen.width;
 var change = function(){
@@ -24,10 +24,10 @@ var change = function(){
 	setTimeout(change,50);
 };
 $("#x").change(function(e){
-        xAmt = $(this).val() % 100;
+        xAmt = $("#x").val() % 100;
 });
 $("#y").change(function(e){
-        yAmt = $(this).val() % 100;
+        yAmt = $("#y").val() % 100;
 });
 change();
 </script>
