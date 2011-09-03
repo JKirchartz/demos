@@ -11,11 +11,9 @@
 </style>
 <script>
 var i = 0;
-var xAmt = 50;
-var yAmt = 50;
 var shift = function(){
 	var out = Math.floor(i%360);
-	$("body").css('background-color','hsl(' + out + ', '+ $("#x").val()+'%, '+$("#y").val()+'%)');
+	$("body").css('background-color','hsl(' + out + ', '+ $("#s").val()+'%, '+$("#l").val()+'%)');
 	i++;
 	/* Recursive: writing things twice with excellent penmanship. */
 	setTimeout(shift,24);
@@ -25,8 +23,10 @@ shift();
 </head>
 <body>
 <form>
-<input type="range" id="x" min="0" max="100" value="50" />
-<input type="range" id="y" min="0" max="100" value="50" />
+<label for="s">Sat.</label>
+<input type="range" id="s" min="0" max="100" value="50" />
+<label for="l">Lum.</label>
+<input type="range" id="l" min="0" max="100" value="50" />
 </form>
 	
 </body>
