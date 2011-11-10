@@ -8,11 +8,12 @@
 	</head>
 	<body>
 	<h1>Bookmarklets</h1>  
-<a href='javascript:var a=document.getElementsByTagName("a");for(i=0;i<a.length;i++){if(a[i].href.match(/([^\/\\]+)\.(DOC|DOCX|PPT|PPTX|XLS|XLSX|PAGES|EPS|PS|PSD|AI|XPS|TTF|DXF|SVG)$/i)){a[i].href ="http://docs.google.com/viewer?url="+ a[i].href;}}'>Open appropriate links (DOC|DOCX|PPT|PPTX|XLS|XLSX|PAGES|EPS|PS|PSD|AI|XPS|TTF|DXF|SVG) in Google Docs Viewer **updated 4/29/11**</a><br>
-<a href='javascript:window.open("http://validator.w3.org/check?uri="+window.location);'>Validate with validator.w3.org</a>
-<a href='javascript:window.open("http://demos.jkirchartz.com/HTML5notepad.html","HTML5 notepad","width=800,height=600");'>HTML5 notepad</a>
-<a href='javascript:(function(){var img=document.getElementsByTagName("img");for (var i=0;i<img.length;i++){img[i].setAttribute("style","rotation: 90deg;filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=1);-moz-transform:rotate(90deg);-webkit-transform:rotate(90deg);-o-transform:rotate(90deg);-ms-transform:rotate(90deg);transform:rotate(90deg);");}})();'>Rotate All Images +90deg Bookmarklet</a>
-<a href='javascript:(function(){var img=document.getElementsByTagName("img");for (var i=0;i<img.length;i++){img[i].setAttribute("style","rotation: -90deg;filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);-moz-transform:rotate(-90deg);-webkit-transform:rotate(-90deg);-o-transform:rotate(-90deg);-ms-transform:rotate(-90deg);transform:rotate(-90deg);");}})();'>Rotate All Images -90deg Bookmarklet</a>
-
+	<ol>
+<li><a href='javascript:var a=document.getElementsByTagName("a");for(i=0;i<a.length;i++){if(a[i].href.match(/([^\/\\]+)\.(DOC|DOCX|PPT|PPTX|XLS|XLSX|PAGES|EPS|PS|PSD|AI|XPS|TTF|DXF|SVG)$/i)){a[i].href ="http://docs.google.com/viewer?url="+ a[i].href;}}'>Open appropriate links (DOC|DOCX|PPT|PPTX|XLS|XLSX|PAGES|EPS|PS|PSD|AI|XPS|TTF|DXF|SVG) in Google Docs Viewer **updated 4/29/11**</a></li>
+<li><a href='javascript:window.open("http://validator.w3.org/check?uri="+window.location);'>Validate with validator.w3.org</a></li>
+<li><a href='javascript:window.open("http://demos.jkirchartz.com/HTML5notepad.html","HTML5 notepad","width=800,height=600");'>HTML5 notepad</a></li>
+<li><a href='javascript:(function(){var img=document.getElementsByTagName("img");for (var i=0;i<img.length;i++){img[i].setAttribute("style","rotation: 90deg;filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=1);-moz-transform:rotate(90deg);-webkit-transform:rotate(90deg);-o-transform:rotate(90deg);-ms-transform:rotate(90deg);transform:rotate(90deg);");}})();'>Rotate All Images +90deg Bookmarklet</a></li>
+<li><a href='javascript:(function(){var img=document.getElementsByTagName("img");for (var i=0;i<img.length;i++){img[i].setAttribute("style","rotation: -90deg;filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);-moz-transform:rotate(-90deg);-webkit-transform:rotate(-90deg);-o-transform:rotate(-90deg);-ms-transform:rotate(-90deg);transform:rotate(-90deg);");}})();'>Rotate All Images -90deg Bookmarklet</a></li>
+	</ol>
 </body>
 </html>
