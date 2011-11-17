@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Canvas Test</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<style>
+body{font:100%/1.25}
+canvas {display:block}
+button {padding:0.5em;display:inline-block}
+</style>
+</head>
+<body>
+<canvas id="stage" style="width:640px; height:480px"></canvas>
+<button id="clear">clear</button><button id="stripes">stripes</button>
+<script>
+var stage = document.getElementById('stage');
+var context = stage.getContext('2d');
+var clear = function () {
+	context.fillStyle = "#FFFFFF";
+	context.fillRect(0, 0, stage.width, stage.height);
+};
+var stripes = function () {
+	var i;
+	for (i = 15; i > 0; i -= 1) {
+		context.strokeStyle = "rgb(0,127,255)";
+		context.lineWidth = i;
+		context.beginPath();
+		context.moveTo(55, (15 + (15 - i) * 15)/2);
+		context.lineTo(335, (15 + (15 - i) * 15)/2);
+		context.stroke();
+	}
+};
+document.getElementById("clear").onclick = clear;
+document.getElementById("stripes").onclick = stripes;
+
+</script>
+</body>
+</html>
