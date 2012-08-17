@@ -7,6 +7,7 @@ html {
 
 body {
 	width: 36em;
+    min-height:100%;
 	margin: 0 auto;
 	padding: 1em;
 	color: #444;
