@@ -1,121 +1,121 @@
 html {
-	height: 100%;
-	width: 100%;
-	font: 100%/1.25 sans-serif;
-	background: #309090 url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAPklEQVQYV2NkIA78ZyRC3X+gGkZkhWABNI1wMZwS6DZhsxqbyRhWwQzCUIzPMyiKSfYMVnchewhkIkFFIA0Ak1IMCv1gGaUAAAAASUVORK5CYII=") repeat
+    height: 100%;
+    width: 100%;
+    font: 100%/1.25 sans-serif;
+    background: #309090 url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAPklEQVQYV2NkIA78ZyRC3X+gGkZkhWABNI1wMZwS6DZhsxqbyRhWwQzCUIzPMyiKSfYMVnchewhkIkFFIA0Ak1IMCv1gGaUAAAAASUVORK5CYII=") repeat
 }
 
 body {
-	width: 36em;
+    width: 36em;
     min-height:100%;
-	margin: 0 auto;
-	padding: 1em;
-	color: #444;
-	background: rgba(238,238,238,0.9);
+    margin: 0 auto;
+    padding: 1em;
+    color: #444;
+    background: rgba(238,238,238,0.9);
 }
 
 h1,h2,h3 {
-	font-family: 'Boogaloo', sans-serif;
-	margin-top: 0;
-	margin-bottom: 0;
-	color: #111;
-	text-shadow: 0.03em 0.03em 0.05em #B0E0E0,
-				 0.04em 0.04em 0.04em #B0E0E0, 
-				 0.05em 0.05em 0.04em #B0E0E0;
+    font-family: 'Boogaloo', sans-serif;
+    margin-top: 0;
+    margin-bottom: 0;
+    color: #111;
+    text-shadow: 0.03em 0.03em 0.05em #B0E0E0,
+                 0.04em 0.04em 0.04em #B0E0E0, 
+                 0.05em 0.05em 0.04em #B0E0E0;
 }
 
 h1 {
-	font-size:8em; 
-	line-height:1.29;
-	border-bottom:1px solid #B0E0E0
+    font-size:8em; 
+    line-height:1.29;
+    border-bottom:1px solid #B0E0E0
 }
 
 h1 a {text-decoration:none;color:#111}
 
 h2 { 
-	font-size:5em; 
-	line-height:1.28
+    font-size:5em; 
+    line-height:1.28
 }
 
 h3 { 
-	font-size:3em; 
-	line-height:1.3 
+    font-size:3em; 
+    line-height:1.3 
 }
 
 ul {
-	list-style: none;
+    list-style: none;
 }
 
 li {
-	margin-bottom:0.5em;
+    margin-bottom:0.5em;
 }
 
 nav ol {
-	counter-reset: li;
-	list-style: none;
-	*list-style: decimal;
-	padding: 0;
-	margin-bottom: 4em;
+    counter-reset: li;
+    list-style: none;
+    *list-style: decimal;
+    padding: 0;
+    margin-bottom: 4em;
 }
 
 nav li:before {
     display:inline-block;
-	content: counter(li);
-	counter-increment: li;
+    content: counter(li);
+    counter-increment: li;
     background:#B0E0E0;
-	border:1px solid #000;
-	font-family: 'Boogaloo', sans-serif;
-	font-size:2em;
-	font-weight:900;
-	border-radius:1em;
-	padding:0.2em 0.6em;
+    border:1px solid #000;
+    font-family: 'Boogaloo', sans-serif;
+    font-size:2em;
+    font-weight:900;
+    border-radius:1em;
+    padding:0.2em 0.6em;
 }
 
 nav li:nth-child(n+10):before {
-   padding:0.2em 0.33em 0.2em 0.27em;
+    padding:0.2em 0.33em 0.2em 0.27em;
 }
 
 nav li p {
-	margin-left: 4em
+    margin-left: 4em
 }
 
 nav a {
-	text-decoration: none;
-	display:inline-block;
-	margin: 0 0.8em 0.09em 0;
-	padding-left:0.5em;
-	font-family: 'Boogaloo', sans-serif;
-	font-size:2em;
-	color: #111;
+    text-decoration: none;
+    display:inline-block;
+    margin: 0 0.8em 0.09em 0;
+    padding-left:0.5em;
+    font-family: 'Boogaloo', sans-serif;
+    font-size:2em;
+    color: #111;
     -webkit-transition: all 0.1s ease-out;  /* Safari 3.2+, Chrome */
-       -moz-transition: all 0.1s ease-out;  /* Firefox 4-15 */
-         -o-transition: all 0.1s ease-out;  /* Opera 10.5–12.00 */
-            transition: all 0.1s ease-out;  /* Firefox 16+, Opera 12.50+ */
+    -moz-transition: all 0.1s ease-out;  /* Firefox 4-15 */
+    -o-transition: all 0.1s ease-out;  /* Opera 10.5–12.00 */
+    transition: all 0.1s ease-out;  /* Firefox 16+, Opera 12.50+ */
 }
 
 nav a:hover {
-	text-shadow: 0.07em 0.07em 0.07em #B0E0E0,
-				 0.08em 0.08em 0.08em #B0E0E0, 
-				 0.09em 0.09em 0.09em #B0E0E0;
-	margin: 0;
+    text-shadow: 0.07em 0.07em 0.07em #B0E0E0,
+                 0.08em 0.08em 0.08em #B0E0E0, 
+                 0.09em 0.09em 0.09em #B0E0E0;
+    margin: 0;
 }
 
 #footer {
-	background: #000;
-	font-size: 0.75em;
-	color: #ccc;
-	border-radius: 1em;
-	-moz-border-radius: 1em;
-	-webkit-border-radius: 1em;
-	padding: 0.5em
+    background: #000;
+    font-size: 0.75em;
+    color: #ccc;
+    border-radius: 1em;
+    -moz-border-radius: 1em;
+    -webkit-border-radius: 1em;
+    padding: 0.5em
 }
 
 #footer a {
-	text-shadow: none;
-	color: #aaf;
-	margin: 0
+    text-shadow: none;
+    color: #aaf;
+    margin: 0
 }
 
 #footer a {
-	text-decoration: underline
+    text-decoration: underline
 }
