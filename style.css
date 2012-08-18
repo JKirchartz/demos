@@ -126,8 +126,8 @@ nav a:hover {
 @media (max-width: 32em) {
 	body
 	{
-	    min-width:auto;
-		max-width:auto;
+	    min-width:none;
+		max-width:none;
 		width:auto;
 		margin:0 0.1em
 	}
