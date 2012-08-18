@@ -123,11 +123,12 @@ nav a:hover {
 }
 
 
-@media (max-width: 32em) {
+@media (max-width: 34em) {
 	body
 	{
-	    min-width:auto;
+	    min-width:inherit;
 		max-width:none;
+		padding:0.5em;
 		width:100%;
 		margin:0 0.1em
 	}
