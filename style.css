@@ -1,17 +1,37 @@
+* {box-sizing: border-box;}
+html, body {margin:0;padding:0}
 html {
-    height: 100%;
     width: 100%;
     font: 100%/1.25 sans-serif;
-    background: #309090 url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAPklEQVQYV2NkIA78ZyRC3X+gGkZkhWABNI1wMZwS6DZhsxqbyRhWwQzCUIzPMyiKSfYMVnchewhkIkFFIA0Ak1IMCv1gGaUAAAAASUVORK5CYII=") repeat
+    background: #309090;
+background-image: linear-gradient(bottom, rgb(176,224,224) 100%,rgb(48, 144, 144) 30%,rgb(48, 144, 144) 15%, rgb(19,15,48) 0%);
+background-image: -o-linear-gradient(bottom, rgb(176,224,224) 100%,rgb(48, 144, 144) 30%,rgb(48, 144, 144) 15%, rgb(19,15,48) 0%);
+background-image: -moz-linear-gradient(bottom, rgb(176,224,224) 100%,rgb(48, 144, 144) 30%,rgb(48, 144, 144) 15%, rgb(19,15,48) 0%);
+background-image: -webkit-linear-gradient(bottom, rgb(176,224,224) 100%, rgb(48, 144, 144) 30%,rgb(48, 144, 144) 15%, rgb(19,15,48) 0%);
+background-image: -ms-linear-gradient(bottom, rgb(176,224,224) 100%,rgb(48, 144, 144) 30%,rgb(48, 144, 144) 15%, rgb(19,15,48) 0%);
+
+background-image: -webkit-gradient(
+	linear,
+	left bottom,
+	left top,
+	color-stop(1, rgb(176,224,224)),
+	color-stop(0.3, rgb(48, 144, 144)),
+	color-stop(0.15, rgb(48, 144, 144)),
+	color-stop(0, rgb(19,15,48))
+);
+
+}
+body {
+   background:transparent url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAPklEQVQYV2NkIA78ZyRC3X+gGkZkhWABNI1wMZwS6DZhsxqbyRhWwQzCUIzPMyiKSfYMVnchewhkIkFFIA0Ak1IMCv1gGaUAAAAASUVORK5CYII=") repeat;
 }
 
-body {
+#container {
     min-width:32em;
     max-width: 50%;
     min-height:100%;
     margin: 0 auto;
     padding: 1em;
-    color: #444;
+    color: #130f30;
     background: rgba(238,238,238,0.9);
 }
 
@@ -19,20 +39,20 @@ h1,h2,h3 {
     font-family: 'Boogaloo', sans-serif;
     margin-top: 0;
     margin-bottom: 0;
-    color: #111;
     text-shadow: 0.03em 0.03em 0.05em #B0E0E0,
                  0.04em 0.04em 0.04em #B0E0E0, 
                  0.05em 0.05em 0.04em #B0E0E0;
     display:block;
 	width:100%;
+	
 }
 
 h1 {
-    line-height:1.29;
-    border-bottom:1px solid #B0E0E0
+    border-bottom:1px solid #B0E0E0;
+	line-height:1
 }
 
-h1 a {text-decoration:none;color:#111;font-size:1em!important}
+h1 a {text-decoration:none;color:#130f30;font-size:1em!important}
 
 h2 { 
     font-size:5em; 
@@ -88,7 +108,7 @@ nav a {
     padding-left:0.5em;
     font-family: 'Boogaloo', sans-serif;
     font-size:2em;
-    color: #111;
+    color: #130f30;
     -webkit-transition: all 0.1s ease-out;  /* Safari 3.2+, Chrome */
     -moz-transition: all 0.1s ease-out;  /* Firefox 4-15 */
     -o-transition: all 0.1s ease-out;  /* Opera 10.5–12.00 */
@@ -103,7 +123,7 @@ nav a:hover {
 }
 
 #footer {
-    background: #000;
+    background: #130f30;
     font-size: 0.75em;
     color: #ccc;
     border-radius: 1em;
