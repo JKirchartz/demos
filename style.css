@@ -23,8 +23,8 @@ h1,h2,h3 {
     text-shadow: 0.03em 0.03em 0.05em #B0E0E0,
                  0.04em 0.04em 0.04em #B0E0E0, 
                  0.05em 0.05em 0.04em #B0E0E0;
-    width:100%;
-    display:inline-block;
+    display:block;
+	width:100%;
 }
 
 h1 {
