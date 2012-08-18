@@ -28,7 +28,7 @@ h1,h2,h3 {
 }
 
 h1 {
-    font-size:8em; 
+    /*font-size:8em;*/ 
     line-height:1.29;
     border-bottom:1px solid #B0E0E0
 }
