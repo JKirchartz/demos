@@ -121,3 +121,12 @@ nav a:hover {
 #footer a {
     text-decoration: underline
 }
+
+
+@media (max-width: 32em) {
+	body
+	{
+		width:auto;
+		margin:0 0.1em
+	}
+}
