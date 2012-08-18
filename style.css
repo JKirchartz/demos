@@ -33,7 +33,7 @@ h1 {
     border-bottom:1px solid #B0E0E0
 }
 
-h1 a {text-decoration:none;color:#111}
+h1 a {text-decoration:none;color:#111;font-size:1em!important}
 
 h2 { 
     font-size:5em; 
