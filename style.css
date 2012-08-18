@@ -4,7 +4,6 @@ html {
     width: 100%;
     font: 100%/1.25 sans-serif;
     background: #309090;
-background-image: linear-gradient(bottom, rgb(176,224,224) 100%,rgb(48, 144, 144) 30%,rgb(48, 144, 144) 15%, rgb(19,15,48) 0%);
 background-image: -o-linear-gradient(bottom, rgb(176,224,224) 100%,rgb(48, 144, 144) 30%,rgb(48, 144, 144) 15%, rgb(19,15,48) 0%);
 background-image: -moz-linear-gradient(bottom, rgb(176,224,224) 100%,rgb(48, 144, 144) 30%,rgb(48, 144, 144) 15%, rgb(19,15,48) 0%);
 background-image: -webkit-linear-gradient(bottom, rgb(176,224,224) 100%, rgb(48, 144, 144) 30%,rgb(48, 144, 144) 15%, rgb(19,15,48) 0%);
@@ -19,7 +18,7 @@ background-image: -webkit-gradient(
 	color-stop(0.15, rgb(48, 144, 144)),
 	color-stop(0, rgb(19,15,48))
 );
-
+background-image: linear-gradient(bottom, rgb(176,224,224) 100%,rgb(48, 144, 144) 30%,rgb(48, 144, 144) 15%, rgb(19,15,48) 0%);
 }
 body {
    background:transparent url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAPklEQVQYV2NkIA78ZyRC3X+gGkZkhWABNI1wMZwS6DZhsxqbyRhWwQzCUIzPMyiKSfYMVnchewhkIkFFIA0Ak1IMCv1gGaUAAAAASUVORK5CYII=") repeat;
