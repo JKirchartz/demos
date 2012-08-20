@@ -1,25 +1,20 @@
 * {box-sizing: border-box;}
 html, body {margin:0;padding:0;;width:100%;background-attachment:fixed}
+
 html {
     font: 100%/1.25 sans-serif;
     background: #309090;
     height:100%;
-background-image: -o-linear-gradient(bottom, rgb(176,224,224) 100%,rgb(48, 144, 144) 30%,rgb(48, 144, 144) 15%, rgb(19,15,48) 0%);
-background-image: -moz-linear-gradient(bottom, rgb(176,224,224) 100%,rgb(48, 144, 144) 30%,rgb(48, 144, 144) 15%, rgb(19,15,48) 0%);
-background-image: -webkit-linear-gradient(bottom, rgb(176,224,224) 100%, rgb(48, 144, 144) 30%,rgb(48, 144, 144) 15%, rgb(19,15,48) 0%);
-background-image: -ms-linear-gradient(bottom, rgb(176,224,224) 100%,rgb(48, 144, 144) 30%,rgb(48, 144, 144) 15%, rgb(19,15,48) 0%);
-
-background-image: -webkit-gradient(
-	linear,
-	left bottom,
-	left top,
-	color-stop(1, rgb(176,224,224)),
-	color-stop(0.3, rgb(48, 144, 144)),
-	color-stop(0.15, rgb(48, 144, 144)),
-	color-stop(0, rgb(19,15,48))
-);
-background-image: linear-gradient(bottom, rgb(176,224,224) 100%,rgb(48, 144, 144) 30%,rgb(48, 144, 144) 15%, rgb(19,15,48) 0%);
+    background: #b0e0e0; /* Old browsers */
+    background: -moz-linear-gradient(top, #b0e0e0 0%, #309090 50%, #309090 70%, #130f30 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#b0e0e0), color-stop(50%,#309090), color-stop(70%,#309090), color-stop(100%,#130f30)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, #b0e0e0 0%,#309090 50%,#309090 70%,#130f30 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, #b0e0e0 0%,#309090 50%,#309090 70%,#130f30 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, #b0e0e0 0%,#309090 50%,#309090 70%,#130f30 100%); /* IE10+ */
+    background: linear-gradient(to bottom, #b0e0e0 0%,#309090 50%,#309090 70%,#130f30 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b0e0e0', endColorstr='#130f30',GradientType=0 ); /* IE6-9 */
 }
+
 body {
    min-height:100%;
    background:transparent url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAPklEQVQYV2NkIA78ZyRC3X+gGkZkhWABNI1wMZwS6DZhsxqbyRhWwQzCUIzPMyiKSfYMVnchewhkIkFFIA0Ak1IMCv1gGaUAAAAASUVORK5CYII=") repeat;
