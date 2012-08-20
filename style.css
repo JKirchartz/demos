@@ -1,5 +1,6 @@
 * {box-sizing: border-box;}
-html, body {margin:0;padding:0;;width:100%;background-attachment:fixed}
+
+html, body {margin:0;padding:0;width:100%;}
 
 html {
     font: 100%/1.25 sans-serif;
@@ -16,7 +17,7 @@ html {
 }
 
 body {
-   min-height:100%;
+   height:100%;
    background:transparent url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAPklEQVQYV2NkIA78ZyRC3X+gGkZkhWABNI1wMZwS6DZhsxqbyRhWwQzCUIzPMyiKSfYMVnchewhkIkFFIA0Ak1IMCv1gGaUAAAAASUVORK5CYII=") repeat;
    overflow:auto;
 }
