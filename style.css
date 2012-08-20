@@ -136,7 +136,7 @@ nav a:hover {
     margin: 0
 }
 
-#footer a {
+#footer a:hover {
     text-decoration: underline
 }
 
