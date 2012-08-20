@@ -2,6 +2,7 @@
 html, body {margin:0;padding:0}
 html {
     width: 100%;
+    min-height:100%;
     font: 100%/1.25 sans-serif;
     background: #309090;
 background-image: -o-linear-gradient(bottom, rgb(176,224,224) 100%,rgb(48, 144, 144) 30%,rgb(48, 144, 144) 15%, rgb(19,15,48) 0%);
@@ -110,7 +111,7 @@ nav a {
     color: #130f30;
     -webkit-transition: all 0.1s ease-out;  /* Safari 3.2+, Chrome */
     -moz-transition: all 0.1s ease-out;  /* Firefox 4-15 */
-    -o-transition: all 0.1s ease-out;  /* Opera 10.5–12.00 */
+    -o-transition: all 0.1s ease-out;  /* Opera 10.5ï¿½12.00 */
     transition: all 0.1s ease-out;  /* Firefox 16+, Opera 12.50+ */
 }
 
