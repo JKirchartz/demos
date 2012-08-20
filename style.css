@@ -1,8 +1,7 @@
 * {box-sizing: border-box;}
-html, body {margin:0;padding:0}
+html, body {margin:0;padding:0;min-height:100%;}
 html {
     width: 100%;
-    min-height:100%;
     font: 100%/1.25 sans-serif;
     background: #309090;
 background-image: -o-linear-gradient(bottom, rgb(176,224,224) 100%,rgb(48, 144, 144) 30%,rgb(48, 144, 144) 15%, rgb(19,15,48) 0%);
