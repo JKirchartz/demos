@@ -1,5 +1,5 @@
 * {box-sizing: border-box;}
-html, body {margin:0;padding:0;min-height:100%;}
+html, body, #container {margin:0;padding:0;min-height:100%;}
 html {
     width: 100%;
     font: 100%/1.25 sans-serif;
@@ -27,7 +27,6 @@ body {
 #container {
     min-width:32em;
     max-width: 50%;
-    min-height:100%;
     margin: 0 auto;
     padding: 1em;
     color: #130f30;
