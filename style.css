@@ -1,8 +1,9 @@
 * {box-sizing: border-box;}
-html, body {margin:0;padding:0;height:100%;width:100%}
+html, body {margin:0;padding:0;;width:100%}
 html {
     font: 100%/1.25 sans-serif;
-    background: #309090;
+    background: #309090 fixed;
+    height:100%;
 background-image: -o-linear-gradient(bottom, rgb(176,224,224) 100%,rgb(48, 144, 144) 30%,rgb(48, 144, 144) 15%, rgb(19,15,48) 0%);
 background-image: -moz-linear-gradient(bottom, rgb(176,224,224) 100%,rgb(48, 144, 144) 30%,rgb(48, 144, 144) 15%, rgb(19,15,48) 0%);
 background-image: -webkit-linear-gradient(bottom, rgb(176,224,224) 100%, rgb(48, 144, 144) 30%,rgb(48, 144, 144) 15%, rgb(19,15,48) 0%);
@@ -20,6 +21,7 @@ background-image: -webkit-gradient(
 background-image: linear-gradient(bottom, rgb(176,224,224) 100%,rgb(48, 144, 144) 30%,rgb(48, 144, 144) 15%, rgb(19,15,48) 0%);
 }
 body {
+   min-height:100%;
    background:transparent url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAPklEQVQYV2NkIA78ZyRC3X+gGkZkhWABNI1wMZwS6DZhsxqbyRhWwQzCUIzPMyiKSfYMVnchewhkIkFFIA0Ak1IMCv1gGaUAAAAASUVORK5CYII=") repeat;
    overflow:auto;
 }
