@@ -1,8 +1,8 @@
 * {box-sizing: border-box;}
-html, body {margin:0;padding:0;;width:100%}
+html, body {margin:0;padding:0;;width:100%;background-attachment:fixed}
 html {
     font: 100%/1.25 sans-serif;
-    background: #309090 fixed;
+    background: #309090;
     height:100%;
 background-image: -o-linear-gradient(bottom, rgb(176,224,224) 100%,rgb(48, 144, 144) 30%,rgb(48, 144, 144) 15%, rgb(19,15,48) 0%);
 background-image: -moz-linear-gradient(bottom, rgb(176,224,224) 100%,rgb(48, 144, 144) 30%,rgb(48, 144, 144) 15%, rgb(19,15,48) 0%);
