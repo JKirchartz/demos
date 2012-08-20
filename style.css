@@ -3,7 +3,7 @@ html, body {margin:0;padding:0;;width:100%;background-attachment:fixed}
 
 html {
     font: 100%/1.25 sans-serif;
-    background: #309090;
+    background: #309090 fixed;
     height:100%;
     background: #b0e0e0; /* Old browsers */
     background: -moz-linear-gradient(top, #b0e0e0 0%, #309090 50%, #309090 70%, #130f30 100%); /* FF3.6+ */
