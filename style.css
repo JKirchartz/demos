@@ -141,8 +141,12 @@ nav a:hover {
     text-decoration: underline
 }
 
-a[href ^= 'http']:not([href *= 'github.']):after {
-   content: '¿';
+a[href ^= 'http']:not([href *= 'jkirchartz.']):after {
+   content: '^';
+   display:inline-block;
+   height:1em;
+   width:1em;
+   border:2px solid #000;
    color:#000;
 }
 
