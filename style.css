@@ -144,10 +144,12 @@ nav a:hover {
 a[href ^= 'http']:not([href *= 'jkirchartz.']):after {
    content: '^';
    display:inline-block;
-   height:1em;
-   width:1em;
+   font-size:0.2em;
+   height:0.3em;
+   width:0.3em;
    border:2px solid #000;
    color:#000;
+   vertical-align:top;
 }
 
 @media (max-width: 34em) {
