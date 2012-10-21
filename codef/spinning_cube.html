@@ -1,0 +1,64 @@
+
+<!DOCTYPE HTML>
+<html> 
+<head> 
+  
+<script src="CODEF/codef/codef_core.js"></script> 
+<script src="CODEF/codef/codef_3d.js"></script> 
+<script> 
+ 
+var mycanvas, my3d, i, xrot, yrot, zrot, myobj = new Array(), myobjvert = new Array();
+function randCol(){
+    return '0x'+Math.floor(Math.random()*16777215).toString(16);	
+}	
+function randDec(){
+    return Math.floor(Math.random()*5)/50;
+}
+myobjvert=[
+        {x:-100, y: 100, z: 100},
+        {x:-100, y:-100, z: 100},
+        {x: 100, y:-100, z: 100},
+        {x: 100, y: 100, z: 100}, 
+        {x: 100, y: 100, z:-100},
+        {x: 100, y:-100, z:-100},
+        {x:-100, y:-100, z:-100},
+        {x:-100, y: 100, z:-100}, 
+       ];
+
+myobj=[ 
+	{p1:0, p2:1, p3:2, p4:3, params:new MeshBasicMaterial({ color: randCol()})},//1
+	{p1:3, p2:2, p3:5, p4:4, params:new MeshBasicMaterial({ color: randCol()})},//2
+	{p1:7, p2:6, p3:1, p4:0, params:new MeshBasicMaterial({ color: randCol()})},//3
+	{p1:4, p2:5, p3:6, p4:7, params:new MeshBasicMaterial({ color: randCol()})},//4	
+	{p1:7, p2:0, p3:3, p4:4, params:new MeshBasicMaterial({ color: randCol()})},//5
+	{p1:1, p2:6, p3:5, p4:2, params:new MeshBasicMaterial({ color: randCol()})},//6
+	  ];
+
+function init(){
+	mycanvas=new canvas(640,480,"main");
+	my3d=new codef3D(mycanvas, 900, 40, 1, 1600 );
+        my3d.faces4(myobjvert,myobj, true, false );
+        xrot = randDec();
+        yrot = randDec();
+        zrot = randDec();
+	go();
+}
+ 
+function go(){
+	mycanvas.fill('#000000');
+        my3d.group.rotation.x+=xrot;
+	my3d.group.rotation.y+=yrot;
+	my3d.group.rotation.z+=zrot;
+	my3d.draw();
+	requestAnimFrame( go );
+}
+
+	</script>
+</head> 
+<body onLoad="init();">
+<br>
+<br><center>
+<div id="main"></div>
+	</center>
+</body> 
+</html>
