@@ -57,8 +57,8 @@ function go(){
             bg.push(randCol());
         }
     }
-    for(var i=0,bg_len=bg.length,height=49;i < 10;i++){
-        mycanvas.line(0,i*height,640,i*height,80,bg[i%bg_len]);
+    for(var i=1,bg_len=bg.length,height=49;i < 11;i++){
+        mycanvas.line(0,i*height,640,i*height,height,bg[i%bg_len]);
     }
     my3d.draw();
     requestAnimFrame( go );
