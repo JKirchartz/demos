@@ -5,8 +5,8 @@
         <!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
         <style>
             html,body{background:#FCFCFC;color:#444;height:100%;width:100%;margin:0;padding:0;}
-            #notepad{height:93%;width:98%;padding:1%;font-size:100%;line-height:125%;font-family:san-serif}
-            header {height:5%;width:98%;padding:1%}
+            #notepad{min-height:80%;width:98%;padding:1%;font-size:100%;line-height:125%;font-family:san-serif}
+            header {width:98%;padding:1%}
             header * { display:inline-block }
             ::selection{background:#7D7}
             ::-moz-selection{background:#7D7}
@@ -18,7 +18,7 @@
             <select id="notes">
                  <option>Saved notes</option>
             </select>
-            <input type="text" id="name" />
+            <input type="text" id="name" placeholder="untitled"/>
             <button id="save">Save</button>
         </header>
         <textarea placeholder="Type here, see it here..."  id="notepad"></textarea>

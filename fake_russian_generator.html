@@ -1,0 +1,128 @@
+<!doctype html>
+<html>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>Fake Russian Generator</title>
+    <style type="text/css">
+        body {  font:1em/1.5 sans-serif;
+                background:#FAA;
+        }
+
+        h1 { font-size:3em;
+             font-weight:900;
+            font-family: sans-serif;
+            background:#933;
+            text-align:center;
+            box-shadow:-0.1em 0.1em 0em 0.1em #311;
+            color:#ccc;
+            padding:0.25em;
+        }
+        p { padding:1em; }
+        textarea { display:block; width:98%; min-height:2em; margin:0 auto; }
+
+        button {
+            display:inline-block;
+            font-size:1.5em;
+            font-weight:900;
+            border-radius:0.2em;
+            background:#FAA;
+            border: 0.05em solid #933;
+            box-shadow:0.18em 0.18em 0em 0em #311;
+            margin:0.5em;
+        }
+        button:hover {
+            background:#F88;
+            box-shadow:0.1em 0.1em 0em 0em #311;
+        }
+        button:active {
+            background:#FDD;
+            box-shadow:0.05em 0.05em 0em 0em #311;
+        }
+        #out {
+            font-size:2em;
+            font-weight:600;
+            padding:0.25em;
+        }
+
+    </style>
+    <script type="text/javascript">
+        window.onload=function(){
+            var Я = {
+                alpha: {
+                        'A': ['Д'],
+                        'B': ['Б', 'Ъ', 'Ь'],
+                        'C': ['Ҫ'],
+                        'E': ['Ԑ', 'Є', 'Э'],
+                        'F': ['Ӻ', 'Ғ'],
+                        'H': ['Њ', 'Ҥ', 'Ӊ', 'Ң'],
+                        'I': ['Ї'],
+                        'K': ['Қ', 'Ҡ', 'Ҝ', 'Ԟ'],
+                        'M': ['Ԡ'],
+                        'N': ['И', 'Ѝ', 'Й'],
+                        'O': ['Ф'],
+                        'R': ['Я'],
+                        'T': ['Г', 'Ґ', 'Ҭ'],
+                        'U': ['Ц'],
+                        'W': ['Ш', 'Щ'],
+                        'X': ['Ӿ', 'Ҳ', 'Ӽ', 'Ж'],
+                        'Y': ['Џ', 'Ч', 'Ұ']
+                },
+                coin_toss: function() {
+                    return Math.random() > 0.5 ? true : false;
+                },
+                random: function(len) {
+                            if (len == 1) return 0;
+                            return !!len ? Math.floor(Math.random() * len + 1) - 1 : Math.random();
+                },
+                generate: function(str) {
+                    var str_arr = str.toUpperCase().split(''),
+                        output = str_arr.map(function(a) {
+                            if (!Я.alpha.hasOwnProperty(a)) return a;
+                            if (Я.coin_toss() && a !== "R") return a;
+                            return Я.alpha[a][Я.random(Я.alpha[a].length)];
+                      });
+                    return output.join('');
+                }
+            };
+
+            var h1 = document.getElementsByTagName("h1")[0],
+                input = document.getElementById("in"),
+                out = document.getElementById("out"),
+                change_btn = document.getElementById("change"),
+                animate_btn = document.getElementById("animate"),
+                animate_timer = null,
+                worker = function(e) {
+                    if(!animate_timer){
+                        e.target.innerHTML = Я.generate("re-generate");
+                    }
+                    out.innerHTML = Я.generate(input.value);
+                    console.log(animate_timer);
+                },
+                animator = function(e) {
+                    if (!!animate_timer) {
+                        e.target.innerHTML = Я.generate("animate");
+                        clearInterval(animate_timer);
+                        animate_timer = null;
+                    } else {
+                        e.target.innerHTML = Я.generate("de-animate");
+                        animate_timer = setInterval(worker, 100);
+                    }
+                };
+
+            input.onkeyup = change_btn.onclick = worker;
+            animate_btn.onclick = animator;
+            h1.innerHTML = Я.generate(h1.innerHTML);
+    </script>
+
+
+</head>
+<body>
+    <h1>FAKE ЯЦSSIAЍ GEЍԐЯATOЯ</h1>
+    <p>Make english look sort of like russian, by using cyrillic letter forms.</p>
+    <textarea id="in"></textarea>
+    <div>
+        <button id="change">ЯԐ-GЭЙEЯATЭ</button>
+        <button id="animate">ДЙIMAҬЗ</button>
+    </div>
+    <div id="out"></div>
+</body>
+</html>
