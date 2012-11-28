@@ -51,6 +51,18 @@
             background-image:none;
         }
         button:active {
+            background-image: -o-linear-gradient(bottom, #A68A00 20%, #FFD900 80%);
+            background-image: -moz-linear-gradient(bottom, #A68A00 20%, #FFD900 80%);
+            background-image: -webkit-linear-gradient(bottom, #A68A00 20%, #FFD900 80%);
+            background-image: -ms-linear-gradient(bottom, #A68A00 20%, #FFD900 80%);
+            background-image: -webkit-gradient(
+                linear,
+                left bottom,
+                left top,
+                color-stop(0.2, #A68A00),
+                color-stop(0.8, #FFD900)
+            );
+            background-image: linear-gradient(bottom, #A68A00 20%, #FFD900 80%);
             margin:0.6em 0.4em 0.4em 0.6em;
             box-shadow:0.1em 0.1em 0px 0px #622;
         }
