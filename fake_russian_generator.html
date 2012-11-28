@@ -5,7 +5,7 @@
     <style type="text/css">
         body {
                 font:100%/1.5 sans-serif;
-                background:#d52b1e;
+                background:#bc0000;
                 margin:0;
                 padding:0;
         }
@@ -13,17 +13,18 @@
         h1 { font-size:3em;
              font-weight:900;
             font-family: sans-serif;
-            background:#bc0000;
             text-align:center;
             border-bottom:0.1em solid #ffd700;
             color:#ffd700;
             padding:0.25em;
             margin:0;
         }
+        #main { background:#d52b1e; margin:0; padding:0; overflow:hidden }
         p { padding:1em; }
         textarea { display:block; width:98%; min-height:2em; margin:0 auto; }
         button {
-            display:inline-block;
+            width:40%;
+            margin:0.5em 30%;
             font-size:1.5em;
             font-weight:900;
             background-image: -o-linear-gradient(bottom, #A68A00 20%, #FFD900 80%);
@@ -40,7 +41,6 @@
             background-image: linear-gradient(bottom, #A68A00 20%, #FFD900 80%);
             border-radius:0.25em;
             padding:0.5em;
-            margin:0.5em;
             border:1px solid #A68A00;
             box-shadow:inset 0 0.1em 0.2em 0.1em #FFD900,
                              0em 0em 0em 0.05em #936900,
@@ -51,26 +51,25 @@
             background-image:none;
         }
         button:active {
-            background-image: -o-linear-gradient(bottom, #A68A00 20%, #FFD900 80%);
-            background-image: -moz-linear-gradient(bottom, #A68A00 20%, #FFD900 80%);
-            background-image: -webkit-linear-gradient(bottom, #A68A00 20%, #FFD900 80%);
-            background-image: -ms-linear-gradient(bottom, #A68A00 20%, #FFD900 80%);
+            background-image: -o-linear-gradient(bottom, #ffd900 30%, #a68a00 90%);
+            background-image: -moz-linear-gradient(bottom, #ffd900 30%, #a68a00 90%);
+            background-image: -webkit-linear-gradient(bottom, #ffd900 30%, #a68a00 90%);
+            background-image: -ms-linear-gradient(bottom, #ffd900 30%, #a68a00 90%);
             background-image: -webkit-gradient(
                 linear,
                 left bottom,
                 left top,
-                color-stop(0.2, #A68A00),
-                color-stop(0.8, #FFD900)
+                color-stop(0.3, #ffd900),
+                color-stop(0.9, #a68a00)
             );
-            background-image: linear-gradient(bottom, #A68A00 20%, #FFD900 80%);
-            margin:0.6em 0.4em 0.4em 0.6em;
-            box-shadow:inset 0 0.1em 0.2em 0.2em #FFD900,
+            background-image: linear-gradient(bottom, #ffd900 30%, #a68a00 90%);
+            margin:0.6em 30% 0.4em 30%;
+            box-shadow:inset 0 0.1em 0.3em 0.1em #FFD900,
                              0em 0em 0em 0.05em #936900,
                              0.1em 0.1em 0px 0px #662222;
         }
         #output-wrapper {
             padding:1em;
-            background:#bc0000;
         }
         #output-wrapper h2 {
             color:#FFd700;
@@ -81,7 +80,16 @@
             font-weight:600;
             padding:0.25em;
         }
-
+        @media (max-width: 40em) {
+            button {
+                margin:0.5em 10%;
+                width:80%;
+            }
+            button:active {
+                margin:0.6em 10% 0.4em 10%;
+                width:80%;
+            }
+        }
     </style>
     <script type="text/javascript">
         window.onload=function(){
@@ -100,13 +108,10 @@
                         'O': ['Ф'],
                         'R': ['Я'],
                         'T': ['Г', 'Ґ', 'Ҭ'],
-                        'U': ['Ц'],
+                        'U': ['Ц','Џ'],
                         'W': ['Ш', 'Щ'],
                         'X': ['Ӿ', 'Ҳ', 'Ӽ', 'Ж'],
-                        'Y': ['Џ', 'Ч', 'Ұ']
-                },
-                coin_toss: function() {
-                    return Math.random() > 0.5 ? true : false;
+                        'Y': ['Ч', 'Ұ']
                 },
                 random: function(len) {
                             if (len == 1) return 0;
@@ -115,8 +120,7 @@
                 generate: function(str) {
                     var str_arr = str.toUpperCase().split(''),
                         output = str_arr.map(function(a) {
-                            if (!Я.alpha.hasOwnProperty(a)) return a;
-                            if (Я.coin_toss() && a !== "R") return a;
+                            if (!Я.alpha.hasOwnProperty(a) && a !== "R") return a;
                             return Я.alpha[a][Я.random(Я.alpha[a].length)];
                       });
                     return output.join('');
@@ -154,13 +158,15 @@
     </script>
 </head>
 <body>
-    <h1>FAKE ЯЦSSIAЍ GEЍԐЯATOЯ</h1>
+    <h1>FAKE RUSSIAN GENERATOR</h1>
+    <div id="main">
     <p>Make english look sort of like russian, by using cyrillic letter forms.</p>
     <textarea id="in" placeholder="input"></textarea>
     <div>
         <button id="change">ЯԐ-GЭЙEЯATЭ</button>
         <button id="animate">ДЙIMAҬЗ</button>
     </div>
+</div>
     <div id="output-wrapper">
         <h2>OUTPUT:</h2>
         <div id="out"></div>
