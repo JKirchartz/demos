@@ -37,7 +37,9 @@
                   font-size:2em;
                   line-height:1.5;
             }
-
+            #social {
+                  margin:1em;
+            }
             h1 {font-size:2em}
             #result, #form {display:none}
             #result {margin-top:1em;}
@@ -53,9 +55,13 @@
 <div id="result">
     <h2>You have survived <span id="counter"></span> times.</h2><p>Find out more on <a href="https://en.wikipedia.org/wiki/List_of_dates_predicted_for_apocalyptic_events">wikipedia</a></p> 
 </div>
+<div id="social">
 <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://bit.ly/ZqUg4K" data-text="how many times have you survived the apocalypse?" data-via="JKirchartz" data-related="jkirchartz">Tweet</a>
+<div class="fb-like" data-href="http://jkirchartz.com/demos/How_Many_Apocalypses_Have_I_Survived.html" data-send="true" data-layout="box_count" data-width="450" data-show-faces="false">
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
     </div>
+    </div>
+<div id="fb-root"></div>
 <script>
     var getYears = [],
         count = 0,
@@ -96,6 +102,13 @@
         count = 0;
         return false;
     });
+(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));
 </script>
 </body>
 </html>
