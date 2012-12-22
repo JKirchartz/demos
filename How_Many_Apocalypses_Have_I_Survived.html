@@ -5,19 +5,29 @@
     <title>How Many Apocalypses Have I Survived?</title>
     <script src="http://js.cdn.tl/jquery-1.8.1.min.js"></script>
         <style>
-            body {font-family:sans-serif;}
-            #main {
-                  display:-webkit-box;
-                  display:-moz-box;
-                  display:box;
+            html, body {
+                height:100%;width:100%;
             }
-            #loading, #form, #results {
-                -webkit-box-pack:center;
-                -moz-box-pack:center;
-                box-pack:center;
-                -webkit-box-align:center;
-                -moz-box-align:center;
-                box-align:center;
+            body {
+                font:100%/1.5 sans-serif;
+                display: -webkit-box;
+                -webkit-box-orient: horizontal;
+                -webkit-box-pack: center;
+                -webkit-box-align: center;
+
+                display: -moz-box;
+                -moz-box-orient: horizontal;
+                -moz-box-pack: center;
+                -moz-box-align: center;
+
+                display: box;
+                box-orient: horizontal;
+                box-pack: center;
+                box-align: center;
+                text-align:center;
+            }
+            #main {
+                max-width:90%;
             }
             #year, #submit {
                   display:inline-block;
@@ -27,7 +37,6 @@
 
             h1 {font-size:2em}
             #result, #form {display:none}
-            #main {text-align:center;max-width:90%;min-width:50%;}
             #result {margin-top:1em;}
         </style>
 </head>
@@ -39,7 +48,7 @@
     <input type="text" id="year" placeholder="Year of Birth"/><button type="submit" id="submit">&raquo;</button>
 </form>
 <div id="result">
-    <h2>You have survived the end <span id="counter"></span> times.</h2><p>Find out more on <a href="https://en.wikipedia.org/wiki/List_of_dates_predicted_for_apocalyptic_events">wikipedia</a></p> 
+    <h2>You have survived the "End of the World" <span id="counter"></span> times.</h2><p>Find out more on <a href="https://en.wikipedia.org/wiki/List_of_dates_predicted_for_apocalyptic_events">wikipedia</a></p> 
 </div>
     </div>
 <script>
