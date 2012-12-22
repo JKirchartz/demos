@@ -1,10 +1,10 @@
 <!doctype html>
 <html>
-<head>
-    <meta charset="UTF-8">
-    <title>How Many Apocalypses Have I Survived?</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <script src="http://js.cdn.tl/jquery-1.8.1.min.js"></script>
+    <head>
+        <meta charset="UTF-8">
+        <title>How Many Apocalypses Have I Survived?</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+        <script src="http://js.cdn.tl/jquery-1.8.1.min.js"></script>
         <style>
             html, body {
                 height:100%;width:100%;
@@ -33,82 +33,83 @@
                 max-width:90%;
             }
             #year, #submit {
-                  display:inline-block;
-                  font-size:2em;
-                  line-height:1.5;
+                display:inline-block;
+                font-size:2em;
+                line-height:1.5;
             }
             #social {
-                  margin:1em;
+                margin:1em;
             }
             h1 {font-size:2em}
             #result, #form {display:none}
             #result {margin-top:1em;}
         </style>
-</head>
-<body>
-    <div id="main">
-<div id="loading">Loading<br/><img src="http://img.cdn.tl/loading20.gif" alt="" /></div>
-<form id="form" action="#">
-    <h1>Find out how many times you've survived "the apocalypse"</h1>
-    <input type="text" id="year" placeholder="Year of Birth"/><button type="submit" id="submit">&raquo;</button>
-</form>
-<div id="result">
-    <h2>You have survived <span id="counter"></span> times.</h2><p>Find out more on <a href="https://en.wikipedia.org/wiki/List_of_dates_predicted_for_apocalyptic_events">wikipedia</a></p> 
-</div>
-<div id="social">
-<a href="https://twitter.com/share" class="twitter-share-button" data-url="http://bit.ly/ZqUg4K" data-text="how many times have you survived the apocalypse?" data-via="JKirchartz" data-related="jkirchartz">Tweet</a>
-<div class="fb-like" data-href="http://jkirchartz.com/demos/How_Many_Apocalypses_Have_I_Survived.html" data-send="true" data-layout="box_count" data-width="450" data-show-faces="false">
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-    </div>
-    </div>
-<div id="fb-root"></div>
-<script>
-    var getYears = [],
+    </head>
+    <body>
+        <div id="main">
+            <div id="loading">Loading<br/><img src="http://img.cdn.tl/loading20.gif" alt="" /></div>
+            <form id="form" action="#">
+                <h1>Find out how many times you've survived "the apocalypse"</h1>
+                <input type="text" id="year" placeholder="Year of Birth"/><button type="submit" id="submit">&raquo;</button>
+            </form>
+            <div id="result">
+                <h2>You have survived <span id="counter"></span> times.</h2>
+                <p>Find out more on <a href="https://en.wikipedia.org/wiki/List_of_dates_predicted_for_apocalyptic_events">wikipedia</a></p> 
+                <div id="social">
+                    <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://bit.ly/ZqUg4K" data-text="how many times have you survived the apocalypse?" data-via="JKirchartz" data-related="jkirchartz">Tweet</a>
+                    <div class="fb-like" data-href="http://jkirchartz.com/demos/How_Many_Apocalypses_Have_I_Survived.html" data-send="true" data-layout="box_count" data-width="450" data-show-faces="false"></div>
+                </div>
+            </div>
+            <div id="fb-root"></div>
+    <script>
+        var getYears = [],
         count = 0,
         d = new Date(),
         currYear = d.getFullYear();
-    $(function() {
-        $.getJSON("http://en.wikipedia.org/w/api.php?action=parse&rvprop=content&page=List_of_dates_predicted_for_apocalyptic_events&format=json&callback=?", function(data) {
-            $(data.parse.text["*"]).find("tr").each(function() {
-                var origin = $(this).find("td:first").text();
-                if (origin.search(/\d\d+/) != -1) {
-                    getYears.push(origin.replace(/,/gi, ""));
-                    $("#loading").hide();
-                    $("#form").show();
-                }
+        $(function() {
+                $.getJSON("http://en.wikipedia.org/w/api.php?action=parse&rvprop=content&page=List_of_dates_predicted_for_apocalyptic_events&format=json&callback=?", 
+                    function(data) {
+                        $(data.parse.text["*"]).find("tr").each(function() {
+                            var origin = $(this).find("td:first").text();
+                            if (origin.search(/\d\d+/) != -1) {
+                                getYears.push(origin.replace(/,/gi, ""));
+                            }
+                        });
+                        $("#loading").hide();
+                        $("#form").show();
+                    });
             });
-        });
-    });
 
-    $("#form").on("submit", function(e) {
-        e.preventDefault();
-        var inputYear = parseInt($("#year").val(),10);
-        if(!inputYear){
-            $("#year").val("");
-            alert("Try a number, genius.");
-            return false;
-        }
-        getYears.map(function(item) {
-            var yr = item.match(/\d{3,9}/);
-            if (yr !== null && 
-                (yr[0] >= inputYear) && 
-                (yr[0] <= currYear)
-            ) {
-                count++;
+        $("#form").on("submit", function(e) {
+            e.preventDefault();
+            var inputYear = parseInt($("#year").val(),10);
+            if(!inputYear){
+                $("#year").val("");
+                alert("Try a number, genius.");
+                return false;
             }
-        });
-        $("#counter").text(count);
-        $("#result").show();
-        count = 0;
-        return false;
-    });
-(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));
-</script>
+            getYears.map(function(item) {
+                var yr = item.match(/\d{3,9}/);
+                if (yr !== null && 
+                    (yr[0] >= inputYear) && 
+                    (yr[0] <= currYear)
+                ) {
+                    count++;
+                    }
+            });
+            $("#counter").text(count);
+            $("#result").show();
+            count = 0;
+            return false;
+            });
+        (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+        fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+        !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
+    </script>
 </body>
 </html>
