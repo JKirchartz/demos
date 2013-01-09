@@ -115,10 +115,10 @@ nav a {
     font-family: 'Boogaloo', sans-serif;
     font-size:2em;
     color: #130f30;
-    -webkit-transition: all 0.1s ease-in-out;  /* Safari 3.2+, Chrome */
-    -moz-transition: all 0.1s ease-in-out;  /* Firefox 4-15 */
-    -o-transition: all 0.1s ease-in-out;  /* Opera 10.5-12.00 */
-    transition: all 0.1s ease-in-out;  /* Firefox 16+, Opera 12.50+ */
+    -webkit-transition: all 0.1s linear;  /* Safari 3.2+, Chrome */
+    -moz-transition: all 0.1s linear;  /* Firefox 4-15 */
+    -o-transition: all 0.1s linear;  /* Opera 10.5-12.00 */
+    transition: all 0.1s linear;  /* Firefox 16+, Opera 12.50+ */
 }
 
 nav a:hover {
