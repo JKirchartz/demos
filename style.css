@@ -4,7 +4,7 @@ html, body {margin:0;padding:0;width:100%;}
 
 html {
     font: 100%/1.25 sans-serif;
-    background: #309090 fixed;
+    background: #309090 url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAPklEQVQYV2NkIA78ZyRC3X+gGkZkhWABNI1wMZwS6DZhsxqbyRhWwQzCUIzPMyiKSfYMVnchewhkIkFFIA0Ak1IMCv1gGaUAAAAASUVORK5CYII=") repeat;
     min-height:100%;
     height:100%
     background: #b0e0e0; /* Old browsers */
@@ -20,7 +20,6 @@ html {
 body {
    height:100%;
    min-height:100%;
-   background:transparent url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAPklEQVQYV2NkIA78ZyRC3X+gGkZkhWABNI1wMZwS6DZhsxqbyRhWwQzCUIzPMyiKSfYMVnchewhkIkFFIA0Ak1IMCv1gGaUAAAAASUVORK5CYII=") repeat;
    overflow-y:auto;
 }
 
