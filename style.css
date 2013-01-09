@@ -27,9 +27,10 @@ body {
     min-width:32em;
     max-width: 50%;
     min-height:100%;
-    margin: 0 auto;
+    margin: 1em auto;
     padding: 1em;
     color: #130f30;
+    border-radius:0.02em;
     background: rgba(238,238,238,0.9);
 }
 
