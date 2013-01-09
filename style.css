@@ -118,10 +118,10 @@ nav a {
 }
 
 nav a:hover {
-    text-shadow: -1px -1px 0 #000,
-                 1px -1px 0 #000,
-                 -1px 1px 0 #000,
-                 1px 1px 0 #000,
+    text-shadow: -1px -1px 0 #488,
+                 1px -1px 0 #488,
+                 -1px 1px 0 #488,
+                 1px 1px 0 #488,
                  0.08em 0.08em 0.08em #B0E0E0;
     font-size:2.2em;
     margin: 0;
