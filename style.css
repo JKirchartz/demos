@@ -118,9 +118,12 @@ nav a {
 }
 
 nav a:hover {
-    text-shadow: 0.07em 0.07em 0.07em #B0E0E0,
-    0.08em 0.08em 0.08em #B0E0E0,
-    0.09em 0.09em 0.09em #B0E0E0;
+    text-shadow: -1px -1px 0 #000,
+                 1px -1px 0 #000,
+                 -1px 1px 0 #000,
+                 1px 1px 0 #000,
+                 0.08em 0.08em 0.08em #B0E0E0;
+    font-size:2.2em;
     margin: 0;
 }
 
@@ -129,8 +132,6 @@ nav a:hover {
     font-size: 0.75em;
     color: #ccc;
     border-radius: 1em;
-    -moz-border-radius: 1em;
-    -webkit-border-radius: 1em;
     padding: 0.5em
 }
 
