@@ -27,7 +27,7 @@ body {
 }
 
 #container {
-    min-width:32em;
+    min-width:36em;
     max-width: 50%;
     min-height:100%;
     margin: 1em auto;
@@ -104,7 +104,7 @@ nav li:nth-child(n+10):before {
 }
 
 nav li p {
-    margin-left: 4em
+    margin:0 2em;
 }
 
 nav a {
@@ -115,19 +115,15 @@ nav a {
     font-family: 'Boogaloo', sans-serif;
     font-size:2em;
     color: #130f30;
-    -webkit-transition: all 0.1s ease-out;  /* Safari 3.2+, Chrome */
-    -moz-transition: all 0.1s ease-out;  /* Firefox 4-15 */
-    -o-transition: all 0.1s ease-out;  /* Opera 10.5-12.00 */
-    transition: all 0.1s ease-out;  /* Firefox 16+, Opera 12.50+ */
+    -webkit-transition: all 0.1s ease-in-out;  /* Safari 3.2+, Chrome */
+    -moz-transition: all 0.1s ease-in-out;  /* Firefox 4-15 */
+    -o-transition: all 0.1s ease-in-out;  /* Opera 10.5-12.00 */
+    transition: all 0.1s ease-in-out;  /* Firefox 16+, Opera 12.50+ */
 }
 
 nav a:hover {
-    text-shadow: -1px -1px 0 #488,
-                 1px -1px 0 #488,
-                 -1px 1px 0 #488,
-                 1px 1px 0 #488,
-                 0.08em 0.08em 0.08em #B0E0E0;
-    font-size:2.2em;
+    text-shadow: 0.08em 0.08em 0.08em #B0E0E0;
+    font-size:2.05em;
     margin: 0;
 }
 
@@ -161,7 +157,7 @@ a[href ^= 'http']:not([href *= 'jkirchartz.']):after {
     vertical-align:top;
 }
 
-@media (max-width: 34em) {
+@media (max-width: 36em) {
     body {
         min-width:0%;
         max-width:none;
