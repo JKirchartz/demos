@@ -16,7 +16,7 @@
     "width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
     name="viewport">
     <link href="css/reveal.min.css" rel="stylesheet">
-    <link href="css/theme/default.css" id="theme" rel="stylesheet">
+    <link href="css/theme/beige.css" id="theme" rel="stylesheet">
     <!-- For syntax highlighting -->
     <link href="lib/css/zenburn.css" rel="stylesheet">
     <!-- If the query includes 'print-pdf', use the PDF print sheet -->
@@ -356,7 +356,6 @@
                     <h2>Modernizr.js &amp; JS</h2>
                     <pre><code>// a string, an object, or an array of strings and objects
 Modernizr.load([{
-    // Logical list of things we would normally need
     test : Modernizr.fontface &amp;&amp; Modernizr.cssgradients,
     // Modernizr.load loads css and javascript by default
     nope : ['presentational-polyfill.js', 
@@ -387,7 +386,7 @@ Modernizr.load([{
   // window.localStorage is available!
 } else {
   // no native support for local storage :(
-  // try a polyfill
+  // use a polyfill! :)
 }</code></pre>
 
                 </section>
@@ -398,7 +397,7 @@ Modernizr.load([{
                     <div>
                         <a href=
                         "https://github.com/Modernizr/Modernizr/wiki/HTML5-Cross-browser-Polyfills">
-                        a JS alternative to every new feature.</a>
+                        a JS alternative for new features.</a>
                     </div>
 
                     <div style="font-size:0.75em">
