@@ -4,11 +4,11 @@
 <head>
     <meta charset="utf-8">
 
-    <title>reveal.js - The HTML Presentation Framework</title>
+    <title>HTML5 skyword</title>
     <meta content=
-    "A framework for easily creating beautiful presentations using HTML" name=
+    "HTML5 presentation written w/ html5 & reveal.js" name=
     "description">
-    <meta content="Hakim El Hattab" name="author">
+    <meta content="Joel Kirchartz" name="author">
     <meta content="yes" name="apple-mobile-web-app-capable">
     <meta content="black-translucent" name=
     "apple-mobile-web-app-status-bar-style">
@@ -47,6 +47,7 @@
                         <p>next stop is Recommendation</p>
                     </div>
                     <h1 class="fragment">HTML 5.0 IS Go</h1>
+                    <p class="fragment">html 5.1 is in the works</p>
                 </section>
             </section>
 
@@ -133,26 +134,26 @@
                         &lt;menu&gt;
                     </div>
                 </section>
-            </section>
 
-            <section>
-                <h2>Depricated?</h2>
+                <section>
+                    <h2>Depricated?</h2>
 
-                <div>
-                    acronym <br>
-                    applet <br>
-                    basefont <br>
-                    big <br>
-                    center <br>
-                    dir <br>
-                    font <br>
-                    frame <br>
-                    frameset <br>
-                    isindex <br>
-                    noframes <br>
-                    strike <br>
-                    tt
-                </div>
+                    <div>
+                        acronym <br>
+                        applet <br>
+                        basefont <br>
+                        big <br>
+                        center <br>
+                        dir <br>
+                        font <br>
+                        frame <br>
+                        frameset <br>
+                        isindex <br>
+                        noframes <br>
+                        strike <br>
+                        tt
+                    </div>
+                </section>
             </section>
 
             <section>
@@ -198,8 +199,8 @@
                     Special</h3>
 
                     <div>
-                        &lt;meta charset=utf-8&gt;<br>
-                        &lt;script async&gt;
+                        <span style="color:#999">&lt;meta </span>charset<span style="color:#999">=utf-8&gt;</span><br>
+                        <span style="color:#999">&lt;script </span>async<span style="color:#999">&gt;</span>
                     </div>
 
                 </section>
@@ -247,7 +248,7 @@
                         you can trigger via headers or it with&nbsp;
                     </div>
                     <pre><code>
-                        &lt;meta http-equiv="X-UA-Compatible" content="chrome=1"&gt;
+&lt;meta http-equiv="X-UA-Compatible" content="chrome=1"&gt;
                     </code></pre>
 
                 </section>
@@ -270,11 +271,11 @@
 
                     <div>
                         <p>
-                            IE 9............138/500<br>
+                            IE 9.............138/500<br>
                             IE 10...........320/500<br>
                             FF 18...........393/500<br>
-                            Ch 24...........448/500<br>
-                            Maxthon.........464/500
+                            Ch 24..........448/500<br>
+                            Maxthon......464/500
                         </p>
                     </div>
                 </section>
@@ -323,44 +324,37 @@
 
                 <section>
                     <h2>How it Works</h2>
-                    <pre><code>
-                    &lt;!doctype html&gt;
-                    &lt;html class="no-js"&gt;
-                        &lt;head&gt;
-                            ...
-                            &lt;script src="js/modernizr-1.0.min.js"&gt;&lt;/script&gt;
-                            ...
-                    </code></pre>
+                    <pre><code>&lt;!doctype html&gt;
+&lt;html class="no-js"&gt;
+    &lt;head&gt;
+        ...
+        &lt;script src="js/modernizr-1.0.min.js"&gt;&lt;/script&gt;
+        ...</code></pre>
                 </section>
 
                 <section>
                     <h2>generates</h2>
-                    <pre><code>
-                    &lt;html class="js canvas canvastext geolocation rgba hsla no-multiplebgs borderimage borderradius boxshadow opacity no-cssanimations csscolumns no-cssgradients no-cssreflections csstransforms no-csstransforms3d no-csstransitions video audio cufon-active fontface cufon-ready"&gt;
-                        &lt;head&gt;
-                            ...
-                            &lt;script src="js/modernizr-1.0.min.js"&gt;&lt;/script&gt;
-                            ...
-                    </code></pre>
+                    <pre><code> &lt;html class="js canvas canvastext geolocation rgba hsla no-multiplebgs borderimage borderradius boxshadow opacity no-cssanimations csscolumns no-cssgradients no-cssreflections csstransforms no-csstransforms3d no-csstransitions video audio cufon-active fontface cufon-ready"&gt;
+&lt;head&gt;
+    ...
+    &lt;script src="js/modernizr-1.0.min.js"&gt;&lt;/script&gt;
+    ...</code></pre>
                 </section>
 
                 <section>
                     <h2>Fallback css</h2>
-                    <pre><code>
-                    .no-js #page,
+                    <pre><code>.no-js #page,
 .no-cssgradient #page {
     background: url("images/gradient.png");
 }
 .cssgradient #page {
     background-image: linear-gradient(top, #555, #333)
-}<br>
-                    </code></pre>
+}</code></pre>
                 </section>
 
                 <section>
                     <h2>Modernizr.js &amp; JS</h2>
-                    <pre><code>
-// a string, an object, or an array of strings and objects
+                    <pre><code>// a string, an object, or an array of strings and objects
 Modernizr.load([{
     // Logical list of things we would normally need
     test : Modernizr.fontface &amp;&amp; Modernizr.cssgradients,
@@ -383,15 +377,13 @@ Modernizr.load([{
   },
   // load analytics after everything else
   'analytics.js'
-]);<br>
-</code></pre>
+]);</code></pre>
 
                 </section>
 
                 <section>
                     <h2>More modernizr &amp; JS</h2>
-                    <pre><code>
-                    if (Modernizr.localstorage) {
+                    <pre><code>if (Modernizr.localstorage) {
   // window.localStorage is available!
 } else {
   // no native support for local storage :(
