@@ -54,10 +54,8 @@
             </form>
             <div id="result">
                 <h2>You have survived <span id="counter"></span> times.</h2>
-                <table id="output">
-
-                </table>
                 <p>Find out more on <a href="https://en.wikipedia.org/wiki/List_of_dates_predicted_for_apocalyptic_events">wikipedia</a></p> 
+                <div id="output"></div>
                 <div id="social">
                     <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://bit.ly/ZqUg4K" data-text="how many times have you survived the apocalypse?" data-via="JKirchartz" data-related="jkirchartz">Tweet</a>
                     <div class="fb-like" data-href="http://jkirchartz.com/demos/How_Many_Apocalypses_Have_I_Survived.html" data-send="false" data-width="450" data-show-faces="false"></div>
@@ -66,45 +64,21 @@
             <div id="fb-root"></div>
     <script>
         var getYears = [],
-        getMeta = [],
-        showMeta = [],
         count = 0,
         d = new Date(),
         currYear = d.getFullYear();
         $(function() {
-                $.getJSON("http://en.wikipedia.org/w/api.php?action=parse&format=json&page=List_of_dates_predicted_for_apocalyptic_events&prop=wikitext&callback=?",
+                $.getJSON("http://en.wikipedia.org/w/api.php?action=parse&rvprop=content&page=List_of_dates_predicted_for_apocalyptic_events&format=json&callback=?", 
                     function(data) {
-                    var chunks = data.parse.wikitext["*"].split("\n|-"),
-                    holdYear = 0,
-                    rowspan = 0;
-                    for(var i = 0, l = chunks.length; i < l; i++){
-                    var row = chunks[i].split("\n|");
-                    row.shift();
-                        if(row.length != 0){
-                        var yr = row[0].match(/\d{4}/), rs = row[0].match(/rowspan="(\d)"/),year;
-                             if(rs !== null && rs.length !== 0){
-                                row.shift();
-                                row.unshift(yr[0]);
-                                holdYear = yr[0];
-                                rowspan = rs[1];
-                                console.log("##rowspan##",holdYear,rowspan);
-                             }
-                             if(yr!==null && yr.length!==0){
-                                  year = yr[0];
-                             }else{
-                                  year = holdYear;
-                                  row.unshift(holdYear);
-                             }
-                             if(year){
-                                getYears.push([year,row]);
-                             }
-                             if(rowspan>0){
-                                 rowspan--;
-                             }else if(rowspan==0){
-                                 holdYear = 0;
-                             }
-                        }
-                        }
+                        $(data.parse.text["*"]).find("tr").each(function() {
+                            if(!!window.console){
+                                console.log(this);
+                            }
+                            var origin = $(this).find("td:first").text();
+                            if (origin.search(/\d\d+/) != -1) {
+                                getYears.push([origin.replace(/,/gi, ""),this]);
+                            }
+                        });
                         $("#loading").hide();
                         $("#form").show();
                     });
@@ -112,33 +86,27 @@
 
         $("#form").on("submit", function(e) {
             e.preventDefault();
-            var inputYear = parseInt($("#year").val(),10);
+            var inputYear = parseInt($("#year").val(),10),
+                output = [];
             if(!inputYear){
                 $("#year").val("");
                 alert("Try a number, genius.");
                 return false;
             }
             getYears.map(function(item) {
-                console.log(item);
-                var yr = parseInt(item[0],10);
+                var yr = item[0].match(/\d{3,9}/);
                 if (yr !== null &&
                     (yr >= inputYear) &&
                     (yr <= currYear)
-                ) {
-                count++;
-                showMeta.push(item[1]);
+                   ) {
+                    output.push(item[1]);
+                    count++;
                     }
             });
-            console.log(showMeta);
-            var output = document.createElement("tbody");
-            for (var i = 0, l = showMeta.length;i<l;i++){
-                output.appendChild(showMeta[i]);
-            }
-            $("table#output").append(output);
             $("#counter").text(count);
+            $("#output").html(output);
             $("#result").show();
             count = 0;
-            showMeta = [];
             return false;
             });
         (function(d, s, id) {
