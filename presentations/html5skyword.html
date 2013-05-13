@@ -231,6 +231,37 @@
                         Video
                     </div>
                 </section>
+                <section>
+                    <h2>Aria Roles</h2>
+                    <p>The "role" Attribute, for accessibility</p>
+                    <div>
+                        application<br/>
+                        article<br/>
+                        header<br/>
+                        main<br/>
+                        navigation<br/>
+                        <a href="http://karlgroves-sandbox.com/ariacheatsheet.php">And many more...</a>
+                    </div>
+                </section>
+                <section>
+                    <h2>Micro-data</h2>
+                    <p>The itemtype, itemscope, and itemprop Attributes</p>
+                    <p>Additional semantics following a specific a href="http://schema.org">schema</a></p>
+                    <div>
+                        itemscope signifies this segment follows a schema<br/>
+                        itemtype names which schema is being followed (i.e. http://schema.org/Movie)<br/>
+                        itemprop the property of the schema this item lists.
+                        <pre><code>
+                        &lt;div itemscope itemtype ="http://schema.org/Movie"&gt;
+                              &lt;h1 itemprop="name"&gt;Avatar&lt;/h1&gt;
+                              &lt;span&gt;Director: &lt;span itemprop="director"&gt;James Cameron&lt;/span&gt; (born August 16, 1954)&lt;/span&gt;
+                              &lt;span itemprop="genre"&gt;Science fiction&lt;/span&gt;
+                              &lt;a href="../movies/avatar-theatrical-trailer.html" itemprop="trailer"&gt;Trailer&lt;/a&gt;
+                        &lt;/div&gt;
+                        </code></pre>
+                        <a href="http://schema.org/docs/full.html">Read more...</a>
+                    </div>
+                </section>
             </section>
 
             <section>
