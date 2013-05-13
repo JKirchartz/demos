@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+
+    <title>HTML5 skyword</title>
+    <meta content=
+    "HTML5 presentation written w/ html5 & reveal.js" name=
+    "description">
+    <meta content="Joel Kirchartz" name="author">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black-translucent" name=
+    "apple-mobile-web-app-status-bar-style">
+    <meta content=
+    "width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    name="viewport">
+    <link href="css/reveal.min.css" rel="stylesheet">
+    <link href="css/theme/beige.css" id="theme" rel="stylesheet">
+    <!-- For syntax highlighting -->
+    <link href="lib/css/zenburn.css" rel="stylesheet">
+    <!-- If the query includes 'print-pdf', use the PDF print sheet -->
+
+    <script>
+        document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+    </script><!--[if lt IE 9]>
+        <script src="lib/js/html5shiv.js"></script>
+        <![endif]-->
+</head>
+
+<body>
+    <div class="reveal">
+        <!-- Any section element inside of this container is displayed as a slide -->
+
+        <div class="slides slides">
+            <section>
+                <section>
+                    <h1 style="font-size: 10.0em;">HTML 5</h1>
+                    <p>for Skyword</p>
+                </section>
+
+                <section>
+                    <h2>Dec. 2012</h2>
+                    <div>
+                        <p>HTML5 became a W3C Candidate&nbsp;Recommendation</p>
+                        <p>it's in final review</p>
+                        <p>next stop is Recommendation</p>
+                    </div>
+                    <h1 class="fragment">HTML 5.0 IS Go</h1>
+                    <p class="fragment">html 5.1 is in the works</p>
+                </section>
+            </section>
+
+            <section>
+                <section>
+                    <h1>New Doctype</h1>
+                    <div class="fragment">
+                        &lt;!DOCTYPE html&gt;
+                    </div>
+                </section>
+                <section>
+                    <h1>New Tags</h1>
+                </section>
+
+                <section>
+                    <h2>Sections</h2>
+                    <div style="font-size: 0.5em;">
+                        like &lt;body&gt; or &lt;h1&gt;
+                    </div>
+                    <div style="font-size: 1.5em;line-height: 1.25;">
+                        &lt;section&gt;<br>
+                        &lt;article&gt;<br>
+                        &lt;aside&gt;<br>
+                        &lt;nav&gt;<br>
+                        &lt;header&gt;<br>
+                        &lt;footer&gt;<br>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Grouping</h2>
+                    <p style="font-size: 0.5em;">Like the &lt;p&gt; tag or &lt;div&gt;</p>
+                    <div style="font-size: 1.5em;line-height: 1.25;">
+                        &lt;figure&gt;<br>
+                        &lt;figcaption&gt;<br>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Text-Level Semantics</h2>
+
+                    <div style="font-size: 0.5em;">
+                        like &lt;a&gt;, &lt;em&gt; or &lt;strong&gt;
+                    </div>
+
+                    <div>
+                        &lt;time&gt;<br>
+                        &lt;mark&gt;<br>
+                        &lt;ruby&gt;<br>
+                        &lt;rt&gt;<br>
+                        &lt;rp&gt;<br>
+                        &lt;bdi&gt;
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Embedded content</h2>
+
+                    <div>
+                        &lt;embed&gt; <br>
+                        &lt;video&gt; <br>
+                        &lt;audio&gt; <br>
+                        &lt;source&gt; <br>
+                        &lt;track&gt; <br>
+                        &lt;canvas&gt;
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Forms</h2>
+
+                    <div>
+                        &lt;datalist&gt; <br>
+                        &lt;textarea&gt; <br>
+                        &lt;keygen&gt; <br>
+                        &lt;output&gt; <br>
+                        &lt;progress&gt; <br>
+                        &lt;meter&gt;
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Interactive elements</h2>
+
+                    <div>
+                        &lt;details&gt; <br>
+                        &lt;summary&gt; <br>
+                        &lt;command&gt; <br>
+                        &lt;menu&gt;
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Depricated?</h2>
+
+                    <div>
+                        acronym <br>
+                        applet <br>
+                        basefont <br>
+                        big <br>
+                        center <br>
+                        dir <br>
+                        font <br>
+                        frame <br>
+                        frameset <br>
+                        isindex <br>
+                        noframes <br>
+                        strike <br>
+                        tt
+                    </div>
+                </section>
+            </section>
+
+            <section>
+                <section>
+                    <h1>Other New Stuff</h1>
+                </section>
+
+                <section>
+                    <h2>Form controls</h2>
+
+                    <div>
+                        date <br>
+                        time <br>
+                        email <br>
+                        url <br>
+                        search <br>
+                        number <br>
+                        range <br>
+                        tel <br>
+                        color
+                    </div>
+
+                    <div>
+                        &lt;input type="url"&gt;
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Attributes</h2>
+
+                    <h3>Global</h3>
+
+                    <div>
+                        contenteditable <br>
+                        contextmenu <br>
+                        draggable <br>
+                        dropzone <br>
+                        hidden <br>
+                        spellcheck
+                    </div>
+
+                    <h3><br>
+                    Special</h3>
+
+                    <div>
+                        <span style="color:#999">&lt;meta </span>charset<span style="color:#999">=utf-8&gt;</span><br>
+                        <span style="color:#999">&lt;script </span>async<span style="color:#999">&gt;</span>
+                    </div>
+
+                </section>
+
+                <section>
+                    <h2>Web Storage</h2>
+
+                    <p>WebSQL<br>
+                    IndexedDB<br>
+                    localStorage<br>
+                    cache manifest</p>
+                </section>
+
+                <section>
+                    <h2>File &amp; Hardware access</h2>
+
+                    <div>
+                        Native Drag &amp; Drop <br>
+                        File API <br>
+                        Geolocation <br>
+                        Orientation <br>
+                        Audio <br>
+                        Video
+                    </div>
+                </section>
+                <section>
+                    <h2>Aria Roles</h2>
+                    <p>The "role" Attribute, for accessibility</p>
+                    <div>
+                        application<br/>
+                        article<br/>
+                        header<br/>
+                        main<br/>
+                        navigation<br/>
+                        <a href="http://karlgroves-sandbox.com/ariacheatsheet.php">And many more...</a>
+                    </div>
+                </section>
+                <section>
+                    <h2>Micro-data</h2>
+                    <p>The itemtype, itemscope, and itemprop Attributes</p>
+                    <p>Additional semantics following a specific a href="http://schema.org">schema</a></p>
+                    <div>
+                        itemscope signifies this segment follows a schema<br/>
+                        itemtype names which schema is being followed (i.e. http://schema.org/Movie)<br/>
+                        itemprop the property of the schema this item lists.
+                        <pre><code>
+                        &lt;div itemscope itemtype ="http://schema.org/Movie"&gt;
+                              &lt;h1 itemprop="name"&gt;Avatar&lt;/h1&gt;
+                              &lt;span&gt;Director: &lt;span itemprop="director"&gt;James Cameron&lt;/span&gt; (born August 16, 1954)&lt;/span&gt;
+                              &lt;span itemprop="genre"&gt;Science fiction&lt;/span&gt;
+                              &lt;a href="../movies/avatar-theatrical-trailer.html" itemprop="trailer"&gt;Trailer&lt;/a&gt;
+                        &lt;/div&gt;
+                        </code></pre>
+                        <a href="http://schema.org/docs/full.html">Read more...</a>
+                    </div>
+                </section>
+            </section>
+
+            <section>
+                <section>
+                    <h1>How do our users stack up?</h1>
+                </section>
+
+                <section>
+                    <h2>Browsers</h2>
+
+                    <div><img src="http://i.imgur.com/C9GD4NQ.png" style=
+                    "margin-left: 0;"></div>
+
+                    <div style="font-size:0.5em">
+                        7. Chrome frame allows IE users to use chrome's
+                        rendering engine
+                    </div>
+
+                    <div style="font-size:0.5em">
+                        you can trigger via headers or it with&nbsp;
+                    </div>
+                    <pre><code>
+&lt;meta http-equiv="X-UA-Compatible" content="chrome=1"&gt;
+                    </code></pre>
+
+                </section>
+
+                <section>
+                    <h2>Browsers By Version</h2>
+
+                    <div>
+                        <img src="http://i.imgur.com/DWuxnzd.png" style=
+                        "margin-left: 0;"><br>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Cross-browser compatibility</h2>
+
+                    <div style="font-size: 0.5em;">
+                        <p>results via <a href="http://html5test.com/">html5test.com</a></p>
+                    </div>
+
+                    <div>
+                        <p>
+                            IE 9.............138/500<br>
+                            IE 10...........320/500<br>
+                            FF 18...........393/500<br>
+                            Ch 24..........448/500<br>
+                            <span class="fragment">Maxthon....464/500</span>
+                        </p>
+                    </div>
+                </section>
+
+                <section>
+                    <br>
+                    <br>
+
+                    <h1 style="font-size: 10.0em;">77%</h1>
+
+                    <div>
+                        of our users can run some HTML5
+                    </div>
+                </section>
+            </section>
+
+            <section>
+                <section>
+                    <h1>But what about those who can't?</h1>
+                    <h2>or don't do it very well</h2>
+                </section>
+
+                <section>
+                    <h2>Feature Detection</h2>
+
+                    <h3>with Modernizr.js</h3>
+
+                        <p>Open-source JS library to<br>
+                            help make html5 &amp; css3 sites.</p>
+
+                    <p>
+                        Detect Browser Compatibility
+                    </p>
+
+                    <p>
+                        Add css classes to facilitate fallbacks
+                    </p>
+
+                    <p>Older Browsers:
+                    Shim &amp; load polyfills</p>
+                </section>
+
+                <section>
+                    <h2>How it Works</h2>
+                    <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html class="no-js"&gt;
+    &lt;head&gt;
+        ...
+        &lt;script src="js/modernizr-1.0.min.js"&gt;&lt;/script&gt;
+        ...</code></pre>
+                </section>
+
+                <section>
+                    <h2>generates</h2>
+                    <pre><code> &lt;html class="js canvas canvastext geolocation rgba hsla no-multiplebgs borderimage borderradius boxshadow opacity no-cssanimations csscolumns no-cssgradients no-cssreflections csstransforms no-csstransforms3d no-csstransitions video audio cufon-active fontface cufon-ready"&gt;
+&lt;head&gt;
+    ...
+    &lt;script src="js/modernizr-1.0.min.js"&gt;&lt;/script&gt;
+    ...</code></pre>
+                </section>
+
+                <section>
+                    <h2>Fallback css</h2>
+                    <pre><code>.no-js #page,
+.no-cssgradient #page {
+    background: url("images/gradient.png");
+}
+.cssgradient #page {
+    background-image: linear-gradient(top, #555, #333)
+}</code></pre>
+                </section>
+
+                <section>
+                    <h2>Modernizr.js &amp; JS</h2>
+                    <pre><code>// a string, an object, or an array of strings and objects
+Modernizr.load([{
+    test : Modernizr.fontface &amp;&amp; Modernizr.cssgradients,
+    // Modernizr.load loads css and javascript by default
+    nope : ['presentational-polyfill.js', 
+            'presentational.css']
+  },{// Functional polyfills
+    // This just has to be truthy
+    test : Modernizr.websockets &amp;&amp; window.JSON,
+    // socket-io.js and json2.js
+    nope : 'functional-polyfills.js',
+    // You can also give arrays of resources to load.
+    both : [ 'app.js', 'extra.js' ],
+    complete : function () {
+      // Run this after everything in this group has 
+      // downloaded and executed, as well everything 
+      // in all previous groups
+      app.init();
+    }
+  },
+  // load analytics after everything else
+  'analytics.js'
+]);</code></pre>
+
+                </section>
+
+                <section>
+                    <h2>More modernizr &amp; JS</h2>
+                    <pre><code>if (Modernizr.localstorage) {
+  // window.localStorage is available!
+} else {
+  // no native support for local storage :(
+  // use a polyfill! :)
+}</code></pre>
+
+                </section>
+
+                <section>
+                    <h1>POLYFILLS</h1>
+
+                    <div>
+                        <a href=
+                        "https://github.com/Modernizr/Modernizr/wiki/HTML5-Cross-browser-Polyfills">
+                        a JS alternative for new features.</a>
+                    </div>
+
+                    <div style="font-size:0.75em">
+                        <blockquote>
+                            Polyfills are a type of shim that retrofit legacy
+                            browsers with modern HTML5/CSS3 features
+                        </blockquote>
+
+                        <div>
+                            —&nbsp;Remy Sharp
+                        </div>
+
+                        <blockquote>
+                            Shims refer to any code that intercepts API calls
+                            and provides a layer of abstraction
+                        </blockquote>
+
+                        <div>
+                            —&nbsp;Paul Irish
+                        </div>
+                    </div>
+                </section>
+            </section>
+
+            <section>
+                <section>
+                    <h1>Demos</h1>
+
+                    <div>
+                        <a href="http://html5demos.com/geo">geolocation</a>
+                    </div>
+
+                    <div>
+                        <a href="http://html5demos.com/file-api">drag &amp;
+                        drop / file API</a>
+                    </div>
+
+                    <div>
+                        <a href="http://html5demos.com/drag">drag &amp;
+                        drop</a>
+                    </div>
+
+                    <div>
+                        <a href=
+                        "http://html5demos.com/storage">localStorage</a>
+                    </div>
+
+                    <div>
+                        <a href=
+                        "http://robertnyman.com/html5/forms/input-types.html">Form
+                        elements</a>
+                    </div>
+
+                    <div>
+                        <a href="http://html5demos.com/svg-clock">svg
+                        animation</a>
+                    </div>
+
+                    <div>
+                        <a href=
+                        "http://jkirchartz.com/demos/HTML5notepad.html">html5/localStorage
+                        notepad</a>
+                    </div>
+
+                    <div>
+                        <a href="http://lea.verou.me/polyfills/progress/">html5
+                        &lt;progress&gt; polyfill</a>
+                    </div>
+
+                    <div>
+                        <a href=
+                        "http://css-tricks.com/examples/CSS3Gradient/">css3
+                        gradients</a>
+                    </div>
+
+                    <div>
+                        <a href=
+                        "http://jkirchartz.com/demos/Border_Radius_Toy.html">css3
+                        border-radius</a>
+                    </div>
+
+                    <div>
+                        <a href=
+                        "http://css-tricks.com/examples/nth-child-tester/">css3
+                        :nth tester</a>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>LINKS</h2>
+
+                    <div>
+                        <a href="http://caniuse.com/">caniuse.com</a><br>
+                    </div>
+
+                    <div>
+                        <a href="http://html5demos.com/">html5demos.com</a><br>
+                    </div>
+
+                    <div>
+                        <a href="http://www.findmebyip.com/litmus/">HTML5
+                        Litmus</a><br>
+                    </div>
+
+                    <div>
+                        <a href=
+                        "http://www.quirksmode.org/compatibility.html">QuirksMode.org
+                        Compatibility<br></a>
+                    </div>
+
+                    <div>
+                        <a href="http://html5rocks.com/">html5rocks.com</a><br>
+                    </div>
+
+                    <div>
+                        <a href="http://slides.html5rocks.com">html5 rocks
+                        deck</a>
+                    </div>
+
+                    <div>
+                        <a href="http://html5readiness.com/">html5
+                        readiness</a>
+                    </div>
+
+                    <div>
+                        <a href="http://diveintohtml5.info/">dive into
+                        html5</a>
+                    </div>
+                </section>
+            </section>
+
+            <section>
+                <h1><br>
+                <span>Thanks!</span><br></h1>
+            </section>
+        </div>
+    </div><script src="lib/js/head.min.js"></script><script src="js/reveal.min.js"></script><script>
+
+            // Full list of configuration options available here:
+            // https://github.com/hakimel/reveal.js#configuration
+            Reveal.initialize({
+                controls: true,
+                progress: true,
+                history: true,
+                center: true,
+
+                theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+                transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+                // Optional libraries used to extend on reveal.js
+                dependencies: [
+                    { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+                    { src: 'plugin/markdown/showdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+                    { src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+                    { src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+                    // { src: 'plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
+                ]
+            });
+
+    </script>
+</body>
+</html>

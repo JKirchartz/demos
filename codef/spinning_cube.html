@@ -1,0 +1,80 @@
+<!DOCTYPE HTML>
+<html> 
+<head> 
+  
+<script src="http://codef.santo.fr/codef/codef_core.js"></script> 
+<script src="http://codef.santo.fr/codef/codef_3d.js"></script> 
+<script> 
+ 
+var mycanvas;
+var my3d, bg_counter = 0, bg = [];
+
+var myobj = new Array();
+var myobjvert = new Array();
+    function randCol(){
+        return Math.floor(Math.random()*16777215).toString(16); 
+    }   
+    
+myobjvert=[
+        {x:-100, y: 100, z: 100},
+        {x:-100, y:-100, z: 100},
+        {x: 100, y:-100, z: 100},
+        {x: 100, y: 100, z: 100}, 
+        {x: 100, y: 100, z:-100},
+        {x: 100, y:-100, z:-100},
+        {x:-100, y:-100, z:-100},
+        {x:-100, y: 100, z:-100}, 
+
+       ];
+
+myobj=[ 
+    {p1:0, p2:1, p3:2, p4:3, params:new MeshBasicMaterial({ color: '0x'+randCol()})},//1
+    {p1:3, p2:2, p3:5, p4:4, params:new MeshBasicMaterial({ color: '0x'+randCol()})},//2
+    {p1:7, p2:6, p3:1, p4:0, params:new MeshBasicMaterial({ color: '0x'+randCol()})},//3
+    {p1:4, p2:5, p3:6, p4:7, params:new MeshBasicMaterial({ color: '0x'+randCol()})},//4        
+    {p1:7, p2:0, p3:3, p4:4, params:new MeshBasicMaterial({ color: '0x'+randCol()})},//5
+    {p1:1, p2:6, p3:5, p4:2, params:new MeshBasicMaterial({ color: '0x'+randCol()})},//6
+    
+
+      ];
+function init(){
+    mycanvas=new canvas(640,480,"main");
+    my3d=new codef3D(mycanvas, 900, 40, 1, 1600 );
+    my3d.faces4(myobjvert,myobj, true, false );
+
+    go();
+}
+ 
+
+function go(){
+    mycanvas.fill('#000000');
+    my3d.group.rotation.x+=0.01;
+    my3d.group.rotation.y+=0.02;
+    my3d.group.rotation.z+=0.04;
+    if(bg_counter++%32==0){
+        bg = [];
+        for(var i = 0; i++ < 10;){
+            bg.push(randCol());
+        }
+    }
+    for(var i=1,bg_len=bg.length,height=49;i < 11;i++){
+        mycanvas.line(0,i*height,640,i*height,height,bg[i%bg_len]);
+    }
+    my3d.draw();
+    requestAnimFrame( go );
+}
+
+    </script>
+</head> 
+<body onLoad="init();">
+<br>
+<br><center>
+<div id="main"></div>
+<br>
+<a href="/codef">&laquo;back</a>
+<br>
+<a href="#" onclick="window.location='view-source:'+window.location;return false;">View Source</a>
+    </center>
+</body> 
+</html>
+

@@ -1,0 +1,176 @@
+<!doctype html>
+<html>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>Fake Russian Generator</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <style type="text/css">
+        body {
+                font:100%/1.5 sans-serif;
+                background:#bc0000;
+                margin:0;
+                padding:0;
+        }
+
+        h1 { font-size:3em;
+             font-weight:900;
+            font-family: sans-serif;
+            text-align:center;
+            border-bottom:0.1em solid #ffd700;
+            color:#ffd700;
+            padding:0.25em;
+            margin:0;
+        }
+        #main { background:#d52b1e; margin:0; padding:0; overflow:hidden }
+        p { padding:1em; }
+        textarea { display:block; width:98%; min-height:2em; margin:0 auto; }
+        button {
+            width:40%;
+            margin:0.5em 30%;
+            font-size:1.5em;
+            font-weight:900;
+            background-image: -o-linear-gradient(bottom, #A68A00 20%, #FFD900 80%);
+            background-image: -moz-linear-gradient(bottom, #A68A00 20%, #FFD900 80%);
+            background-image: -webkit-linear-gradient(bottom, #A68A00 20%, #FFD900 80%);
+            background-image: -ms-linear-gradient(bottom, #A68A00 20%, #FFD900 80%);
+            background-image: -webkit-gradient(
+                linear,
+                left bottom,
+                left top,
+                color-stop(0.2, #A68A00),
+                color-stop(0.8, #FFD900)
+            );
+            background-image: linear-gradient(bottom, #A68A00 20%, #FFD900 80%);
+            border-radius:0.25em;
+            padding:0.5em;
+            border:1px solid #A68A00;
+            box-shadow:inset 0 0.1em 0.2em 0.1em #FFD900,
+                             0em 0em 0em 0.05em #936900,
+                             0.2em 0.2em 0px 0px #662222;
+        }
+        button:hover {
+            background:#FD0;
+            background-image:none;
+        }
+        button:active {
+            background-image: -o-linear-gradient(bottom, #ffd900 30%, #a68a00 90%);
+            background-image: -moz-linear-gradient(bottom, #ffd900 30%, #a68a00 90%);
+            background-image: -webkit-linear-gradient(bottom, #ffd900 30%, #a68a00 90%);
+            background-image: -ms-linear-gradient(bottom, #ffd900 30%, #a68a00 90%);
+            background-image: -webkit-gradient(
+                linear,
+                left bottom,
+                left top,
+                color-stop(0.3, #ffd900),
+                color-stop(0.9, #a68a00)
+            );
+            background-image: linear-gradient(bottom, #ffd900 30%, #a68a00 90%);
+            margin:0.6em 30% 0.4em 30%;
+            box-shadow:inset 0 0.1em 0.3em 0.1em #FFD900,
+                             0em 0em 0em 0.05em #936900,
+                             0.1em 0.1em 0px 0px #662222;
+        }
+        #output-wrapper {
+            padding:1em;
+        }
+        #output-wrapper h2 {
+            color:#FFd700;
+        }
+        #out {
+            border:1px solid #FFd700;
+            font-size:2em;
+            font-weight:600;
+            padding:0.25em;
+        }
+        @media (max-width: 40em) {
+            button {
+                margin:0.5em 10%;
+                width:80%;
+            }
+            button:active {
+                margin:0.6em 10% 0.4em 10%;
+                width:80%;
+            }
+        }
+    </style>
+    <script type="text/javascript">
+        window.onload=function(){
+            var Я = {
+                alpha: {
+                        'A': ['Д'],
+                        'B': ['Б', 'Ъ', 'Ь'],
+                        'C': ['Ҫ'],
+                        'E': ['Ԑ', 'Є', 'Э'],
+                        'F': ['Ӻ', 'Ғ'],
+                        'H': ['Њ', 'Ҥ', 'Ӊ', 'Ң'],
+                        'I': ['Ї'],
+                        'K': ['Қ', 'Ҡ', 'Ҝ', 'Ԟ'],
+                        'M': ['Ԡ'],
+                        'N': ['И', 'Ѝ', 'Й'],
+                        'O': ['Ф'],
+                        'R': ['Я'],
+                        'T': ['Г', 'Ґ', 'Ҭ'],
+                        'U': ['Ц','Џ'],
+                        'W': ['Ш', 'Щ'],
+                        'X': ['Ӿ', 'Ҳ', 'Ӽ', 'Ж'],
+                        'Y': ['Ч', 'Ұ']
+                },
+                random: function(len) {
+                            if (len == 1) return 0;
+                            return !!len ? Math.floor(Math.random() * len + 1) - 1 : Math.random();
+                },
+                generate: function(str) {
+                    var str_arr = str.toUpperCase().split(''),
+                        output = str_arr.map(function(a) {
+                            if (!Я.alpha.hasOwnProperty(a) && a !== "R") return a;
+                            return Я.alpha[a][Я.random(Я.alpha[a].length)];
+                      });
+                    return output.join('');
+                }
+            };
+
+            var h1 = document.getElementsByTagName("h1")[0],
+                input = document.getElementById("in"),
+                out = document.getElementById("out"),
+                change_btn = document.getElementById("change"),
+                animate_btn = document.getElementById("animate"),
+                animate_timer = null,
+                worker = function(e) {
+                    if(!animate_timer){
+                        e.target.innerHTML = Я.generate("re-generate");
+                    }
+                    out.innerHTML = Я.generate(input.value);
+                    console.log(animate_timer);
+                },
+                animator = function(e) {
+                    if (!!animate_timer) {
+                        e.target.innerHTML = Я.generate("animate");
+                        clearInterval(animate_timer);
+                        animate_timer = null;
+                    } else {
+                        e.target.innerHTML = Я.generate("de-animate");
+                        animate_timer = setInterval(worker, 100);
+                    }
+                };
+
+            input.onkeyup = change_btn.onclick = worker;
+            animate_btn.onclick = animator;
+            h1.innerHTML = Я.generate(h1.innerHTML);
+        };
+    </script>
+</head>
+<body>
+    <h1>FAKE RUSSIAN GENERATOR</h1>
+    <div id="main">
+    <p>Make english look sort of like russian, by using cyrillic letter forms.</p>
+    <textarea id="in" placeholder="input"></textarea>
+    <div>
+        <button id="change">ЯԐ-GЭЙEЯATЭ</button>
+        <button id="animate">ДЙIMAҬЗ</button>
+    </div>
+</div>
+    <div id="output-wrapper">
+        <h2>OUTPUT:</h2>
+        <div id="out"></div>
+    </div>
+</body>
+</html>

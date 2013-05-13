@@ -1,0 +1,13 @@
+{
+    "name": "Kingdom Of Loathing",
+    "description": "The Kingdom of Loathing is a free, comical RPG, brought to you by the folks at Asymmetric Publications. An Adventurer is You!",
+    "version": "1.0",
+    "manifest_version": 2,
+    "icons": { "128": "KoLicon.png" },
+    "app": {
+        "urls": [ "http://kingdomofloathing.com/" ],
+        "launch": { "web_url": "http://kingdomofloathing.com" }
+    },
+    "permissions": [ "unlimitedStorage", "notifications" ]
+}
+
