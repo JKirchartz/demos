@@ -43,9 +43,9 @@
             h1 {font-size:2em}
             #result, #form {display:none}
             #result {margin-top:1em;}
-			#output table { border-collapse: collapse }
+			table#output { border-collapse: collapse }
 			#output td { border: 1px #AAA solid; padding:0.2em }
-			#output tr > td:last { display:none }
+			#output tr:last-child { display:none }
         </style>
     </head>
     <body>
@@ -112,7 +112,7 @@
             count = 0;
             return false;
             });
-            $("#output a").click(function(e){
+            $("#output a").live("click",function(e){
             e.preventDefault();
             window.open("http://en.wikipedia.org/" + $(this).attr('href'));
             });
