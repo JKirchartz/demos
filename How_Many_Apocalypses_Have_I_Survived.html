@@ -44,11 +44,14 @@
                 font-size:2em;
                 line-height:1.5;
                 text-align:center;
-                max-width:100%;
+                max-width:83%;
             }
             #social {
                 margin:1em;
             }
+			#social > * {
+                display:inline!important;
+			}
             h1 {font-size:2em}
             #result, #form {display:none}
             #result {margin-top:1em;}
@@ -56,6 +59,8 @@
 			    background:#f00;
 				padding:0.5em;
 				border-radius:50%;
+				height:2em;
+				width:2em;
 				}
         </style>
     </head>
@@ -67,7 +72,7 @@
                 <input type="tel" id="year" placeholder="Year of Birth"/><button type="submit" id="submit">&raquo;</button>
             </form>
             <div id="result">
-                <h2>You have survived <span id="counter"></span> end-times.</h2>
+                <h2>You have survived <div><span id="counter"></span></div> end-times.</h2>
                 <p>Find out more on <a href="https://en.wikipedia.org/wiki/List_of_dates_predicted_for_apocalyptic_events">wikipedia</a></p> 
                 <div id="social">
                     <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://bit.ly/ZqUg4K" data-text="how many times have you survived the apocalypse?" data-via="JKirchartz" data-related="jkirchartz">Tweet</a>
