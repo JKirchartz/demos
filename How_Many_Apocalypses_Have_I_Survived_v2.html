@@ -102,7 +102,7 @@
                     (yr >= inputYear) &&
                     (yr <= currYear)
                    ) {
-                    output.push(item[1].innerHTML(("" + item[1].innerHTML() + "").replace(/href="\/wiki\/"/, "href=\"http://en.wikipedia.org")));
+                    output.push(item[1]);
                     count++;
                     }
             });
@@ -111,6 +111,10 @@
             $("#result").show();
             count = 0;
             return false;
+            });
+            $("#output a").click(function(e){
+            e.preventDefault();
+            window.open("http://en.wikipedia.org/" + $(this).attr('href'));
             });
         (function(d, s, id) {
         var js, fjs = d.getElementsByTagName(s)[0];
