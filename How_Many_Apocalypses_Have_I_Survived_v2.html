@@ -43,7 +43,9 @@
             h1 {font-size:2em}
             #result, #form {display:none}
             #result {margin-top:1em;}
+			#output table { border-collapse: collapse }
 			#output td { border: 1px #AAA solid; padding:0.2em }
+			#output tr > td:last { display:none }
         </style>
     </head>
     <body>
@@ -100,7 +102,7 @@
                     (yr >= inputYear) &&
                     (yr <= currYear)
                    ) {
-                    output.push(item[1]);
+                    output.push(item[1].replace(/href="\/wiki\/"/, "href=\"http://en.wikipedia.org"));
                     count++;
                     }
             });
