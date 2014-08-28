@@ -6,13 +6,15 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
         <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
         <style>
+            @import url(http://fonts.googleapis.com/css?family=PT+Sans+Narrow);
             html, body {
                 height:100%;width:100%;
                 margin:0;
                 padding:0;
             }
             body {
-                font:100%/1.5 sans-serif;
+                font:100%/1.5;
+                font-family: 'PT Sans Narrow', Helvetica, sans-serif;
                 display: -webkit-box;
                 -webkit-box-orient: horizontal;
                 -webkit-box-pack: center;
@@ -47,17 +49,22 @@
             h1 {font-size:2em}
             #result, #form {display:none}
             #result {margin-top:1em;}
+			#counter {
+			    background:#f00;
+				padding:0.5em;
+				border-radius:50%;
+				}
         </style>
     </head>
     <body>
         <div id="main">
             <div id="loading">Loading<br/><img src="http://cdnjs.cloudflare.com/ajax/libs/file-uploader/3.7.0/loading.gif" alt="" /></div>
             <form id="form" action="#">
-                <h1>Find out how many times you've survived "the apocalypse"</h1>
+                <h1>How Many Apocalypses Have I Survived?</h1>
                 <input type="text" id="year" placeholder="Year of Birth"/><button type="submit" id="submit">&raquo;</button>
             </form>
             <div id="result">
-                <h2>You have survived <span id="counter"></span> times.</h2>
+                <h2>You have survived <span id="counter"></span> end-times.</h2>
                 <p>Find out more on <a href="https://en.wikipedia.org/wiki/List_of_dates_predicted_for_apocalyptic_events">wikipedia</a></p> 
                 <div id="social">
                     <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://bit.ly/ZqUg4K" data-text="how many times have you survived the apocalypse?" data-via="JKirchartz" data-related="jkirchartz">Tweet</a>
