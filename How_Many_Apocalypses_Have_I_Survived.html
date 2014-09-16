@@ -64,24 +64,26 @@
                 width:2em;
             }
 
-            @keyframes spin{
-                0% { transform:rotate(0deg); -webkit-transform-origin:50% 50%; }
-                100% { transform:rotate(359deg); }
-            }
 
             @-webkit-keyframes spin{
                 0% { -webkit-transform:rotate(0deg); -webkit-transform-origin:50% 50%; }
                 100% { -webkit-transform:rotate(359deg); }
             }
+            @keyframes spin{
+                0% { transform:rotate(0deg); }
+                100% { transform:rotate(359deg); }
+            }
 
             #spinner {
                 border-radius:100%; height:2em; width:2em;
+                margin:1em auto;
                 box-shadow:2px 2px 5px rgba(0,0,0,0.8),
                 -2px -2px 5px rgba(255,255,255,0.8),
                 2px -2px 5px rgba(0,0,0,0.8),
                 -2px 2px 5px rgba(255,255,255,0.8);
                 display:block;
-                animation:0.8s spin infinite linear; -webkit-animation:0.8s spin infinite linear; 
+                -webkit-animation:0.8s spin infinite linear; 
+                animation:0.8s spin infinite linear; 
             }
         </style>
     </head>
