@@ -34,7 +34,7 @@
                 background: url(http://upload.wikimedia.org/wikipedia/commons/7/79/Operation_Upshot-Knothole_-_Badger_001.jpg) #111;
                 background-position: center center;
                 color:#000;
-				text-shadow:1px 1px 0 #ccc;
+                text-shadow:1px 1px 0 #ccc;
             }
             #main {
                 max-width:90%;
@@ -49,25 +49,45 @@
             #social {
                 margin:1em;
             }
-			#social > * {
+            #social > * {
                 display:inline!important;
-			}
+            }
             h1 {font-size:2em}
-			h2 div { padding:0.6em }
+            h2 div { padding:0.6em }
             #result, #form {display:none}
             #result {margin-top:1em;}
-			#counter {
-			    background:#f00;
-				padding:0.5em;
-				border-radius:50%;
-				height:2em;
-				width:2em;
-				}
+            #counter {
+                background:#f00;
+                padding:0.5em;
+                border-radius:50%;
+                height:2em;
+                width:2em;
+            }
+
+            @keyframes spin{
+                0% { transform:rotate(0deg); -webkit-transform-origin:50% 50%; }
+                100% { transform:rotate(359deg); }
+            }
+
+            @-webkit-keyframes spin{
+                0% { -webkit-transform:rotate(0deg); -webkit-transform-origin:50% 50%; }
+                100% { -webkit-transform:rotate(359deg); }
+            }
+
+            #spinner {
+                border-radius:100%; height:2em; width:2em;
+                box-shadow:2px 2px 5px rgba(0,0,0,0.8),
+                -2px -2px 5px rgba(255,255,255,0.8),
+                2px -2px 5px rgba(0,0,0,0.8),
+                -2px 2px 5px rgba(255,255,255,0.8);
+                display:block;
+                animation:0.8s spin infinite linear; -webkit-animation:0.8s spin infinite linear; 
+            }
         </style>
     </head>
     <body>
         <div id="main">
-            <div id="loading">Loading<br/><img src="http://cdnjs.cloudflare.com/ajax/libs/file-uploader/3.7.0/loading.gif" alt="" /></div>
+            <div id="loading">Loading<br/><div id="spinner"></div></div>
             <form id="form" action="#">
                 <h1>How Many Apocalypses Have I Survived?</h1>
                 <input type="tel" id="year" placeholder="Year of Birth"/><button type="submit" id="submit">&raquo;</button>
@@ -81,55 +101,55 @@
                 </div>
             </div>
             <div id="fb-root"></div>
-    <script>
-        var getYears = [],
-        count = 0,
-        d = new Date(),
-        currYear = d.getFullYear();
-        $(function() {
-                $.getJSON("http://en.wikipedia.org/w/api.php?action=parse&rvprop=content&page=List_of_dates_predicted_for_apocalyptic_events&format=json&callback=?", 
-                    function(data) {
-                        $(data.parse.text["*"]).find("tr").each(function() {
-                            var origin = $(this).find("td:first").text();
-                            if (origin.search(/\d\d+/) != -1) {
-                                getYears.push(origin.replace(/,/gi, ""));
-                            }
+            <script>
+                var getYears = [],
+                count = 0,
+                d = new Date(),
+                currYear = d.getFullYear();
+$(function() {
+        $.getJSON("http://en.wikipedia.org/w/api.php?action=parse&rvprop=content&page=List_of_dates_predicted_for_apocalyptic_events&format=json&callback=?", 
+                function(data) {
+                $(data.parse.text["*"]).find("tr").each(function() {
+                        var origin = $(this).find("td:first").text();
+                        if (origin.search(/\d\d+/) != -1) {
+                        getYears.push(origin.replace(/,/gi, ""));
+                        }
                         });
-                        $("#loading").hide();
-                        $("#form").show();
-                    });
-            });
+                $("#loading").hide();
+                $("#form").show();
+                });
+        });
 
-        $("#form").on("submit", function(e) {
-            e.preventDefault();
-            var inputYear = parseInt($("#year").val(),10);
-            if(!inputYear){
-                $("#year").val("");
-                alert("Try a number, genius.");
-                return false;
-            }
-            getYears.map(function(item) {
+$("#form").on("submit", function(e) {
+        e.preventDefault();
+        var inputYear = parseInt($("#year").val(),10);
+        if(!inputYear){
+        $("#year").val("");
+        alert("Try a number, genius.");
+        return false;
+        }
+        getYears.map(function(item) {
                 var yr = item.match(/\d{3,9}/);
                 if (yr !== null && 
-                    (yr[0] >= inputYear) && 
-                    (yr[0] <= currYear)
-                ) {
-                    count++;
-                    }
-            });
-            $("#counter").text(count);
-            $("#result").show();
-            count = 0;
-            return false;
-            });
-        (function(d, s, id) {
-        var js, fjs = d.getElementsByTagName(s)[0];
-        if (d.getElementById(id)) return;
-        js = d.createElement(s); js.id = id;
-        js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
-        fjs.parentNode.insertBefore(js, fjs);
-        }(document, 'script', 'facebook-jssdk'));
-        !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
-    </script>
+                        (yr[0] >= inputYear) && 
+                        (yr[0] <= currYear)
+                   ) {
+                count++;
+                }
+                });
+        $("#counter").text(count);
+        $("#result").show();
+        count = 0;
+        return false;
+});
+(function(d, s, id) {
+ var js, fjs = d.getElementsByTagName(s)[0];
+ if (d.getElementById(id)) return;
+ js = d.createElement(s); js.id = id;
+ js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+ fjs.parentNode.insertBefore(js, fjs);
+ }(document, 'script', 'facebook-jssdk'));
+!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
+</script>
 </body>
 </html>
