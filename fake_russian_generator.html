@@ -139,28 +139,12 @@
                 input = document.getElementById("in"),
                 out = document.getElementById("out"),
                 change_btn = document.getElementById("change"),
-                animate_btn = document.getElementById("animate"),
-                animate_timer = null,
                 worker = function(e) {
-                    if(!animate_timer){
-                        e.target.innerHTML = Я.generate("re-generate");
-                    }
-                    out.innerHTML = Я.generate(input.value);
-                    console.log(animate_timer);
-                },
-                animator = function(e) {
-                    if (!!animate_timer) {
-                        e.target.innerHTML = Я.generate("animate");
-                        clearInterval(animate_timer);
-                        animate_timer = null;
-                    } else {
-                        e.target.innerHTML = Я.generate("de-animate");
-                        animate_timer = setInterval(worker, 100);
-                    }
+                  e.target.innerHTML = Я.generate("re-generate");
+                  out.innerHTML = Я.generate(input.value);
                 };
 
             input.onkeyup = change_btn.onclick = worker;
-            animate_btn.onclick = animator;
             h1.innerHTML = Я.generate(h1.innerHTML);
         };
     </script>
@@ -172,7 +156,6 @@
     <textarea id="in" placeholder="input"></textarea>
     <div>
         <button id="change">ЯԐ-GЭЙEЯATЭ</button>
-        <button id="animate">ДЙIMAҬЗ</button>
     </div>
 </div>
     <div id="output-wrapper">
