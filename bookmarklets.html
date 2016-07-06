@@ -11,8 +11,8 @@
         <div id="container">
             <h1><a href="index.html">JKirchartz's Demos Etc.</a></h1>
             <h2>Bookmarklets</h2>
-            <p>Bookmarklets are javascript functions that live in your 
-              bookmarks bar, each provides additional functionality for your 
+            <p>Bookmarklets are javascript functions that live in your
+              bookmarks bar, each provides additional functionality for your
               browser. To "install" one, simply click and drag it to your bookmarks bar.</p>
             <ol>
                 <li><a href='javascript:(function(){var a=document.getElementsByTagName("a");for(i=0;i<a.length;i++){if(a[i].href.match(/([^\/\\]+)\.(DOC|DOCX|PPT|PPTX|XLS|XLSX|PAGES|EPS|PS|PSD|AI|XPS|TTF|DXF|SVG)$/i)){a[i].href ="http://docs.google.com/viewer?url="+ a[i].href;}}})();'>Open appropriate links in Google Docs Viewer</a>(DOC, DOCX, PPT, PPTX, XLS, XLSX, PAGES, EPS, PS, PSD, AI, XPS, TTF, DXF, SVG)</li>
@@ -29,6 +29,7 @@
                 <li><a href='javascript:(function(){document.body.contentEditable = true;})()'>Edit text on page</a></li>
                 <li><a href='javascript:(function(){var ins=document.getElementsByTagName("input");for(var i=0,l=ins.length;i<l;i++){if(ins[i].type == "password"){ins[i].type = "";}}})()'>Change password fields to text</a></li>
                 <li><a href='javascript:(function(){var u = window.location.toString(); u = u.replace(new RegExp("(i\.)"),""); u = u.substr(0,u.lastIndexOf(".")) || u; window.open(u,"_blank","");})()'>Imgur image to page</a></li>
+                <li><a href='javascript:(function(){document.getElementById("viewissuesidebar").style.display="none";})'>Hide "People" sidebar in Jira</a></li>
             </ol>
         </div>
     </body>
