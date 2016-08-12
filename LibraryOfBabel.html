@@ -98,7 +98,6 @@ function create() {
     }
     return output += "</ol>";
 }
-
 function write(){
     chars = chars.shuffle();
     var content = create();
@@ -118,4 +117,11 @@ seedform.onsubmit = function(e) {
   return false;
 }
 write();
+window.onload = function() {
+  var hash = (window.location.hash).substr(1);
+  var seedEl = document.getElementById('seed');
+  seedEl.value = hash;
+  Math.seedrandom(hash);
+  write();
+};
 </script>
