@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<title>Library Of Babel</title>
+<style>
+  html {
+    height:100%;
+    width:100%;
+    margin:0;
+    padding:0;
+    font-size:100%;
+    line-height:1.25;
+    background-color: lightgrey;
+  }
+  body {
+    margin:0 auto;
+    width:40.5em;
+    min-height:57.27.56em;
+    counter-reset:pages;
+  }
+  article {
+    border:1px solid grey;
+    border-radius:5px;
+    margin:1em;
+    background-color: white;
+    padding: 0.75em 1em 1em 0.75em;
+    word-wrap:break-word;
+    color:black;
+  }
+  ol, li {
+    margin:0; padding:0;
+    list-style-type:none;
+  }
+  li { margin-bottom:3em; padding-top:1em; border-top:1px solid grey }
+  li:after { content: counter(pages);
+    counter-increment: pages;
+    margin-top:2em;
+    font-size:0.7em;
+    display:block;
+    float:right;
+  }
+  h1, h2 {
+    font-family:sans-serif;
+    margin: 0 auto; }
+  h1 {
+    font-size:1.5em;
+    padding:1.45em 0;
+    color: white;
+    text-shadow: 2px 2px rgba(0,0,0,0.5);
+    text-transform:capitalize;
+  }
+  h2 {font-size:1.16em; padding:1.52em 0;}
+
+</style>
+<h1>NaNoGenMo15: Library of Babel</h1>
+<p>Based on Borges original short of the same name. This page will create a
+  new NaNoGenMo Novel on every reseed or rewrite. Seeding  the random number
+  generator allows us to see some consistency in the output.</p>
+<form id="seedform" action="#">
+  seed:
+  <input type="text" name="seed" id="seed" value="Borges" placeholder="seed"/>
+  <input type="submit" name="submit" id="submit" value="reseed/rewrite" />
+  (will not reseed unless the seed has been changed)
+</form>
+<div id='book'></div>
+<script src="seedrandom.min.js" type="text/javascript" charset="utf-8"></script>
+<script>
+var chars = "abcdefghijklmnopqrstuvwxyz ,.";
+var book = 410;
+var page = 3200;
+String.prototype.shuffle = function () {
+    var a = this.split(""),
+        n = a.length;
+
+    for(var i = n - 1; i > 0; i--) {
+        var j = Math.floor(Math.random() * (i + 1));
+        var tmp = a[i];
+        a[i] = a[j];
+        a[j] = tmp;
+    }
+    return a.join("");
+}
+
+function create() {
+    var output = "<h1></h1>";
+    var chapters = 1;
+    for (var j = 0; j < book; j++) {
+        if (Math.round(Math.random() * book) % 33 === 0 || j == 0) {
+           if (j !== 0){
+             output += "</ol></article>";
+           }
+           output += "<article><h2>CHAPTER " + chapters + "</h2><ol>";
+           chapters++;
+        }
+        output += "<li>"
+        for (var i = 0; i < page; i++) {
+            output += chars.charAt(Math.round(Math.random()*chars.length));
+        }
+        output += "</li>"
+    }
+    return output += "</ol>";
+}
+function write(){
+    chars = chars.shuffle();
+    var content = create();
+    document.getElementById('book').innerHTML = content;
+    document.getElementsByTagName('h1')[1].innerHTML = chars;
+}
+var seedform = document.getElementById('seedform');
+var seed = document.getElementById('seed').value;
+Math.seedrandom(seed);
+seedform.onsubmit = function(e) {
+  e.preventDefault();
+  if (this.seed.value !== seed) {
+    seed = this.seed.value;
+    Math.seedrandom(seed)
+  }
+  write();
+  return false;
+}
+write();
+window.onload = function() {
+  var hash = (window.location.hash).substr(1);
+  var seedEl = document.getElementById('seed');
+  seedEl.value = hash;
+  Math.seedrandom(hash);
+  write();
+};
+</script>
