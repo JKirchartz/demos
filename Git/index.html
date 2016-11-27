@@ -20,22 +20,39 @@
 				</section>
 				<section>
 					<section>
-						<p>Forget to add a file?</p>
+						<p>Forgot to add a file?</p>
 						<h1>Add to last commit</h1>
-						<pre><code>git commit --amend</code></pre>
+						<pre><code>
+							$>git add path/to/file.ext
+							$>git commit --amend
+						</code></pre>
+						<p>Note: if you've already pushed your previous commit to remote, you may cause headaches for other developers missing your forgotten files</p>
 					</section>
 					<section>
 						<h2>Add all changes to last commit, Keep commit message</h2>
-						<pre><code>git commit --all --ammend --no-edit</code></pre>
+						<pre><code>$>git commit --all --ammend --no-edit</code></pre>
+						<p>`--all` adds all changed files</p>
+						<p>`--no-edit` skips editing the commit message</p>
+						<p>Save this as an alias like so: `$> git --global alias.caa = 'commit --all --ammend --no-edit'`</p>
 					</section>
 				</section>
 				<section>
-					<h1>Undo Last commit: Git Reset</h1>
-					<pre><code>git reset HEAD~1</code></pre>
+					<p>Add the wrong file?</p>
+					<h2>Unstage Changes</h2>
+					<pre><code>$>git reset HEAD --</code></pre>
+					<p>Save this as an alias like so: `$> git --global alias.unstage = 'reset HEAD --'`</p>
+					<section>
+						<h1>Undo Last commit</h1>
+						<pre><code>$>git reset HEAD~1</code></pre>
+					<p>Save this as an alias like so: `$> git --global alias.undo = 'reset HEAD~1'`</p>
+					</section>
 				</section>
 				<section>
-					<h1>Better Redo: Git Rebase</h1>
-					<pre><code>git rebase -i</code></pre>
+					<h1>Git Rebase</h1>
+					<pre><code>$>git rebase -i</code></pre>
+					<p>Notes: Do not rebase commits you've already pushed to remote, you will give everyone headaches</p>
+					<p>`-i` enables interactive mode</p>
+					<p>In interactive mode you can re-order commits by changing the order of the lines in the commit message</p>
 				</section>
 			</div>
 		</div>
