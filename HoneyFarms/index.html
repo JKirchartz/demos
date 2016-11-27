@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+				<head>
+								<meta charset="utf-8" />
+								<title>index</title>
+								<style>
+												*, :before, :after { box-sizing: border-box; }
+												body, html { margin:0; padding:0; height:100%; width:100%; }
+												body {
+																background: url(/demos/HoneyFarms/images/full/FerneHollow_1037_1066x646.JPG) no-repeat center center;
+																background-size: cover;
+																width:100%;
+																height:100%;
+																font-size: 100%;
+																overflow: hidden;
+																font-family: "Myriad Pro", Myriad, Frutiger, "Frutiger Linotype", Univers, Calibri, "Gill Sans", "Gill Sans MT", "DejaVu Sans Condensed", "Liberation Sans", "Nimbus Sans L", Tahoma, Geneva, "Helvetica Neue", Helvetica, Arial, sans-serif;
+																color: #333;
+												}
+												h1, h2, h3 {
+																font-family: 'Mrs Eaves Roman', serif;
+												}
+												h1 {
+																background: url(/demos/HoneyFarms/images/honeyfarms_logo.min.svg) no-repeat center center;
+																background-size: contain;
+																display:inline-block;
+																width: 100%;
+																height: 500px;
+												}
+												h1 span {
+																color: transparent;
+												}
+												main {
+																background: url(/demos/HoneyFarms/images/full/FerneHollow_Blur.jpg) no-repeat center center fixed;
+																background-size: cover;
+																height:100%;
+																min-width:65%;
+																width:65em;
+																max-width:100%;
+																margin: 0 auto;
+																text-align:center;
+																overflow: auto;
+												}
+												.info {
+																padding: 6vh 0;
+												}
+												.info.splash {
+																height: 100%;
+																display: flex;
+																justify-content: center;
+																align-items: center;
+																flex-flow: column nowrap;
+												}
+												.images {
+																display: flex;
+																flex-flow: row wrap;
+																justify-content: center;
+																align-items: center;
+																width: 100%;
+												}
+												.image {
+																width: 32%;
+																min-width: 300px;
+																margin: 0.25%;
+																background-repeat: no-repeat;
+																background-position:center center;
+																/* background-attachment: fixed; */
+																background-size: cover;
+																height: 300px;
+																justify-content: center;
+																margin-bottom: 2em;
+												}
+												p {
+																margin: 1em 4em;
+												}
+												.contact, .blurb {
+																font-size: 1.5em;
+												}
+												.contact a {
+																display:block;
+																text-decoration: none;
+																color: #4F87A0;
+																cursor: pointer;
+																margin-top: 0.5em;
+												}
+												a.down {
+																text-decoration: none;
+																display: block;
+																margin: 5vh auto 1em;
+																width: 4em;
+												}
+												.down span {
+																color: transparent;
+																height: 0;
+																width: 0;
+																display: block;
+																border-top: 2em solid #E28432;
+																border-left: 2em solid transparent;
+																border-right: 2em solid transparent;
+												}
+												.image h2 {display: block; margin-top: 100%;}
+												#map_container {margin:0 auto;overflow:hidden;margin-top: 100px; height:400px;width:100%;}
+												#gmap_canvas img{margin:0 auto;max-width:none!important;background:none!important; max-width:100%;}
+								</style>
+				</head>
+				<body>
+								<main>
+								<div class="info splash">
+												<h1 class="logo"><span>Spring House at Honey Farms</span><span>The Sweet Life</span></h1>
+												<a href="#" class="down"><span>scroll down</span></a>
+								</div>
+								<div class="info blurb">
+												<p>Resort Living Townhomes in Maury County</p>
+												<p>5 miles from Spring Hill, Tennessee</p>
+												<p>The beautiful country location is minutes from shopping, entertainment, and the Spring Hill job center. The community features 3 bedroom townhomes with integral garage.</p>
+								</div>
+								<div class="images info">
+												<div class="image" style="background-image: url(/demos/HoneyFarms/images/thumb/Piatt_details_5720.jpg);">
+																<h2>New Town Homes</h2>
+												</div>
+												<div class="image" style="background-image: url(/demos/HoneyFarms/images/thumb/Pool.jpg);">
+																<h2>Resort-Style Living</h2>
+												</div>
+												<div class="image" style="background-image: url(/demos/HoneyFarms/images/thumb/Piatt_details_5754.jpg);">
+																<h2>Quality Crastsmanship</h2>
+												</div>
+								</div>
+								<div class="contact info">
+												<h2>Brian Nelson</h2>
+												<h3>Sales Manager</h3>
+												<a href="mailto:brian.nelson@honeyfarmsliving.com">brian.nelson@honeyfarmsliving.com</a>
+												<a href="tel:615-545-9311">615.545.9311</a>
+								<div class="map">
+												<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB9XJtwCQJNI-xU1Kz_ywkat6vo4WICLmY"></script>
+												<div id="map_container"><div id="gmap_canvas" style="height:400px;"></div></div>
+								</div>
+												<script type="text/javascript">
+																function init_map() {
+var myOptions = {
+zoom: 16,
+center: new google.maps.LatLng(35.6892041, -86.98436830000003),
+mapTypeId: google.maps.MapTypeId.ROADMAP
+};
+map = new google.maps.Map(document.getElementById("gmap_canvas"), myOptions);
+marker = new google.maps.Marker({
+map: map,
+position: new google.maps.LatLng(35.6892041, -86.98436830000003)
+});
+infowindow = new google.maps.InfoWindow({
+content: "<b>Spring House at Honey Farms</b><br/>Honey Farm Way<br/> Columbia, Tennessee"
+});
+// Resize stuff...
+google.maps.event.addDomListener(window, "resize", function() {
+var center = map.getCenter();
+google.maps.event.trigger(map, "resize");
+map.setCenter(center);
+});
+google.maps.event.addListener(marker, "click", function() {
+infowindow.open(map, marker);
+});
+}
+google.maps.event.addDomListener(window, 'load', init_map);
+												</script>
+												<script type="text/javascript">
+																/* 30-day trial from myfonts.com, starting Fri Nov 04, 2016 */
+(function() {
+var path = '//easy.myfonts.net/v2/js?sid=155585(font-family=Mrs+Eaves+Roman)&sid=155586(font-family=Mrs+Eaves+Italic)&sid=155587(font-family=Mrs+Eaves+Bold)&key=zBAw3OLobk',
+protocol = ('https:' == document.location.protocol ? 'https:' : 'http:'),
+trial = document.createElement('script');
+trial.type = 'text/javascript';
+trial.async = true;
+trial.src = protocol + path;
+var head = document.getElementsByTagName("head")[0];
+head.appendChild(trial);
+})();
+
+document.addEventListener('click', function(e) {
+var item = e.target;
+console.log(item);
+if (item.contains("down")) {
+e.preventDefault();
+console.log('contains', item);
+return false;
+}
+});
+</script>
+								</div>
+								</main>
+				</body>
+</html>
