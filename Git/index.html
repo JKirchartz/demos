@@ -19,13 +19,28 @@
 					<p>A short guide to git tricks and worthwhile aliases</p>
 				</section>
 				<section>
+					<h1>See what's up</h1>
+<pre><code>
+$> git log
+$> git show
+$> git log --name-status HEAD^..HEAD
+$> git log --graph --format=oneline --abbrev-commit
+</code></pre>
+					<p>List previous commits</p>
+					<p>Show details of last commit, including diff</p>
+					<p>Show shorter details of last commit</p>
+					<p>Save this as an alias like so: `$> git --global alias.last = 'log --name-status HEAD^..HEAD'`</p>
+					<p>show prettier list of previous commits</p>
+					<p>Save this as an alias like so: `$> git --global alias.lo = 'log --graph --format=oneline --abbrev-commit'`</p>
+				</section>
+				<section>
 					<section>
 						<p>Forgot to add a file?</p>
 						<h1>Add to last commit</h1>
 						<pre><code>
-							$>git add path/to/file.ext
-							$>git commit --amend
-						</code></pre>
+$>git add path/to/file.ext
+$>git commit --amend
+</code></pre>
 						<p>Note: if you've already pushed your previous commit to remote, you may cause headaches for other developers missing your forgotten files</p>
 					</section>
 					<section>
@@ -44,23 +59,43 @@
 					<section>
 						<h1>Undo Last commit</h1>
 						<pre><code>$>git reset HEAD~1</code></pre>
-					<p>Save this as an alias like so: `$> git --global alias.undo = 'reset HEAD~1'`</p>
+						<p>Save this as an alias like so: `$> git --global alias.undo = 'reset HEAD~1'`</p>
 					</section>
 				</section>
 				<section>
 					<h1>Git Rebase</h1>
-					<pre><code>$>git rebase -i</code></pre>
+					<pre><code>$>git rebase -i HEAD~5</code></pre>
 					<p>Notes: Do not rebase commits you've already pushed to remote, you will give everyone headaches</p>
-					<p>`-i` enables interactive mode</p>
-					<p>In interactive mode you can re-order commits by changing the order of the lines in the commit message</p>
-				</section>
+					<p>`-i` enables interactive mode, `HEAD~5` selects the last 5 commits for revision.</p>
+					<section>
+						<p>In interactive mode you can combine commits, edit commit messages, you can even re-order commits by rearranging the lines in the commit message</p>
+						<pre><code>
+# Commands:
+#  p, pick = use commit
+#  r, reword = use commit, but edit the commit message
+#  e, edit = use commit, but stop for amending
+#  s, squash = use commit, but meld into previous commit
+#  f, fixup = like "squash", but discard this commit's log message
+#  x, exec = run command (the rest of the line) using shell
+#
+# These lines can be re-ordered; they are executed from top to bottom.
+#
+# If you remove a line here THAT COMMIT WILL BE LOST.
+#
+# However, if you remove everything, the rebase will be aborted.
+#
+# Note that empty commits are commented out
+</code></pre>
+						<p>
+						</section>
+					</section>
+				</div>
 			</div>
-		</div>
-		<script src="js/reveal.js"></script>
-		<script>
-			Reveal.initialize({
-				transition: 'convex',
-			});
-		</script>
+			<script src="js/reveal.js"></script>
+			<script>
+				Reveal.initialize({
+transition: 'convex',
+});
+</script>
 	</body>
-	</html>
+</html>
