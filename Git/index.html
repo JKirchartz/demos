@@ -20,17 +20,20 @@
 				</section>
 				<section>
 					<h1>See what's up</h1>
-<pre><code>$> git log
-$> git show
+<pre><code>$> git log # list previous commits
+$> git show #Show details of last commit, including diff
 $> git log --name-status HEAD^..HEAD
 $> git log --graph --format=oneline --abbrev-commit
 </code></pre>
-					<p>List previous commits</p>
-					<p>Show details of last commit, including diff</p>
 					<p>Show shorter details of last commit</p>
-					<p>Save Alias: <pre><code> git --global alias.last = 'log --name-status HEAD^..HEAD'</code></pre>p>
+					<p>Save Alias: <pre><code>git --global alias.last = 'log --name-status HEAD^..HEAD'</code></pre></p>
 					<p>show prettier list of previous commits</p>
-					<p>Save Alias: <pre><code> git --global alias.lo = 'log --graph --format=oneline --abbrev-commit'</code></pre>p>
+					<p>Save Alias: <pre><code>git --global alias.lo = 'log --graph --format=oneline --abbrev-commit'</code></pre></p>
+				</section>
+				<section>
+					<h1>Changing History</h1>
+					<p>Warning: Altering git's history is potentially dangerous when you've already published the history</p>
+					<p>Use <pre><code>git push --force</code></pre> only if you're absolutely certain you're not causing headaches for other developers</p>
 				</section>
 				<section>
 					<section>
@@ -46,7 +49,7 @@ $>git commit --amend
 						<pre><code>$>git commit --all --ammend --no-edit</code></pre>
 						<p>`--all` adds all changed files</p>
 						<p>`--no-edit` skips editing the commit message</p>
-						<p>Save Alias: <pre><code> git --global alias.caa = 'commit --all --ammend --no-edit'</code></pre>p>
+						<p>Save Alias: <pre><code>git --global alias.caa = 'commit --all --ammend --no-edit'</code></pre></p>
 					</section>
 				</section>
 				<section>
@@ -54,17 +57,17 @@ $>git commit --amend
 						<p>Add the wrong file?</p>
 						<h2>Unstage Changes</h2>
 					<pre><code>$>git reset HEAD --</code></pre>
-						<p>Save Alias: <pre><code> git --global alias.unstage = 'reset HEAD --'</code></pre>p>
-					</section>
-					<section>
-						<h1>Undo Last commit</h1>
+						<p>Save Alias: <pre><code>git --global alias.unstage = 'reset HEAD --'</code></pre></p>
+				</section>
+				<section>
+					<h1>Undo Last commit</h1>
 						<pre><code>$>git reset HEAD~1</code></pre>
-						<p>Save Alias: <pre><code> git --global alias.undo = 'reset HEAD~1'</code></pre>p>
+						<p>Save Alias: <pre><code>git --global alias.undo = 'reset HEAD~1'</code></pre></p>
 					</section>
 				</section>
 				<section>
 					<section>
-						<h1>Git Rebase</h1>
+						<h1>Cover your Tracks</h1>
 					<pre><code>$>git rebase -i HEAD~5</code></pre>
 						<p>Notes: Do not rebase commits you've already pushed to remote, you will give everyone headaches</p>
 						<p>`-i` enables interactive mode, `HEAD~5` selects the last 5 commits for revision.</p>
@@ -89,12 +92,23 @@ $>git commit --amend
 </code></pre>
 						<p>
 						</section>
+						<section>
+<pre><code>$>git pull --rebase</code></pre>
+						<p>Use rebase instead of merge when you pull a commit</p>
+						<p>Replay your commits <em>on top</em> of the remote branch</p>
+						<p>Avoid pointless merge messages</p>
 					</section>
-				</div>
+<section>
+<pre><code>$>git pull --rebase=preserve</code></pre>
+						<p>Use rebase instead of merge when you pull a commit</p>
+						<p>Replay your commits <em>on top</em> of the remote branch</p>
+						<p>Keep pointless merge messages</p>
+				</section>
 			</div>
-			<script src="js/reveal.js"></script>
-			<script>
-				Reveal.initialize({
+		</div>
+		<script src="js/reveal.js"></script>
+		<script>
+			Reveal.initialize({
 transition: 'convex',
 });
 </script>
