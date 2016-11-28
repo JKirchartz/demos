@@ -15,13 +15,12 @@
 			<!-- Any section element inside of this container is displayed as a slide -->
 			<div class="slides">
 				<section>
-					<h1>Look Smarter (Or Break Everything) With Git</h1>
+					<h1>Look Smarter With Git</h1>
 					<p>A short guide to git tricks and worthwhile aliases</p>
 				</section>
 				<section>
 					<h1>See what's up</h1>
-<pre><code>
-$> git log
+<pre><code>$> git log
 $> git show
 $> git log --name-status HEAD^..HEAD
 $> git log --graph --format=oneline --abbrev-commit
@@ -29,16 +28,15 @@ $> git log --graph --format=oneline --abbrev-commit
 					<p>List previous commits</p>
 					<p>Show details of last commit, including diff</p>
 					<p>Show shorter details of last commit</p>
-					<p>Save this as an alias like so: `$> git --global alias.last = 'log --name-status HEAD^..HEAD'`</p>
+					<p>Save Alias: `$> git --global alias.last = 'log --name-status HEAD^..HEAD'`</p>
 					<p>show prettier list of previous commits</p>
-					<p>Save this as an alias like so: `$> git --global alias.lo = 'log --graph --format=oneline --abbrev-commit'`</p>
+					<p>Save Alias: `$> git --global alias.lo = 'log --graph --format=oneline --abbrev-commit'`</p>
 				</section>
 				<section>
 					<section>
 						<p>Forgot to add a file?</p>
 						<h1>Add to last commit</h1>
-						<pre><code>
-$>git add path/to/file.ext
+						<pre><code>$>git add path/to/file.ext
 $>git commit --amend
 </code></pre>
 						<p>Note: if you've already pushed your previous commit to remote, you may cause headaches for other developers missing your forgotten files</p>
@@ -48,29 +46,32 @@ $>git commit --amend
 						<pre><code>$>git commit --all --ammend --no-edit</code></pre>
 						<p>`--all` adds all changed files</p>
 						<p>`--no-edit` skips editing the commit message</p>
-						<p>Save this as an alias like so: `$> git --global alias.caa = 'commit --all --ammend --no-edit'`</p>
+						<p>Save Alias: `$> git --global alias.caa = 'commit --all --ammend --no-edit'`</p>
 					</section>
 				</section>
 				<section>
-					<p>Add the wrong file?</p>
-					<h2>Unstage Changes</h2>
+					<section>
+						<p>Add the wrong file?</p>
+						<h2>Unstage Changes</h2>
 					<pre><code>$>git reset HEAD --</code></pre>
-					<p>Save this as an alias like so: `$> git --global alias.unstage = 'reset HEAD --'`</p>
+						<p>Save Alias: `$> git --global alias.unstage = 'reset HEAD --'`</p>
+					</section>
 					<section>
 						<h1>Undo Last commit</h1>
 						<pre><code>$>git reset HEAD~1</code></pre>
-						<p>Save this as an alias like so: `$> git --global alias.undo = 'reset HEAD~1'`</p>
+						<p>Save Alias: `$> git --global alias.undo = 'reset HEAD~1'`</p>
 					</section>
 				</section>
 				<section>
-					<h1>Git Rebase</h1>
+					<section>
+						<h1>Git Rebase</h1>
 					<pre><code>$>git rebase -i HEAD~5</code></pre>
-					<p>Notes: Do not rebase commits you've already pushed to remote, you will give everyone headaches</p>
-					<p>`-i` enables interactive mode, `HEAD~5` selects the last 5 commits for revision.</p>
+						<p>Notes: Do not rebase commits you've already pushed to remote, you will give everyone headaches</p>
+						<p>`-i` enables interactive mode, `HEAD~5` selects the last 5 commits for revision.</p>
+					</section>
 					<section>
 						<p>In interactive mode you can combine commits, edit commit messages, you can even re-order commits by rearranging the lines in the commit message</p>
-						<pre><code>
-# Commands:
+						<pre><code># Commands:
 #  p, pick = use commit
 #  r, reword = use commit, but edit the commit message
 #  e, edit = use commit, but stop for amending
