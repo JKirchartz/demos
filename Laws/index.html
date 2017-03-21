@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Better Bootstrap</title>
+    <link href="css/reveal.css" rel="stylesheet">
+    <link href="css/theme/sky.css" id="theme" rel="stylesheet">
+    <!-- If the query includes 'print-pdf', use the PDF print sheet -->
+
+  </head>
+
+  <body>
+    <div class="reveal">
+      <!-- Any section element inside of this container is displayed as a slide -->
+      <div class="slides">
+        <section>
+          <h1>Laws of (Business) Software (as a Business)</h1>
+        </section>
+        <section>
+                <h2>Conway's Law</h2>
+                <blockquote cite="https://en.wikipedia.org/wiki/Conway%27s_law">
+                        organizations which design systems ... are constrained to produce designs which are copies of the communication structures of these organizations
+                </blockquote>
+                <p>— Melvin E. Conway</p>
+                <aside class="notes">
+                        The way you talk to each other instructs the way your software works, and the way it communicates with your client.
+                        "Organisations often produce web sites with a content and structure which mirrors the internal concerns of the organisation rather than the needs of the users of the site." ~ Nigel Bevan
+                </aside>
+                <section>
+                        <h3>Further Reading</h3>
+                        <ul>
+                                <li><a href="http://www.melconway.com/Home/Conways_Law.html">Conway on Conway's Law</a></li>
+                                <li><a href="http://www.melconway.com/Home/Committees_Paper.html">How Do Committees Invent?</a></li>
+                        </ul>
+                </section>
+        </section>
+        <section>
+                <h2>Hofstadter's Law</h2>
+                <blockquote cite="https://en.wikipedia.org/wiki/Hofstadter%27s_law">
+                        It always takes longer than you expect, even when you take into account Hofstadter's Law.
+                </blockquote>
+                <p>— Douglas Hofstadter</p>
+                <aside class="notes">
+                        Time estimates are just estimates, the real work is rarely exactly what you expect because realtity is messy.
+                </aside>
+        </section>
+        <section>
+                <h2>Brooks's Law</h2>
+                <blockquote cite="https://en.wikipedia.org/wiki/Brooks%27s_law">
+                        adding manpower to a late software project makes it later
+                </blockquote>
+                <p>— Fred Brooks (Author of The Mythical Man-Month)</p>
+                <aside class="notes">
+                        It takes time to become productive in a new project, helping people become productive makes the productive people unproductive.
+                        Communication takes time, and there's only so many tasks that can happen simultaneously without people stepping on eachothers toes.
+                </aside>
+        </section>
+        <section>
+                <h2>Miller's Law</h2>
+                <blockquote cite="https://en.wikipedia.org/wiki/Miller%27s_law">
+                        All discussions of incremental updates to Bugzilla will eventually trend towards proposals for large scale redesigns or feature additions or replacements for Bugzilla.
+                </blockquote>
+                <p>— Mike Beltzner</p>
+                <aside class="notes">
+                        Dave Miller owned the Bugzilla product, probably saw this happen a lot. Iterating on software tends towards scope/feature creep, or complete and total redesign.
+                        Redesign will likely ignore previously fixed bugs, it's better to pay off techical debt; not all suggested features are valuable to all clients.
+                </aside>
+        </section>
+      </div>
+    </div>
+    <script src="js/reveal.js"></script>
+    <script>
+      Reveal.initialize({
+        transition: 'convex',
+      });
+    </script>
+    </body>
+  </html>
