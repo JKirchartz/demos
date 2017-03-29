@@ -25,9 +25,10 @@
 				<section>
 					<h1>See what's up</h1>
 <pre><code>$> git log # list previous commits
-$> git show #Show details of last commit, including diff
+$> git log -p path/to/file.name # show commits to a single file
 $> git log --name-status HEAD^..HEAD
 $> git log --graph --format=oneline --abbrev-commit
+$> git show #Show details of last commit, including diff
 </code></pre>
 					<p>Show shorter details of last commit</p>
 					<p>Save Alias: <pre><code>git --global alias.last = 'log --name-status HEAD^..HEAD'</code></pre></p>
