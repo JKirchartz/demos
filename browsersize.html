@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Browsersize</title>
+  </head>
+  <body>
+        <h1>Determine Browser Size for Responsive Design</h1>
+        <table cellpadding="0" cellspacing="10" border="0" width="250">
+                <tr><td colspan="2"><b>Dimensions</b></td></tr>
+                <tr><td class="label">Browser window width:</td><td id="windowwidth">?</td></tr>
+                <tr><td class="label">Browser window height:</td><td id="windowheight">?</td></tr>
+                <tr><td class="label">Screen width:</td><td id="screenwidth">?</td></tr>
+                <tr><td class="label">Screen height:</td><td id="screenheight">?</td></tr>
+                <tr><td class="label">Device Pixel Ratio:</td><td id="pixelratio">?</td></tr>
+                <tr><td class="label">Screen color depth:</td><td id="colordepth">?</td></tr>
+        </table>
+        <script>
+/*! GetDevicePixelRatio | Author: Tyson Matanich, 2012 | License: MIT */
+(function(n){n.getDevicePixelRatio=function(){var t=1;return n.screen.systemXDPI!==undefined&&n.screen.logicalXDPI!==undefined&&n.screen.systemXDPI>n.screen.logicalXDPI?t=n.screen.systemXDPI/n.screen.logicalXDPI:n.devicePixelRatio!==undefined&&(t=n.devicePixelRatio),t}})(this);
+/*! Determine Size for Responsive Design | License: NPL */
+                var $ = document.getElementById;
+                var dimensions = {
+                        width: window.innerWidth || document.documentElement.clientWidth || document.body.offsetWidth,
+                        height: window.innerHeight || document.documentElement.clientHeight || document.body.offsetHeight
+                };
+
+                $("screenwidth").innerHTML = screen.width;
+                $("screenheight").innerHTML = screen.height;
+                $("colordepth").innerHTML = screen.colorDepth;
+                $("windowwidth").innerHTML = dimensions.width;
+                $("windowheight").innerHTML = dimensions.height;
+                $("pixelratio").innerHTML = window.getDevicePixelRatio();
+        </script>
+  </body>
+</html>
