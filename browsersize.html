@@ -21,7 +21,7 @@
 /*! GetDevicePixelRatio | Author: Tyson Matanich, 2012 | License: MIT */
 (function(n){n.getDevicePixelRatio=function(){var t=1;return n.screen.systemXDPI!==undefined&&n.screen.logicalXDPI!==undefined&&n.screen.systemXDPI>n.screen.logicalXDPI?t=n.screen.systemXDPI/n.screen.logicalXDPI:n.devicePixelRatio!==undefined&&(t=n.devicePixelRatio),t}})(this);
 /*! Determine Size for Responsive Design | License: NPL */
-                var $ = document.getElementById;
+                var $ = document.getElementById.bind(document);
                 var dimensions = {
                         width: window.innerWidth || document.documentElement.clientWidth || document.body.offsetWidth,
                         height: window.innerHeight || document.documentElement.clientHeight || document.body.offsetHeight
