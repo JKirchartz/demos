@@ -16,6 +16,7 @@
                 <tr><td class="label">Screen height:</td><td id="screenheight">?</td></tr>
                 <tr><td class="label">Device Pixel Ratio:</td><td id="pixelratio">?</td></tr>
                 <tr><td class="label">Screen color depth:</td><td id="colordepth">?</td></tr>
+                <tr><td class="label">User Agent:</td><td id="useragent">?</td></tr>
         </table>
         <script>
 /*! GetDevicePixelRatio | Author: Tyson Matanich, 2012 | License: MIT */
@@ -33,6 +34,7 @@
                 $("windowwidth").innerHTML = dimensions.width;
                 $("windowheight").innerHTML = dimensions.height;
                 $("pixelratio").innerHTML = window.getDevicePixelRatio();
+                $("useragent").innerHTML = navigator.userAgent;
         </script>
   </body>
 </html>
