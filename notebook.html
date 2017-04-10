@@ -11,12 +11,24 @@
                 <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.25.0/codemirror.min.css">
                 <style>
                         html,body{height:100%;width:100%;margin:0;padding:0;overflow:hidden}
-                        #notepad{height:100%;width:100%;padding:1%;font-size:100%;line-height:125%;font-family:san-serif;box-sizing:border-box}
+                        textarea { visibility:hidden; }
+                        .CodeMirror {height:100%}
+                        .navbar {margin-bottom:0;}
                         ::selection{background:#7D7}
                         ::-moz-selection{background:#7D7}
                 </style>
         </head>
         <body>
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">Notebook</a>
+    </div>
+    <ul class="nav navbar-nav">
+            <!-- TODO: make this add another localStorage item for another 'page' of notes      <li><a href="#add" class="add"><i class="glyphicon glyphicon-plus"></i></a></li> -->
+    </ul>
+  </div>
+</nav>
                 <textarea placeholder="Type here, see it here..."  id="notepad"></textarea>
                 <script>
                         $(function(){
@@ -26,6 +38,11 @@
                                         notepad.on("changes", function(changeObj) {
                                                         changeObj.save();
                                                         localStorage.setItem("notepad", changeObj.getTextArea().value);
+                                                        });
+                                        $('.navbar').on('click', function(evt) {
+                                                        if (evt.target.classList.contains('add')) {
+                                                                        console.log('add localStorage item for new page of notes');
+                                                                        }
                                                         });
                         });
                 </script>
