@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+        <head>
+                <meta charset="utf-8" />
+                <meta name="viewport" content="width=device-width, initial-scale=1">
+                <title>Notebook</title>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+                <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.25.0/codemirror.min.js"></script>
+                <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+                <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.25.0/codemirror.min.css">
+                <style>
+                        html,body{height:100%;width:100%;margin:0;padding:0;overflow:hidden}
+                        #notepad{height:100%;width:100%;padding:1%;font-size:100%;line-height:125%;font-family:san-serif;box-sizing:border-box}
+                        ::selection{background:#7D7}
+                        ::-moz-selection{background:#7D7}
+                </style>
+        </head>
+        <body>
+                <textarea placeholder="Type here, see it here..."  id="notepad"></textarea>
+                <script>
+                        $(function(){
+                                        var notepad = CodeMirror.fromTextArea(document.getElementById('notepad'), {lineNumbers: true});
+                                        notepad.on("changes", function(changeObj) {
+                                                        changeObj.save();
+                                                        localStorage.setItem("notepad", changeObj.getTextArea().value);
+                                                        });
+                        });
+                </script>
+        </body>
+</html>
