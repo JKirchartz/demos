@@ -34,7 +34,7 @@
                         $(function(){
                                         var textArea = document.getElementById('notepad');
                                         textArea.value = localStorage.getItem("notepad");
-                                        var notepad = CodeMirror.fromTextArea(textArea, {lineNumbers: true});
+                                        var notepad = CodeMirror.fromTextArea(textArea, {lineNumbers: true, readOnly: false});
                                         notepad.on("changes", function(changeObj) {
                                                         changeObj.save();
                                                         localStorage.setItem("notepad", changeObj.getTextArea().value);
