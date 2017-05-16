@@ -36,7 +36,7 @@
                 box-align: center;
                 text-align:center;
 
-                background: url(http://upload.wikimedia.org/wikipedia/commons/7/79/Operation_Upshot-Knothole_-_Badger_001.jpg) #111;
+                background: url(https://i.ytimg.com/vi/wGxiNK-8hHE/maxresdefault.jpg) #111;
                 background-position: center center;
                 color:#000;
                 text-shadow:1px 1px 0 #ccc;
@@ -87,8 +87,8 @@
                 2px -2px 5px rgba(0,0,0,0.8),
                 -2px 2px 5px rgba(255,255,255,0.8);
                 display:block;
-                -webkit-animation:0.8s spin infinite linear; 
-                animation:0.8s spin infinite linear; 
+                -webkit-animation:0.8s spin infinite linear;
+                animation:0.8s spin infinite linear;
             }
         </style>
         <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
@@ -102,7 +102,7 @@
             </form>
             <div id="result">
                 <h2>You have survived <div><span id="counter"></span></div> end-times.</h2>
-                <p>Find out more on <a href="https://en.wikipedia.org/wiki/List_of_dates_predicted_for_apocalyptic_events">wikipedia</a></p> 
+                <p>Find out more on <a href="https://en.wikipedia.org/wiki/List_of_dates_predicted_for_apocalyptic_events">wikipedia</a></p>
                 <div id="social">
                     <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://bit.ly/ZqUg4K" data-text="how many times have you survived the apocalypse?" data-via="JKirchartz" data-related="jkirchartz">Tweet</a>
                     <div class="fb-like" data-href="http://jkirchartz.com/demos/How_Many_Apocalypses_Have_I_Survived.html" data-send="false" data-width="320" data-show-faces="false" data-layout="button_count"></div>
@@ -115,7 +115,7 @@
                 d = new Date(),
                 currYear = d.getFullYear();
 $(function() {
-        $.getJSON("http://en.wikipedia.org/w/api.php?action=parse&rvprop=content&page=List_of_dates_predicted_for_apocalyptic_events&format=json&callback=?", 
+        $.getJSON("http://en.wikipedia.org/w/api.php?action=parse&rvprop=content&page=List_of_dates_predicted_for_apocalyptic_events&format=json&callback=?",
                 function(data) {
                 $(data.parse.text["*"]).find("tr").each(function() {
                         var origin = $(this).find("td:first").text();
@@ -138,8 +138,8 @@ $("#form").on("submit", function(e) {
         }
         getYears.map(function(item) {
                 var yr = item.match(/\d{3,9}/);
-                if (yr !== null && 
-                        (yr[0] >= inputYear) && 
+                if (yr !== null &&
+                        (yr[0] >= inputYear) &&
                         (yr[0] <= currYear)
                    ) {
                 count++;
