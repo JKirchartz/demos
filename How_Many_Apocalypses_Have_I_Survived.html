@@ -139,37 +139,26 @@
       </div>
     </div>
 
-
-    <form action="#" id="form" name="form">
-      <h1>How Many Apocalypses Have I Survived?</h1>
-      <input id="year" placeholder="Year of Birth" type="tel"><button id="submit" type="submit">&raquo;</button>
-    </form>
-
-
+     <h1>How Many Apocalypses Have I Survived?</h1>
     <div id="result">
             <div class="h2">You have survived
                     <div id="counter">
                     </div>
                     end times
             </div>
-
-
-
-
       <p>Find out more on <a href="https://en.wikipedia.org/wiki/List_of_dates_predicted_for_apocalyptic_events">wikipedia</a></p>
-
-
       <div id="social">
-        <a class="twitter-share-button" data-related="jkirchartz" data-text="how many times have you survived the apocalypse?" data-url="http://bit.ly/ZqUg4K" data-via="JKirchartz" href="https://twitter.com/share">Tweet</a>
-
-        <div class="fb-like" data-href="http://jkirchartz.com/demos/How_Many_Apocalypses_Have_I_Survived.html" data-layout="button_count" data-send="false" data-show-faces="false" data-width="320">
+        <a class="twitter-share-button" data-related="jkirchartz" data-text="how many times have you survived the apocalypse?" data-url="http://jkirchartz.com/demos/How_Many_Apocalypses_Have_I_Survived.html" data-via="JKirchartz" href="https://twitter.com/share">Tweet</a>
+        <div class="fb-like" data-href="http://jkirchartz.com/demos/How_Many_Apocalypses_Have_I_Survived.html" data-layout="button" data-size="small" data-share="true" data-show-faces="false" data-width="320">
         </div>
       </div>
     </div>
 
+    <form action="#" id="form" name="form">
+      <input id="year" placeholder="Year of Birth" type="tel"><button id="submit" type="submit">&raquo;</button>
+    </form>
 
-    <div id="fb-root">
-    </div>
+
     <script>
                         var getYears = [],
                         count = 0,
@@ -208,18 +197,20 @@
                                 });
                 $("#counter").text(count);
                 $("#result").show();
+                $('[id*=twitter-widget]').attr('data-text', "How many apocalypses have you survived? I've survived " + count + " times!");
                 count = 0;
                 return false;
     });
-    (function(d, s, id) {
-    var js, fjs = d.getElementsByTagName(s)[0];
-    if (d.getElementById(id)) return;
-    js = d.createElement(s); js.id = id;
-    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
-    fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'facebook-jssdk'));
-    !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
+!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
     </script>
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.9&appId=1879249312305029";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
   </div>
 </body>
 </html>
