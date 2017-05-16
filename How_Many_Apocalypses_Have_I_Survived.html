@@ -1,163 +1,225 @@
-<!doctype html>
+<!DOCTYPE html>
+
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>How Many Apocalypses Have I Survived?</title>
-        <meta name="apple-mobile-web-app-capable" content="yes" />
-        <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
-        <script type='text/javascript' charset='utf-8'>
-            window.addEventListener('load', function(e) {
-                setTimeout(function() { window.scrollTo(0, 1); }, 1);
-            }, false);
-        </script>
-        <style>
-            @import url(http://fonts.googleapis.com/css?family=PT+Sans+Narrow);
-            html, body {
-                height:100%;width:100%;
-                margin:0;
-                padding:0;
-            }
-            body {
-                font:100%/1.5;
-                font-family: 'PT Sans Narrow', Helvetica, sans-serif;
-                display: -webkit-box;
-                -webkit-box-orient: horizontal;
-                -webkit-box-pack: center;
-                -webkit-box-align: center;
+<head>
+  <meta charset="UTF-8">
 
-                display: -moz-box;
-                -moz-box-orient: horizontal;
-                -moz-box-pack: center;
-                -moz-box-align: center;
-
-                display: box;
-                box-orient: horizontal;
-                box-pack: center;
-                box-align: center;
-                text-align:center;
-
-                background: url(https://i.ytimg.com/vi/wGxiNK-8hHE/maxresdefault.jpg) #111;
-                background-position: center center;
-                color:#000;
-                text-shadow:1px 1px 0 #ccc;
-            }
-            #main {
-                max-width:90%;
-            }
-            #year, #submit {
-                display:inline-block;
-                font-size:2em;
-                line-height:1.5;
-                text-align:center;
-                max-width:83%;
-            }
-            #social {
-                margin:1em;
-            }
-            #social > * {
-                display:inline!important;
-            }
-            h1 {font-size:2em}
-            h2 div { padding:0.6em }
-            #result, #form {display:none}
-            #result {margin-top:1em;}
-            #counter {
-                background:#f00;
-                padding:0.5em;
-                border-radius:50%;
-                height:2em;
-                width:2em;
-            }
-
-
-            @-webkit-keyframes spin{
-                0% { -webkit-transform:rotate(0deg); -webkit-transform-origin:50% 50%; }
-                100% { -webkit-transform:rotate(359deg); }
-            }
-            @keyframes spin{
-                0% { transform:rotate(0deg); }
-                100% { transform:rotate(359deg); }
-            }
-
-            #spinner {
-                border-radius:100%; height:2em; width:2em;
-                margin:1em auto;
-                box-shadow:2px 2px 5px rgba(0,0,0,0.8),
-                -2px -2px 5px rgba(255,255,255,0.8),
-                2px -2px 5px rgba(0,0,0,0.8),
-                -2px 2px 5px rgba(255,255,255,0.8);
-                display:block;
-                -webkit-animation:0.8s spin infinite linear;
-                animation:0.8s spin infinite linear;
-            }
-        </style>
-        <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-    </head>
-    <body>
-        <div id="main">
-            <div id="loading">Loading<br/><div id="spinner"></div></div>
-            <form id="form" action="#">
-                <h1>How Many Apocalypses Have I Survived?</h1>
-                <input type="tel" id="year" placeholder="Year of Birth"/><button type="submit" id="submit">&raquo;</button>
-            </form>
-            <div id="result">
-                <h2>You have survived <div><span id="counter"></span></div> end-times.</h2>
-                <p>Find out more on <a href="https://en.wikipedia.org/wiki/List_of_dates_predicted_for_apocalyptic_events">wikipedia</a></p>
-                <div id="social">
-                    <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://bit.ly/ZqUg4K" data-text="how many times have you survived the apocalypse?" data-via="JKirchartz" data-related="jkirchartz">Tweet</a>
-                    <div class="fb-like" data-href="http://jkirchartz.com/demos/How_Many_Apocalypses_Have_I_Survived.html" data-send="false" data-width="320" data-show-faces="false" data-layout="button_count"></div>
-                </div>
-            </div>
-            <div id="fb-root"></div>
-            <script>
-                var getYears = [],
-                count = 0,
-                d = new Date(),
-                currYear = d.getFullYear();
-$(function() {
-        $.getJSON("http://en.wikipedia.org/w/api.php?action=parse&rvprop=content&page=List_of_dates_predicted_for_apocalyptic_events&format=json&callback=?",
-                function(data) {
-                $(data.parse.text["*"]).find("tr").each(function() {
-                        var origin = $(this).find("td:first").text();
-                        if (origin.search(/\d\d+/) != -1) {
-                        getYears.push(origin.replace(/,/gi, ""));
-                        }
-                        });
-                $("#loading").hide();
-                $("#form").show();
-                });
-        });
-
-$("#form").on("submit", function(e) {
-        e.preventDefault();
-        var inputYear = parseInt($("#year").val(),10);
-        if(!inputYear){
-        $("#year").val("");
-        alert("Try a number, genius.");
-        return false;
+  <title>How Many Apocalypses Have I Survived?</title>
+  <meta content="yes" name="apple-mobile-web-app-capable">
+  <meta content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0" name="viewport">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:700" rel="stylesheet">
+  <script charset='utf-8' type='text/javascript'>
+                        window.addEventListener('load', function(e) {
+                                        setTimeout(function() { window.scrollTo(0, 1); }, 1);
+                                        }, false);
+  </script>
+  <style>
+        html, body {
+        height:100%;width:100%;
+        margin:0;
+        padding:0;
         }
-        getYears.map(function(item) {
-                var yr = item.match(/\d{3,9}/);
-                if (yr !== null &&
-                        (yr[0] >= inputYear) &&
-                        (yr[0] <= currYear)
-                   ) {
-                count++;
-                }
+        body {
+        font:200%/1.5;
+        font-family: 'Open Sans', Helvetica, sans-serif;
+        font-weight: 700;
+        display: -webkit-box;
+        -webkit-box-orient: horizontal;
+        -webkit-box-pack: center;
+        -webkit-box-align: center;
+
+        display: -moz-box;
+        -moz-box-orient: horizontal;
+        -moz-box-pack: center;
+        -moz-box-align: center;
+
+        display: box;
+        box-orient: horizontal;
+        box-pack: center;
+        box-align: center;
+        text-align:center;
+
+        background: url(https://i.ytimg.com/vi/wGxiNK-8hHE/maxresdefault.jpg) #111;
+        background-size: cover;
+        background-position: center center;
+        color: white;
+  }
+  #main {
+        max-width:90%;
+  }
+  #year, #submit {
+        display:inline-block;
+        font-size:2em;
+        line-height:1.5;
+        text-align:center;
+        max-width:83%;
+  }
+  #social {
+        margin:1em;
+  }
+  #social > * {
+        display:inline!important;
+  }
+  h1, #counter {
+        font-size: 50px;
+        text-shadow: 1px 1px #999, 2px 2px #999, 3px 3px #999, 0 0 5px #111;
+        -webkit-font-smoothing: antialiased;
+  }
+  @media (min-width: 576px) {
+        h1, #counter {
+                font-size: calc(15.625vw - 40px);
+        }
+  }
+  @media (min-width: 768px) {
+        h1, #counter {
+                font-size: calc(8.92857vw + 11.42857px);
+        }
+  }
+  @media (min-width: 992px) {
+        h1, #counter {
+                font-size: 100px;
+        }
+  }
+  #result p, #result a, #result a:hover {
+        color: white;
+        text-decoration: none;
+        text-shadow: 0 0 10px #111, 0 0 5px #000, 0 0 1px #000;
+  }
+  #result .h2 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        margin: 1em auto;
+        background:#f00;
+        padding:0.5em;
+        border-radius:50%;
+        width: 30vw;
+        height: 30vw;
+  }
+  #counter {
+        margin: 0;
+        padding: 0;
+  }
+  #result, #form {display:none}
+
+
+  @-webkit-keyframes spin{
+        0% { -webkit-transform:rotate(0deg); -webkit-transform-origin:50% 50%; }
+        100% { -webkit-transform:rotate(359deg); }
+  }
+  @keyframes spin{
+        0% { transform:rotate(0deg); }
+        100% { transform:rotate(359deg); }
+  }
+
+  #spinner {
+        border-radius:100%; height:2em; width:2em;
+        margin:1em auto;
+        box-shadow:2px 2px 5px rgba(0,0,0,0.8),
+        -2px -2px 5px rgba(255,255,255,0.8),
+        2px -2px 5px rgba(0,0,0,0.8),
+        -2px 2px 5px rgba(255,255,255,0.8);
+        display:block;
+        -webkit-animation:0.8s spin infinite linear;
+        animation:0.8s spin infinite linear;
+  }
+  </style>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js">
+  </script>
+</head>
+
+<body>
+  <div id="main">
+    <div id="loading">
+      Loading<br>
+
+
+      <div id="spinner">
+      </div>
+    </div>
+
+
+    <form action="#" id="form" name="form">
+      <h1>How Many Apocalypses Have I Survived?</h1>
+      <input id="year" placeholder="Year of Birth" type="tel"><button id="submit" type="submit">&raquo;</button>
+    </form>
+
+
+    <div id="result">
+            <div class="h2">You have survived
+                    <div id="counter">
+                    </div>
+                    end times
+            </div>
+
+
+
+
+      <p>Find out more on <a href="https://en.wikipedia.org/wiki/List_of_dates_predicted_for_apocalyptic_events">wikipedia</a></p>
+
+
+      <div id="social">
+        <a class="twitter-share-button" data-related="jkirchartz" data-text="how many times have you survived the apocalypse?" data-url="http://bit.ly/ZqUg4K" data-via="JKirchartz" href="https://twitter.com/share">Tweet</a>
+
+        <div class="fb-like" data-href="http://jkirchartz.com/demos/How_Many_Apocalypses_Have_I_Survived.html" data-layout="button_count" data-send="false" data-show-faces="false" data-width="320">
+        </div>
+      </div>
+    </div>
+
+
+    <div id="fb-root">
+    </div>
+    <script>
+                        var getYears = [],
+                        count = 0,
+                        d = new Date(),
+                        currYear = d.getFullYear();
+    $(function() {
+                $.getJSON("http://en.wikipedia.org/w/api.php?action=parse&rvprop=content&page=List_of_dates_predicted_for_apocalyptic_events&format=json&callback=?",
+                                function(data) {
+                                $(data.parse.text["*"]).find("tr").each(function() {
+                                                var origin = $(this).find("td:first").text();
+                                                if (origin.search(/\d\d+/) != -1) {
+                                                getYears.push(origin.replace(/,/gi, ""));
+                                                }
+                                                });
+                                $("#loading").hide();
+                                $("#form").show();
+                                });
                 });
-        $("#counter").text(count);
-        $("#result").show();
-        count = 0;
-        return false;
-});
-(function(d, s, id) {
- var js, fjs = d.getElementsByTagName(s)[0];
- if (d.getElementById(id)) return;
- js = d.createElement(s); js.id = id;
- js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
- fjs.parentNode.insertBefore(js, fjs);
- }(document, 'script', 'facebook-jssdk'));
-!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
-</script>
+
+    $("#form").on("submit", function(e) {
+                e.preventDefault();
+                var inputYear = parseInt($("#year").val(),10);
+                if(!inputYear){
+                $("#year").val("");
+                alert("Try a number, genius.");
+                return false;
+                }
+                getYears.map(function(item) {
+                                var yr = item.match(/\d{3,9}/);
+                                if (yr !== null &&
+                                                (yr[0] >= inputYear) &&
+                                                (yr[0] <= currYear)
+                                   ) {
+                                count++;
+                                }
+                                });
+                $("#counter").text(count);
+                $("#result").show();
+                count = 0;
+                return false;
+    });
+    (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+    fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+    !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
+    </script>
+  </div>
 </body>
 </html>
