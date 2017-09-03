@@ -6,7 +6,7 @@ v.addEventListener('load', function() {
   var s = Math.round(Math.random()) ?
       (Math.round(Math.random() * 10)) :
       (Math.round(Math.random()*10) + ', ' + Math.round(Math.random()*10));
-  if(1) { // Math.round(Math.random() * 100) > 25) {
+  if(Math.round(Math.random() * 100) > 25) {
     var st = document.getElementById('strip');
     st.setAttribute('transform', 'scale(' + s + ')');
     var m = st.getTransformToElement(v);
