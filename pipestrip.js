@@ -2,7 +2,7 @@ SVGElement.prototype.getTransformToElement = SVGElement.prototype.getTransformTo
 var v = document.getElementById('viewport');
 v.addEventListener('load', function() {
   var oH = 349, oW = 1200;
-  var nH = Math.round(Math.random() * (oH - 100)) + 100, nW = Math.round(Math.random() * (oW - 100)) + 100;
+  var nH = viewport.getAttribute('height'), nW = viewport.getAttribute('width');
   var s = Math.round(Math.random()) ?
       (Math.round(Math.random() * 10)) :
       (Math.round(Math.random()*10) + ', ' + Math.round(Math.random()*10));
