@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" id="viewport" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="1200" height="349" style="background:#f0f;">
+<svg xmlns="http://www.w3.org/2000/svg" id="viewport" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="1200" height="349">
   <image id="strip" xlink:href="https://pbs.twimg.com/media/C6f54WXWQAABCyH.jpg" />
   <script>
     SVGElement.prototype.getTransformToElement = SVGElement.prototype.getTransformToElement || function(elem) {return elem.getScreenCTM().inverse().multiply(this.getScreenCTM());};
