@@ -31,6 +31,8 @@
                 <li><a href='javascript:(function(){var ins=document.getElementsByTagName("input");for(var i=0,l=ins.length;i<l;i++){if(ins[i].type == "password"){ins[i].type = "";}}})()'>Change password fields to text</a></li>
                 <li><a href='javascript:(function(){var u = window.location.toString(); u = u.replace(new RegExp("(i\.)"),""); u = u.substr(0,u.lastIndexOf(".")) || u; window.open(u,"_blank","");})()'>Imgur image to page</a></li>
                 <li><a href='javascript:(function(){document.getElementById("viewissuesidebar").style.display="none";})'>Hide "People" sidebar in Jira</a></li>
+                <li><a href='javascript:(function(){var elems=document.getElementsByTagName("a");for(var i=0;i<elems.length;i++)window.open(elems[i]["href"])})();'>Open All Links on Page</a></li>
+                <li><a href="javascript:var e=document.links;for(var i=1;i<e.length;i++){var a=e[i],j=new Image;j.src=a.href,j.onerror=function(){this.style.display='none'},a.parentNode.insertBefore(j,a)}">Open Image Links as Inline Images</a></li>
             </ol>
         </div>
     </body>
