@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+    <title>HTML5 notepad app</title>
+    <meta charset="utf-8" />
+    <!--[if lt IE 9
+      ]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script
+    ><![endif]-->
+    <style type="text/css">
+      html,
+      body {
+        background: #fcfcfc;
+        color: #444;
+        height: 100%;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        position: relative;
+      }
+      #notepad {
+        height: 100%;
+        width: 100%;
+        padding: 1%;
+        font-size: 100%;
+        line-height: 125%;
+        font-family: san-serif;
+        box-sizing: border-box;
+      }
+      ::selection {
+        background: #7d7;
+      }
+      ::-moz-selection {
+        background: #7d7;
+      }
+      label[for="settings"] {
+        display: block;
+        position: absolute;
+        top: 0.5em;
+        right: 0.5em;
+        z-index: 9999;
+      }
+      [type=radio] {
+        position:absolute;
+        left: -9999px;
+      }
+      [type=radio] ~ #config {
+          display: none;
+          z-index: -1111;
+      }
+      [type=radio]:checked ~ #config {
+          display: block;
+          z-index: 8888;
+      }
+    </style>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.45.0/codemirror.min.css"
+      type="text/css"
+    />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.45.0/codemirror.min.js"
+      type="text/javascript"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/localStorage/2.0.1/localStorage.min.js"
+      type="text/javascript"
+    ></script>
+  </head>
+  <body>
+    <input type="radio" id="settings" name="settings">
+    <label for="settings"><img src="http://icons.iconarchive.com/icons/google/noto-emoji-objects/16/62971-gear-icon.png" alt="settings"/></label>
+    <script type="text/javascript">
+      /* the code */
+      var CM = CodeMirror(document.body, {
+        value: localStorage.getItem("CMNotepad") || ""
+      });
+      /* save */
+      var s = function() {
+        localStorage.setItem("CMNotepad", CM.getValue());
+      };
+      /* autosave onchange and every 500ms and when you close the window */
+      CM.on("change", s);
+      setInterval(s, 500);
+      window.onunload = s();
+    </script>
+  </body>
+</html>
