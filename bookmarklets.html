@@ -33,6 +33,7 @@
                 <li><a href='javascript:(function(){document.getElementById("viewissuesidebar").style.display="none";})'>Hide "People" sidebar in Jira</a></li>
                 <li><a href='javascript:(function(){var elems=document.getElementsByTagName("a");for(var i=0;i<elems.length;i++)window.open(elems[i]["href"])})();'>Open All Links on Page</a></li>
                 <li><a href="javascript:var e=document.links;for(var i=1;i<e.length;i++){var a=e[i],j=new Image;j.src=a.href,j.onerror=function(){this.style.display='none'},a.parentNode.insertBefore(j,a)}">Open Image Links as Inline Images</a></li>
+                <li><a href="javascript:(function(){document.head.parentNode.removeChild(document.head);})">Remove DOM Head</a></li>
             </ol>
         </div>
     </body>
