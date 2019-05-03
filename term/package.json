@@ -1,0 +1,22 @@
+{
+  "name": "term",
+  "version": "1.0.0",
+  "description": "Testing xterm.js",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jkirchartz/Demos.git"
+  },
+  "author": "JKirchartz",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jkirchartz/Demos/issues"
+  },
+  "homepage": "https://github.com/jkirchartz/Demos#readme",
+  "dependencies": {
+    "xterm": "^3.12.2"
+  }
+}
