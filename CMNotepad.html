@@ -51,15 +51,15 @@
         right: 0.5em;
         z-index: 9999;
       }
-      [type=radio] {
+      [type=checkbox] {
         position:absolute;
         left: -9999px;
       }
-      [type=radio] ~ #config {
+      [type=checkbox] ~ #config {
           display: none;
           z-index: -1111;
       }
-      [type=radio]:checked ~ #config {
+      [type=checkbox]:checked ~ #config {
           display: block;
           z-index: 8888;
       }
@@ -79,7 +79,7 @@
     ></script>
   </head>
   <body>
-    <input type="radio" id="settings" name="settings">
+    <input type="checkbox" id="settings" name="settings">
     <label for="settings"><img src="http://icons.iconarchive.com/icons/google/noto-emoji-objects/16/62971-gear-icon.png" alt="settings"/></label>
     <div id="config">Coming Soon: CodeMirror settings &amp; more!</div>
     <script type="text/javascript">
