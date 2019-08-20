@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
     <title>HTML5 notepad app</title>
     <meta charset="utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, minimum-scale=1.0">
     <!--[if lt IE 9
       ]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script
     ><![endif]-->
@@ -28,11 +29,20 @@
         font-family: san-serif;
         box-sizing: border-box;
       }
+      .CodeMirror {
+        height: 100vh;
+        width: 100vw;
+      }
       ::selection {
         background: #7d7;
       }
       ::-moz-selection {
         background: #7d7;
+      }
+      #config {
+        display:inline-block;
+        margin:1rem;
+        padding:1rem;
       }
       label[for="settings"] {
         display: block;
@@ -71,10 +81,12 @@
   <body>
     <input type="radio" id="settings" name="settings">
     <label for="settings"><img src="http://icons.iconarchive.com/icons/google/noto-emoji-objects/16/62971-gear-icon.png" alt="settings"/></label>
+    <div id="config">Coming Soon: CodeMirror settings &amp; more!</div>
     <script type="text/javascript">
       /* the code */
       var CM = CodeMirror(document.body, {
         value: localStorage.getItem("CMNotepad") || ""
+        viewportMargin: Infinity
       });
       /* save */
       var s = function() {
