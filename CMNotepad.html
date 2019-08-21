@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>HTML5 notepad app</title>
+    <title>CodeMirror Notepad app</title>
     <meta charset="utf-8" />
     <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, minimum-scale=1.0">
@@ -16,6 +16,22 @@
     ></script>
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/localStorage/2.0.1/localStorage.min.js"
+      type="text/javascript"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.48.4/addon/mode/loadmode.min.js"
+      type="text/javascript"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.48.4/mode/meta.min.js"
+      type="text/javascript"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.48.4/mode/meta.min.js"
+      type="text/javascript"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.48.4/addon/display/placeholder.min.js"
       type="text/javascript"
     ></script>
     <style type="text/css">
@@ -88,6 +104,227 @@
     <input type="checkbox" id="settings" name="settings">
     <label for="settings"><img src="http://icons.iconarchive.com/icons/google/noto-emoji-objects/16/62971-gear-icon.png" alt="settings"/></label>
     <form id="config">
+      <label>Theme
+        <select id="theme">
+          <option value="default">none</option>
+          <option value="3024-day">3024 day</option>
+          <option value="3024-night">3024 night</option>
+          <option value="abcdef">Abcdef</option>
+          <option value="ambiance-mobile">Ambiance mobile</option>
+          <option value="ambiance">Ambiance</option>
+          <option value="base16-dark">Base16 dark</option>
+          <option value="base16-light">Base16 light</option>
+          <option value="bespin">Bespin</option>
+          <option value="blackboard">Blackboard</option>
+          <option value="cobalt">Cobalt</option>
+          <option value="colorforth">Colorforth</option>
+          <option value="darcula">Darcula</option>
+          <option value="dracula">Dracula</option>
+          <option value="duotone-dark">Duotone dark</option>
+          <option value="duotone-light">Duotone light</option>
+          <option value="eclipse">Eclipse</option>
+          <option value="elegant">Elegant</option>
+          <option value="erlang-dark">Erlang dark</option>
+          <option value="gruvbox-dark">Gruvbox dark</option>
+          <option value="hopscotch">Hopscotch</option>
+          <option value="icecoder">Icecoder</option>
+          <option value="idea">Idea</option>
+          <option value="isotope">Isotope</option>
+          <option value="lesser-dark">Lesser dark</option>
+          <option value="liquibyte">Liquibyte</option>
+          <option value="lucario">Lucario</option>
+          <option value="material">Material</option>
+          <option value="mbo">Mbo</option>
+          <option value="mdn-like">Mdn like</option>
+          <option value="midnight">Midnight</option>
+          <option value="monokai">Monokai</option>
+          <option value="neat">Neat</option>
+          <option value="neo">Neo</option>
+          <option value="night">Night</option>
+          <option value="nord">Nord</option>
+          <option value="oceanic-next">Oceanic next</option>
+          <option value="panda-syntax">Panda syntax</option>
+          <option value="paraiso-dark">Paraiso dark</option>
+          <option value="paraiso-light">Paraiso light</option>
+          <option value="pastel-on-dark">Pastel on dark</option>
+          <option value="railscasts">Railscasts</option>
+          <option value="rubyblue">Rubyblue</option>
+          <option value="seti">Seti</option>
+          <option value="shadowfox">Shadowfox</option>
+          <option value="solarized">Solarized</option>
+          <option value="ssms">Ssms</option>
+          <option value="the-matrix">The matrix</option>
+          <option value="tomorrow-night-bright">Tomorrow night bright</option>
+          <option value="tomorrow-night-eighties">Tomorrow night eighties</option>
+          <option value="ttcn">Ttcn</option>
+          <option value="twilight">Twilight</option>
+          <option value="vibrant-ink">Vibrant ink</option>
+          <option value="xq-dark">Xq dark</option>
+          <option value="xq-light">Xq light</option>
+          <option value="yeti">Yeti</option>
+          <option value="yonce">Yonce</option>
+          <option value="zenburn">Zenburn</option>
+        </select>
+      </label>
+      <label>Mode
+        <select id="mode">
+          <option value="text/plain">Plain Text</option>
+          <option value="text/apl">APL</option>
+          <option value="undefined">PGP</option>
+          <option value="text/x-ttcn-asn">ASN.1</option>
+          <option value="text/x-asterisk">Asterisk</option>
+          <option value="text/x-brainfuck">Brainfuck</option>
+          <option value="text/x-csrc">C</option>
+          <option value="text/x-c++src">C++</option>
+          <option value="text/x-cobol">Cobol</option>
+          <option value="text/x-csharp">C#</option>
+          <option value="text/x-clojure">Clojure</option>
+          <option value="text/x-clojurescript">ClojureScript</option>
+          <option value="text/x-gss">Closure Stylesheets (GSS)</option>
+          <option value="text/x-cmake">CMake</option>
+          <option value="undefined">CoffeeScript</option>
+          <option value="text/x-common-lisp">Common Lisp</option>
+          <option value="application/x-cypher-query">Cypher</option>
+          <option value="text/x-cython">Cython</option>
+          <option value="text/x-crystal">Crystal</option>
+          <option value="text/css">CSS</option>
+          <option value="text/x-cassandra">CQL</option>
+          <option value="text/x-d">D</option>
+          <option value="undefined">Dart</option>
+          <option value="text/x-diff">diff</option>
+          <option value="text/x-django">Django</option>
+          <option value="text/x-dockerfile">Dockerfile</option>
+          <option value="application/xml-dtd">DTD</option>
+          <option value="text/x-dylan">Dylan</option>
+          <option value="text/x-ebnf">EBNF</option>
+          <option value="text/x-ecl">ECL</option>
+          <option value="application/edn">edn</option>
+          <option value="text/x-eiffel">Eiffel</option>
+          <option value="text/x-elm">Elm</option>
+          <option value="application/x-ejs">Embedded Javascript</option>
+          <option value="application/x-erb">Embedded Ruby</option>
+          <option value="text/x-erlang">Erlang</option>
+          <option value="text/x-esper">Esper</option>
+          <option value="text/x-factor">Factor</option>
+          <option value="text/x-fcl">FCL</option>
+          <option value="text/x-forth">Forth</option>
+          <option value="text/x-fortran">Fortran</option>
+          <option value="text/x-fsharp">F#</option>
+          <option value="text/x-gas">Gas</option>
+          <option value="text/x-feature">Gherkin</option>
+          <option value="text/x-gfm">GitHub Flavored Markdown</option>
+          <option value="text/x-go">Go</option>
+          <option value="text/x-groovy">Groovy</option>
+          <option value="text/x-haml">HAML</option>
+          <option value="text/x-haskell">Haskell</option>
+          <option value="text/x-literate-haskell">Haskell (Literate)</option>
+          <option value="text/x-haxe">Haxe</option>
+          <option value="text/x-hxml">HXML</option>
+          <option value="application/x-aspx">ASP.NET</option>
+          <option value="text/html">HTML</option>
+          <option value="message/http">HTTP</option>
+          <option value="text/x-idl">IDL</option>
+          <option value="text/x-pug">Pug</option>
+          <option value="text/x-java">Java</option>
+          <option value="application/x-jsp">Java Server Pages</option>
+          <option value="undefined">JavaScript</option>
+          <option value="undefined">JSON</option>
+          <option value="application/ld+json">JSON-LD</option>
+          <option value="text/jsx">JSX</option>
+          <option value="text/jinja2">Jinja2</option>
+          <option value="text/x-julia">Julia</option>
+          <option value="text/x-kotlin">Kotlin</option>
+          <option value="text/x-less">LESS</option>
+          <option value="text/x-livescript">LiveScript</option>
+          <option value="text/x-lua">Lua</option>
+          <option value="text/x-markdown">Markdown</option>
+          <option value="text/mirc">mIRC</option>
+          <option value="text/x-mariadb">MariaDB SQL</option>
+          <option value="text/x-mathematica">Mathematica</option>
+          <option value="text/x-modelica">Modelica</option>
+          <option value="text/x-mumps">MUMPS</option>
+          <option value="text/x-mssql">MS SQL</option>
+          <option value="application/mbox">mbox</option>
+          <option value="text/x-mysql">MySQL</option>
+          <option value="text/x-nginx-conf">Nginx</option>
+          <option value="text/x-nsis">NSIS</option>
+          <option value="undefined">NTriples</option>
+          <option value="text/x-objectivec">Objective-C</option>
+          <option value="text/x-ocaml">OCaml</option>
+          <option value="text/x-octave">Octave</option>
+          <option value="text/x-oz">Oz</option>
+          <option value="text/x-pascal">Pascal</option>
+          <option value="null">PEG.js</option>
+          <option value="text/x-perl">Perl</option>
+          <option value="undefined">PHP</option>
+          <option value="text/x-pig">Pig</option>
+          <option value="text/x-plsql">PLSQL</option>
+          <option value="text/x-pgsql">PostgreSQL</option>
+          <option value="application/x-powershell">PowerShell</option>
+          <option value="text/x-properties">Properties files</option>
+          <option value="text/x-protobuf">ProtoBuf</option>
+          <option value="text/x-python">Python</option>
+          <option value="text/x-puppet">Puppet</option>
+          <option value="text/x-q">Q</option>
+          <option value="text/x-rsrc">R</option>
+          <option value="text/x-rst">reStructuredText</option>
+          <option value="text/x-rpm-changes">RPM Changes</option>
+          <option value="text/x-rpm-spec">RPM Spec</option>
+          <option value="text/x-ruby">Ruby</option>
+          <option value="text/x-rustsrc">Rust</option>
+          <option value="text/x-sas">SAS</option>
+          <option value="text/x-sass">Sass</option>
+          <option value="text/x-scala">Scala</option>
+          <option value="text/x-scheme">Scheme</option>
+          <option value="text/x-scss">SCSS</option>
+          <option value="undefined">Shell</option>
+          <option value="application/sieve">Sieve</option>
+          <option value="undefined">Slim</option>
+          <option value="text/x-stsrc">Smalltalk</option>
+          <option value="text/x-smarty">Smarty</option>
+          <option value="text/x-solr">Solr</option>
+          <option value="text/x-sml">SML</option>
+          <option value="text/x-soy">Soy</option>
+          <option value="application/sparql-query">SPARQL</option>
+          <option value="text/x-spreadsheet">Spreadsheet</option>
+          <option value="text/x-sql">SQL</option>
+          <option value="text/x-sqlite">SQLite</option>
+          <option value="text/x-squirrel">Squirrel</option>
+          <option value="text/x-styl">Stylus</option>
+          <option value="text/x-swift">Swift</option>
+          <option value="text/x-stex">sTeX</option>
+          <option value="text/x-latex">LaTeX</option>
+          <option value="text/x-systemverilog">SystemVerilog</option>
+          <option value="text/x-tcl">Tcl</option>
+          <option value="text/x-textile">Textile</option>
+          <option value="text/x-tiddlywiki">TiddlyWiki </option>
+          <option value="text/tiki">Tiki wiki</option>
+          <option value="text/x-toml">TOML</option>
+          <option value="text/x-tornado">Tornado</option>
+          <option value="text/troff">troff</option>
+          <option value="text/x-ttcn">TTCN</option>
+          <option value="text/x-ttcn-cfg">TTCN_CFG</option>
+          <option value="text/turtle">Turtle</option>
+          <option value="application/typescript">TypeScript</option>
+          <option value="text/typescript-jsx">TypeScript-JSX</option>
+          <option value="text/x-twig">Twig</option>
+          <option value="text/x-webidl">Web IDL</option>
+          <option value="text/x-vb">VB.NET</option>
+          <option value="text/vbscript">VBScript</option>
+          <option value="text/velocity">Velocity</option>
+          <option value="text/x-verilog">Verilog</option>
+          <option value="text/x-vhdl">VHDL</option>
+          <option value="undefined">Vue.js Component</option>
+          <option value="undefined">XML</option>
+          <option value="application/xquery">XQuery</option>
+          <option value="text/x-yacas">Yacas</option>
+          <option value="undefined">YAML</option>
+          <option value="text/x-z80">Z80</option>
+          <option value="text/x-mscgen">mscgen</option>
+          <option value="text/x-xu">xu</option>
+          <option value="text/x-msgenny">msgenny</option>
+        </select>
+      </label>
       <label>Keymap
           <select id="keyMap">
             <option>none</option>
@@ -106,9 +343,9 @@
       var CM = CodeMirror(document.body, {
         value: localStorage.getItem("CMNotepad") || "Type it here, see it here.",
         autofocus: true,
+        placeholder: "Type it here, see it here.",
         viewportMargin: Infinity
       });
-
 
       /* handle settings */
       document.getElementById("config").addEventListener("submit", function (event) {
@@ -180,6 +417,8 @@
                 setTheme(opt[1]);
               } else if (opt[0] === "keyMap") {
                 setKeymap(opt[1]);
+              } else if (opt[0] === "mode") {
+               CodeMirror.autoLoadMode(CM, CodeMirror.findModeByMIME(opt[1] || "text/plain"));
               } else {
                 CM.setOption(opt[0], opt[1]);
               }
