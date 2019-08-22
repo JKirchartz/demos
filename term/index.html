@@ -2,11 +2,20 @@
 <html>
   <head>
     <link rel="stylesheet" href="node_modules/xterm/dist/xterm.css" />
-    <script src="node_modules/xterm/dist/xterm.js"></script>
-    <script src="node_modules/xterm/dist/addons/webLinks/webLinks.js"></script>
-    <script src="index.js"></script>
+    <style>
+       * {
+         margin: 0;
+         padding: 0;
+       }
+       html, body, #terminal {
+         height: 100%;
+         width: 100%;
+         background: #000;
+       }
+     </style>
   </head>
   <body>
     <div id="terminal"></div>
+    <script src="bundle.js"></script>
   </body>
 </html>

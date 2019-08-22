@@ -1,9 +1,15 @@
+import { Terminal } from './node_modules/xterm/dist/xterm';
+import { webLinks } from 'xterm-addon-web-links';
+import { fit } from 'xterm-addon-fit';
+
 // see https://codercat.tk/terminal-prints.html for inspiration
-Terminal.applyAddon(webLinks);
-var xterm = new Terminal();  // Instantiate the terminal
-var command = ""; // is there a better way to collect commands than char-by-char?
-var history = [];
+const xterm = new Terminal();  // Instantiate the terminal
+let command = ""; // is there a better way to collect commands than char-by-char?
+let history = [];
+xterm.loadAddon(new webLinks());
+xterm.loadAddon(fit);
 xterm.open(document.getElementById('terminal'));
+xterm.fit();
 xterm.prompt = () => {
   xterm.write('\r\n$> ');
 };
@@ -34,11 +40,13 @@ xterm.on('paste', function(data) {
   command += data;
 });
 
-var runCommand = (command) => {
+const runCommand = (command) => {
   xterm.writeln("");
   if (command === "help") {
     xterm.writeln("this doesn't do anything yet - check back soon!");
+    return;
   }
+  return command + " unknown!"
 };
 
 

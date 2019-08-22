@@ -4,7 +4,9 @@
   "description": "Testing xterm.js",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "babel": "babel --presets es2015 js/main.js -o build/main.bundle.js",
+    "start": "http-server",
+    "webpack": "webpack"
   },
   "repository": {
     "type": "git",
@@ -16,7 +18,23 @@
     "url": "https://github.com/jkirchartz/Demos/issues"
   },
   "homepage": "https://github.com/jkirchartz/Demos#readme",
+  "babel": {
+    "presets": [
+      "@babel/preset-env",
+      "babel-preset-es2015"
+    ]
+  },
   "dependencies": {
-    "xterm": "^3.12.2"
+    "xterm": "^3.14.5",
+    "xterm-addon-fit": "^0.1.0",
+    "xterm-addon-web-links": "^0.1.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.5.5",
+    "@babel/preset-env": "^7.5.5",
+    "babel-loader": "^8.0.6",
+    "babel-preset-es2015": "^6.24.1",
+    "webpack": "^4.39.2",
+    "webpack-cli": "^3.3.7"
   }
 }
