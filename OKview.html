@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+        <head>
+        <meta charset="utf-8" />
+                <title>grandview</title>
+                <style>
+                  html, body {
+                    height: 100%;
+                    width: 100%;
+                    margin: 0;
+                    padding: 0;
+                  }
+                  body {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                  }
+
+                  #input {
+                    border: 0;
+                    outline: 0;
+                    display: block;
+                    font-size: 10vmax;
+                    max-width: 100%;
+                    text-align:center;
+                  }
+
+                  #output, #splash {
+                    max-width: 45rem;
+                  }
+
+                  .invisible {
+                    display: none!important;
+                  }
+
+                  #download, #splash-button {
+                      display: inline-block;
+                      background: #AAA;
+                      padding: 0.5rem 1rem;
+                      border-radius: 0.25rem;
+                      border: 1px solid #333;
+                      text-decoration: none;
+                      font-family: sans-serif;
+                      color: #000;
+                  }
+                  #download:hover, #splash-button:hover {
+                      background: #CCC;
+                      cursor: pointer;
+                  }
+                  #download:active, #splash-button:active {
+                      background: #444;
+                      color: #FFF;
+                  }
+                </style>
+        </head>
+        <body>
+          <div id="splash">
+            <h1>OKview</h1>
+            <p> This is an automatic writing app based on the one sentence description of "Grandview" provided on <a href="https://en.wikipedia.org/wiki/Surrealist_automatism#Contemporary_techniques">wikipedia</a>.  </p>
+            <p> As you type, the word you're writing will disappear once you hit space or enter -- but do not fear! It's being saved for later! Hit escape to see what you've come up with.  </p>
+            <button id="splash-button">continue</button autofocus>
+          </div>
+          <input type="text" id="input" autofocus class="invisible"/>
+          <div id="output-container" class="invisible">
+            <pre id="output"></pre>
+            <a href="" id="download" download>download</a>
+          </div>
+          <script>
+            let input = document.getElementById("input");
+            let outputContainer = document.getElementById("output-container");
+            let output = document.getElementById("output");
+            let splash = document.getElementById("splash");
+            let splashBtn = document.getElementById("splash-button");
+            let downloadBtn = document.getElementById("download");
+            input.addEventListener("keydown", function(evt) {
+                console.log(evt);
+                if (evt.keyCode === 32 || evt.keyCode === 13) {
+                output.innerHTML += this.value.trim() + (evt.keyCode === 13 ? "\n" : " ");
+                this.value = "";
+                } else if (evt.keyCode === 27) {
+                input.classList.add("invisible");
+                outputContainer.classList.remove("invisible");
+
+                var file = new Blob([output.innerHTML], {type: "text/plain"});
+                downloadBtn.href = URL.createObjectURL(file);
+                downloadBtn.download = "automatic_writing.txt";
+                }
+              });
+            splashBtn.addEventListener("click", function() {
+                splash.classList.add("invisible");
+                input.classList.remove("invisible");
+              });
+          </script>
+        </body>
+      </html>
