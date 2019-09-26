@@ -1,0 +1,16 @@
+{
+  "name": "parent-test",
+  "version": "1.0.0",
+  "description": "Testing checking parent package.json from child module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "parentMessage": "This is a message from the parent package.json",
+  "author": "JKirchartz",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/JKirchartz/get-root-package.json-from-child-module.git"
+  }
+}
