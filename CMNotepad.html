@@ -27,10 +27,6 @@
       type="text/javascript"
     ></script>
     <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.48.4/mode/meta.min.js"
-      type="text/javascript"
-    ></script>
-    <script
       src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.48.4/addon/display/placeholder.min.js"
       type="text/javascript"
     ></script>
@@ -98,11 +94,20 @@
           right: 0;
           z-index: 8888;
       }
+      #save {
+        display: inline-block;
+        position: absolute;
+        top: 0;
+        right: 2rem;
+        border: none;
+        background: transparent;
+      }
     </style>
   </head>
   <body>
     <input type="checkbox" id="settings" name="settings">
     <label for="settings"><img src="http://icons.iconarchive.com/icons/google/noto-emoji-objects/16/62971-gear-icon.png" alt="settings"/></label>
+    <a id="save"><img src="http://icons.iconarchive.com/icons/wefunction/woofunction/32/save-download-icon.png" alt="save" /></a>
     <form id="config">
       <label>Theme
         <select id="theme">
@@ -418,7 +423,7 @@
               } else if (opt[0] === "keyMap") {
                 setKeymap(opt[1]);
               } else if (opt[0] === "mode") {
-               CodeMirror.autoLoadMode(CM, CodeMirror.findModeByMIME(opt[1] || "text/plain"));
+                CodeMirror.autoLoadMode(CM, CodeMirror.findModeByMIME(opt[1] || "text/plain"));
               } else {
                 CM.setOption(opt[0], opt[1]);
               }
@@ -434,6 +439,13 @@
       setCMOptions(JSON.parse(localStorage.getItem("CMNotepadOptions")));
 
       /* save */
+      var saveFile = function(evt){
+        var mode = CM.findModeByMIME(CM.getMode());
+        var file = new Blob(CM.getValue(), { type: mode.mime });
+        evt.target.href = URL.createObjectURL(file);
+        evt.target.download = "CMnotepad." + (mode.ext[mode.ext.length - 1] || "txt");
+      }
+      document.getElementById("save").addEventListener("click", saveFile);
       var save = function() {
         localStorage.setItem("CMNotepad", CM.getValue());
       };
