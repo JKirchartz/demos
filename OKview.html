@@ -4,13 +4,13 @@
         <meta charset="utf-8" />
                 <title>OKview</title>
                 <style>
-                  html, body {
+                  html, body, #input_label {
                     height: 100%;
                     width: 100%;
                     margin: 0;
                     padding: 0;
                   }
-                  body {
+                  body, #input_label {
                     display: flex;
                     justify-content: center;
                     align-items: center;
@@ -60,7 +60,9 @@
             <p> As you type, the word you're writing will disappear once you hit space or enter -- but do not fear! It's being saved for later! Hit escape to see what you've come up with.  </p>
             <button id="splash-button">continue</button autofocus>
           </div>
-          <input type="text" id="input" autofocus class="invisible"/>
+          <label id="input_label" class="invisible">
+            <input type="text" id="input" autofocus />
+          </label>
           <div id="output-container" class="invisible">
             <pre id="output"></pre>
             <a href="" id="download" download>download</a>
@@ -78,7 +80,7 @@
                 output.innerHTML += this.value.trim() + (evt.keyCode === 13 ? "\n" : " ");
                 this.value = "";
                 } else if (evt.keyCode === 27) {
-                input.classList.add("invisible");
+                document.getElementById("input_label").classList.add("invisible");
                 outputContainer.classList.remove("invisible");
 
                 var file = new Blob([output.innerHTML], {type: "text/plain"});
@@ -88,7 +90,8 @@
               });
             splashBtn.addEventListener("click", function() {
                 splash.classList.add("invisible");
-                input.classList.remove("invisible");
+                document.getElementById("input_label").classList.remove("invisible");
+                input.focus();
               });
           </script>
         </body>

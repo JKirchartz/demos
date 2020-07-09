@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+        <meta charset="utf-8" />
+		<title>Web Worker Demo</title>
+	</head>
+	<body>
+    <h1>Web Worker Demo</h2>
+    <p>The worker will take 3 seconds to complete</p>
+    <p>View console for complete logs since workers cannot interact with the DOM</p>
+    <button id="send">Run Webworker</button>
+    <div id="output"></div>
+    <script>
+      function log(...args) {
+        console.log(...args);
+        document.getElementById("output").innerHTML += (args.join(' ') + "<br>");
+      }
+      window.onload = function () {
+        log("setup worker");
+        var worker = new Worker('./worker.js');
+        var button = document.getElementById("send");
+        worker.onmessage = function(e) {
+          log("main onmessage", e);
+          log("main data", e.data);
+        }
+        send.onclick = () => {
+          log("post message");
+          worker.postMessage("posted message");
+        }
+      }
+    </script>
+	</body>
+</html>
