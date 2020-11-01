@@ -34,6 +34,8 @@
                 <li><a href='javascript:(function(){var elems=document.getElementsByTagName("a");for(var i=0;i<elems.length;i++)window.open(elems[i]["href"])})();'>Open All Links on Page</a></li>
                 <li><a href="javascript:var e=document.links;for(var i=1;i<e.length;i++){var a=e[i],j=new Image;j.src=a.href,j.onerror=function(){this.style.display='none'},a.parentNode.insertBefore(j,a)}">Open Image Links as Inline Images</a></li>
                 <li><a href="javascript:(function(){document.head.parentNode.removeChild(document.head);})">Remove DOM Head</a></li>
+                <li><a href="javascript:(document.querySelectorAll('*').forEach(function(node){ if(node.offsetWidth>window.innerWidth){node.style.border='1px solid #f0f';console.log(node);}});)">Find Body Overflow</a></li>
+                <li><a href="javascript:(document.querySelectorAll('.status__content__spoiler-link').forEach((e) => e.click());)">Open all Mastodon spoilers</a></li>
             </ol>
         </div>
     </body>
