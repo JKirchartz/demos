@@ -148,7 +148,7 @@
       <p>Find out more on <a href="https://en.wikipedia.org/wiki/List_of_dates_predicted_for_apocalyptic_events">wikipedia</a></p>
       <div id="social">
         <a class="twitter-share-button" data-related="jkirchartz" data-text="how many times have you survived the apocalypse?" data-url="http://jkirchartz.com/demos/How_Many_Apocalypses_Have_I_Survived.html" data-via="JKirchartz" href="https://twitter.com/share">Tweet</a>
-        <div class="fb-like" data-href="http://jkirchartz.com/demos/How_Many_Apocalypses_Have_I_Survived.html" data-layout="button" data-size="small" data-share="true" data-show-faces="false" data-width="320">
+        <div class="fb-like" data-href="https://jkirchartz.com/demos/How_Many_Apocalypses_Have_I_Survived.html" data-layout="button" data-size="small" data-share="true" data-show-faces="false" data-width="320">
         </div>
 				<script type='text/javascript'>kofiwidget2.init('Buy Me a Coffee', '#46b798', 'Q5Q79ZEI');kofiwidget2.draw();</script>
       </div>
@@ -165,7 +165,7 @@
                         d = new Date(),
                         currYear = d.getFullYear();
     $(function() {
-                $.getJSON("http://en.wikipedia.org/w/api.php?action=parse&rvprop=content&page=List_of_dates_predicted_for_apocalyptic_events&format=json&callback=?",
+                $.getJSON("https://en.wikipedia.org/w/api.php?action=parse&rvprop=content&page=List_of_dates_predicted_for_apocalyptic_events&format=json&callback=?",
                                 function(data) {
                                 $(data.parse.text["*"]).find("tr").each(function() {
                                                 var origin = $(this).find("td:first").text();
